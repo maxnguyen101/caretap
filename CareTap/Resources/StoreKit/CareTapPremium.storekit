@@ -1,0 +1,71 @@
+{
+  "products" : [
+
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "A7D91F23",
+      "localizations" : [
+        {
+          "description" : "Unlock deeper history patterns, refill outlook, and care circle summaries.",
+          "displayName" : "CareTap Premium",
+          "locale" : "en_US"
+        }
+      ],
+      "name" : "CareTap Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "9A3C8E11",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Monthly access to CareTap Premium features.",
+              "displayName" : "CareTap Premium Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.maxnguyen.caretap.premium.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "CareTap Premium Monthly",
+          "subscriptionGroupID" : "A7D91F23",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "displayPrice" : "29.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "0D57B6C4",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Yearly access to CareTap Premium features.",
+              "displayName" : "CareTap Premium Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.maxnguyen.caretap.premium.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "CareTap Premium Yearly",
+          "subscriptionGroupID" : "A7D91F23",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 0
+  }
+}

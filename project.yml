@@ -1,0 +1,150 @@
+name: CareTap
+options:
+  minimumXcodeGenVersion: 2.39.1
+  deploymentTarget:
+    iOS: "18.0"
+  groupSortPosition: top
+settings:
+  base:
+    SWIFT_VERSION: 6.0
+    IPHONEOS_DEPLOYMENT_TARGET: 18.0
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+    TARGETED_DEVICE_FAMILY: 1
+    DEVELOPMENT_ASSET_PATHS: "\"CareTap/Resources\""
+    DEVELOPMENT_TEAM: R662BH835Y
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
+    AD_HOC_CODE_SIGNING_ALLOWED: YES
+schemes:
+  CareTap:
+    build:
+      targets:
+        CareTap: all
+        CareTapWidgetExtension: [build]
+        CareTapTests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: CareTap/Resources/StoreKit/CareTapPremium.storekit
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CareTapTests
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+    profile:
+      config: Release
+targets:
+  CareTap:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    info:
+      path: CareTap/Info.plist
+      properties:
+        CFBundleDisplayName: CareTap
+        CFBundleURLTypes:
+          - CFBundleTypeRole: Editor
+            CFBundleURLName: com.maxnguyen.caretap
+            CFBundleURLSchemes:
+              - caretap
+        UILaunchStoryboardName: LaunchScreen
+        CareTapSupabaseProjectURL: https://qznwkvezqsxcbbvgqjci.supabase.co
+        CareTapSupabasePublishableKey: sb_publishable_z3lkN1DweATyHJxZNAmluA_6jnesRfG
+        CareTapUniversalLinkHost: vercel-links-mu.vercel.app
+        CareTapTapKitCheckoutURL: ""
+        CareTapTapKitStarterPaymentLink: "https://buy.stripe.com/28E3cvelbbTN6Ad8riao800"
+        CareTapTapKitFamilyPaymentLink: "https://buy.stripe.com/eVqfZh3GxcXR1fTcHyao801"
+        CareTapStripePublishableKey: ""
+        CareTapPremiumMonthlyProductID: com.maxnguyen.caretap.premium.monthly
+        CareTapPremiumYearlyProductID: com.maxnguyen.caretap.premium.yearly
+        CareTapAppGroupIdentifier: group.com.maxnguyen.caretap.shared
+        NFCReaderUsageDescription: CareTap uses NFC bottle and organizer tags so patients can log dose events with a simple tap.
+        NSSupportsLiveActivities: true
+        ITSAppUsesNonExemptEncryption: false
+    sources:
+      - path: CareTap/Sources/App
+      - path: CareTap/Sources/DesignSystem
+      - path: CareTap/Sources/Features
+      - path: CareTap/Sources/Models
+      - path: CareTap/Sources/Services
+      - path: CareTap/Sources/Infrastructure
+      - path: CareTap/Sources/Previews
+      - path: CareTap/Resources
+        buildPhase: resources
+        excludes:
+          - StoreKit/**
+    postBuildScripts:
+      - name: Ad Hoc Sign Embedded Widget For Simulator
+        basedOnDependencyAnalysis: false
+        script: |
+          if [ "${PLATFORM_NAME}" = "iphonesimulator" ]; then
+            WIDGET_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}/PlugIns/CareTapWidget.appex"
+            if [ -d "${WIDGET_PATH}" ]; then
+              /usr/bin/codesign --force --sign - --timestamp=none --generate-entitlement-der "${WIDGET_PATH}"
+            fi
+          fi
+    dependencies:
+      - target: CareTapWidgetExtension
+        embed: true
+        codeSign: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxnguyen.caretap
+        PRODUCT_NAME: CareTap
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: CareTap/CareTap.entitlements
+      configs:
+        Debug:
+          ENABLE_DEBUG_DYLIB: NO
+  CareTapWidgetExtension:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "18.0"
+    info:
+      path: CareTapWidget/Info.plist
+      properties:
+        CFBundleDisplayName: CareTap
+        CareTapAppGroupIdentifier: group.com.maxnguyen.caretap.shared
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    sources:
+      - path: CareTap/Sources/DesignSystem
+      - path: CareTap/Sources/Features/Widgets
+      - path: CareTap/Sources/Models
+        excludes:
+          - AppFlowModels.swift
+          - CareTapSyncPayloads.swift
+      - path: CareTap/Sources/Services/HomeSnapshotProviding.swift
+      - path: CareTap/Sources/Services/CareTapWidgetServiceProtocols.swift
+      - path: CareTap/Sources/Infrastructure/PreviewHomeSnapshotService.swift
+      - path: CareTap/Sources/Infrastructure/Widgets
+      - path: CareTap/Sources/Previews
+      - path: CareTapWidget/Sources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxnguyen.caretap.widget
+        PRODUCT_NAME: CareTapWidget
+        GENERATE_INFOPLIST_FILE: NO
+        SKIP_INSTALL: NO
+        CODE_SIGN_ENTITLEMENTS: CareTapWidget/CareTapWidget.entitlements
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: $(inherited) APP_EXTENSION
+  CareTapTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: CareTapTests
+        excludes:
+          - StudyTests.swift
+    dependencies:
+      - target: CareTap
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.maxnguyen.caretap.tests
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_NAME: CareTapTests

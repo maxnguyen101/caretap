@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>CareTap</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.maxnguyen.caretap</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>caretap</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>CareTapAppGroupIdentifier</key>
+	<string>group.com.maxnguyen.caretap.shared</string>
+	<key>CareTapSupabaseProjectURL</key>
+	<string>https://qznwkvezqsxcbbvgqjci.supabase.co</string>
+	<key>CareTapSupabasePublishableKey</key>
+	<string>sb_publishable_z3lkN1DweATyHJxZNAmluA_6jnesRfG</string>
+	<key>CareTapPremiumMonthlyProductID</key>
+	<string>com.maxnguyen.caretap.premium.monthly</string>
+	<key>CareTapPremiumYearlyProductID</key>
+	<string>com.maxnguyen.caretap.premium.yearly</string>
+	<key>CareTapTapKitCheckoutURL</key>
+	<string></string>
+	<key>CareTapTapKitStarterPaymentLink</key>
+	<string>https://buy.stripe.com/28E3cvelbbTN6Ad8riao800</string>
+	<key>CareTapTapKitFamilyPaymentLink</key>
+	<string>https://buy.stripe.com/eVqfZh3GxcXR1fTcHyao801</string>
+	<key>CareTapStripePublishableKey</key>
+	<string></string>
+	<key>CareTapUniversalLinkHost</key>
+	<string>vercel-links-mu.vercel.app</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>NFCReaderUsageDescription</key>
+	<string>CareTap uses NFC bottle and organizer tags so patients can log dose events with a simple tap.</string>
+	<key>NSSupportsLiveActivities</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+</dict>
+</plist>
