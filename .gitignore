@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Environment (never commit secrets; allow example templates)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Next.js
+.next/
+out/
+
+# Build / bundler
+build/
+dist/
+.turbo
+.cache
+
+# Vercel
+.vercel/
+
+# Xcode / iOS / SwiftPM
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
+.swiftpm/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# IDE / tooling
+.idea/
+*.swp
+*.swo
+*~
