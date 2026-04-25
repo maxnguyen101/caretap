@@ -17,12 +17,23 @@ sell TapKit purchases through Stripe Payment Links.
 
 ## Local development
 
+| Command | Purpose |
+| ------- | ------- |
+| `npm install` | Install dependencies (run from `website/`). |
+| `npm run dev` | Local dev server at http://localhost:3000. |
+| `npm run build` | Production build; use to verify before deploy or in CI. |
+| `npm run deploy:prod` | Production deploy via Vercel CLI (see below). |
+
 ```bash
 cd website
 npm install
 cp .env.example .env.local   # fill in Stripe Payment Link URLs
 npm run dev
 ```
+
+**First time with Vercel (from `website/`):** `npx vercel login`, then `npx vercel link` so the CLI knows which project to deploy. Linking is stored under `.vercel/`, which is gitignored, so it stays local to your machine.
+
+If `npm run build` fails with a filesystem error under `.next/`, remove the cache and retry: `rm -rf .next && npm run build`.
 
 Open http://localhost:3000.
 
@@ -52,15 +63,19 @@ and renders the friendly thanks page when it isn't.
 The full Stripe configuration walkthrough lives in
 `../TAPKIT_STRIPE_SETUP.md`.
 
-## Deploy to Vercel
+## Deploy (Vercel)
 
-```bash
-npx vercel link        # one-time
-npx vercel env add NEXT_PUBLIC_STRIPE_LINK_STARTER  # repeat for each pack
-npx vercel --prod
-```
+From the `website/` directory (after `npm install`):
 
-Then in the Vercel dashboard, add `tapcare.app` as a custom domain.
+1. **Log in once:** `npx vercel login`
+2. **Link the project (first time only):** run `npx vercel link` in `website/` and follow the prompts (choose team/project or create new).
+3. **Environment variables:** add Stripe and other public env vars in the [Vercel dashboard](https://vercel.com) for this project, or use `npx vercel env add` for each key (e.g. repeat for all `NEXT_PUBLIC_STRIPE_LINK_*` vars from the table above). Do not commit secrets; do not put tokens in the repo.
+4. **Monorepos:** if this app lives in a subfolder of a larger repo, set **Root Directory** to `website` (or the path to this Next app) in the project **Settings** so builds run from the right place.
+5. **Production deploy:** `npm run deploy:prod` (alias for `vercel --prod`).
+
+**Preview / CI:** `npm run deploy` or `npm run vercel:preview` deploys a preview deployment.
+
+After deploy, in the Vercel dashboard, add `tapcare.app` as a custom domain if needed.
 
 ## Update the App Store ID
 
