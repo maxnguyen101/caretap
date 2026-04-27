@@ -31,7 +31,7 @@ struct CaregiverWorkspaceView: View {
                         CareTapSegmentedItem(
                             id: $0,
                             title: $0.title,
-                            subtitle: $0 == .people ? "Sharing and alerts" : "Recent monitoring"
+                            subtitle: $0 == .people ? "Sharing and alerts" : "Recent check-ins"
                         )
                     },
                     selectedID: selectedSection,
@@ -98,10 +98,10 @@ struct CaregiverWorkspaceView: View {
                 ViewThatFits(in: .vertical) {
                     HStack(alignment: .top, spacing: 12) {
                         relationshipSummaryText(relationship: selectedRelationship)
-
-                        Spacer()
+                            .frame(maxWidth: .infinity, alignment: .leading)
 
                         statusBadge(for: selectedRelationship)
+                            .frame(minWidth: 0, alignment: .trailing)
                     }
 
                     VStack(alignment: .leading, spacing: 10) {
@@ -113,7 +113,7 @@ struct CaregiverWorkspaceView: View {
 
             CareTapInsightsDashboard(
                 adherenceFraction: adherenceFraction,
-                adherenceLabel: selectedSection == .people ? "Care circle" : "Monitoring",
+                adherenceLabel: selectedSection == .people ? "Care circle" : "Check-ins",
                 adherenceCaption: adherenceCaption,
                 primaryStat: .init(
                     label: "People",
@@ -162,7 +162,7 @@ struct CaregiverWorkspaceView: View {
 
     private var adherenceCaption: String {
         if relationships.isEmpty {
-            return "Connect someone with a shared code to start monitoring."
+            return "Connect someone with a shared code to see shared check-ins."
         }
         if attentionCount == 0 {
             return "Everyone you follow looks on track."
@@ -181,7 +181,6 @@ struct CaregiverWorkspaceView: View {
                 .foregroundStyle(relationship.showsAttention ? CareTapTheme.alert : CareTapTheme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
         }
-        .layoutPriority(1)
     }
 
     @ViewBuilder

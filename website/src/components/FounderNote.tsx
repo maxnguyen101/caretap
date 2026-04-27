@@ -4,68 +4,49 @@ import { motion } from "framer-motion";
 
 export function FounderNote() {
   return (
-    <section id="story" className="relative bg-canvas py-28 sm:py-36">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="support" className="scroll-mt-24 bg-canvas py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="grid gap-10 rounded-3xl bg-white p-8 shadow-card sm:p-12 lg:grid-cols-[200px_1fr] lg:items-start lg:gap-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="grid gap-10 rounded-lg border border-stroke bg-white p-6 shadow-card lg:grid-cols-[0.72fr_1fr] lg:p-10"
         >
-          <div className="flex flex-col items-center gap-4 lg:items-start">
-            <div className="grid h-32 w-32 place-items-center rounded-3xl bg-sage-gradient text-white shadow-sage">
-              <span className="text-5xl font-semibold tracking-tight">M</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <p className="text-base font-semibold text-ink">Max Nguyen</p>
-              <p className="text-sm text-inkSecondary">
-                Founder, USC pre-med
-              </p>
-            </div>
+          <div>
+            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
+              Setup help included
+            </p>
+            <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+              Not techy? We help with setup.
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-inkSecondary">
+              Every TapKit includes simple setup support, so you or your parent
+              do not have to figure it out alone.
+            </p>
           </div>
 
-          <div>
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-sageStrong">
-              A note from the founder
-            </p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
-              I built CareTap because reminder apps don’t work.
-            </h2>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-inkSecondary">
-              <p>
-                I’m a USC pre-med student. Over the last year, I sat with
-                families in my own neighborhood — parents, grandparents,
-                people on five-medication routines — and I watched the same
-                pattern: the reminder fires, the bottle stays sealed, and
-                the spreadsheet of doses never gets filled in.
-              </p>
-              <p>
-                CareTap takes the bottle that’s already there and teaches it
-                to log itself. One tap. No app to open. The dose is
-                recorded. Caregivers see it.
-              </p>
-              <p>
-                Every TapKit ships from my desk. I hand-test each tag with
-                the app before I package it, and I write the shipping label
-                myself. If anything feels off when it arrives, email me at
-                {" "}
-                <a
-                  className="font-semibold text-sageStrong underline-offset-4 hover:underline"
-                  href="mailto:hello@tapcare.app"
-                >
-                  hello@tapcare.app
-                </a>
-                {" "}
-                and I’ll make it right.
-              </p>
+          <div className="grid gap-5">
+            <SupportCard
+              title="Set up for a parent"
+              body="You can help place tags, name routines, and get the first check-ins ready without turning it into a complicated tech project."
+            />
+            <SupportCard
+              title="Support, not monitoring"
+              body="TapCare is designed to support routines, not take away independence. The goal is simple: make daily check-ins easier, clearer, and less stressful for everyone."
+            />
+
+            <div className="grid gap-4 sm:grid-cols-3">
+              <SupportStat value="Setup" label="Help included" />
+              <SupportStat value="$25+" label="Free U.S. shipping" />
+              <SupportStat value="30 days" label="Returns" />
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 text-sm text-inkSecondary">
-              <Stat value="20+" label="Local families onboarded" />
-              <Stat value="1-day" label="Typical ship time" />
-              <Stat value="100%" label="Tags hand-tested" />
-            </div>
+            <p className="text-sm leading-relaxed text-inkSecondary">
+              If a tag does not scan, a routine needs renaming, or the first
+              setup feels unclear, email support and we will help get the
+              system working simply.
+            </p>
           </div>
         </motion.div>
       </div>
@@ -73,13 +54,22 @@ export function FounderNote() {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
+function SupportCard({ title, body }: { title: string; body: string }) {
   return (
-    <div>
+    <div className="rounded-lg border border-stroke bg-canvas p-5">
+      <h3 className="text-lg font-semibold text-ink">{title}</h3>
+      <p className="mt-2 leading-relaxed text-inkSecondary">{body}</p>
+    </div>
+  );
+}
+
+function SupportStat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="rounded-lg border border-stroke bg-white p-4">
       <p className="text-2xl font-semibold tracking-tight text-ink tabular">
         {value}
       </p>
-      <p className="text-xs uppercase tracking-wider text-inkTertiary">
+      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-inkTertiary">
         {label}
       </p>
     </div>

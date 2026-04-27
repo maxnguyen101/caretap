@@ -9,9 +9,9 @@ private enum CareTapPremiumStoreError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .missingProductConfiguration:
-            return "CareTap Premium products are not configured for this build yet."
+            return "TapCare Premium products are not configured for this build yet."
         case .productsUnavailable:
-            return "CareTap Premium plans are not available right now. Try again in a moment."
+            return "TapCare Premium plans are not available right now. Try again in a moment."
         case .verificationFailed:
             return "The App Store could not verify that purchase."
         }

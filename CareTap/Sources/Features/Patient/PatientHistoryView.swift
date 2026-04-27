@@ -37,7 +37,7 @@ struct PatientHistoryView: View {
             Text(
                 context == .patient
                     ? "Recent check-ins, skips, and anything that still needs attention."
-                    : "A calmer view of recent monitored check-ins, misses, and updated entries."
+                    : "A calmer view of recent shared check-ins, misses, and updated entries."
             )
                 .font(CareTapTypography.footnote)
                 .foregroundStyle(CareTapTheme.textSecondary)
@@ -47,7 +47,7 @@ struct PatientHistoryView: View {
     private var insightsDashboard: some View {
         CareTapInsightsDashboard(
             adherenceFraction: adherenceFraction,
-            adherenceLabel: context == .patient ? "Recent" : "Monitoring",
+            adherenceLabel: context == .patient ? "Recent" : "Check-ins",
             adherenceCaption: adherenceCaption,
             primaryStat: .init(
                 label: "Done",
@@ -149,10 +149,10 @@ struct PatientHistoryView: View {
     private var emptyState: some View {
         CareTapEmptyState(
             icon: "chart.bar",
-            title: context == .patient ? "Nothing logged yet" : "Nothing monitored yet",
+            title: context == .patient ? "Nothing logged yet" : "Nothing shared yet",
             message: context == .patient
                 ? "Check-ins, misses, and corrections will appear here."
-                : "Recent linked routine activity will appear here once there is something to monitor."
+                : "Recent linked routine activity will appear here once check-ins are shared."
         )
     }
 
@@ -242,9 +242,7 @@ private struct HistoryRowCard: View {
                                 .foregroundStyle(CareTapTheme.textSecondary)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
-                        .layoutPriority(1)
-
-                        Spacer(minLength: 0)
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
                         CareTapStatusBadge(text: row.statusText, tone: row.tone)
                     }
@@ -280,7 +278,8 @@ private struct HistoryRowCard: View {
                             Text(row.confidenceText)
                                 .font(CareTapTypography.footnote)
                                 .foregroundStyle(CareTapTheme.textTertiary)
-                                .fixedSize(horizontal: true, vertical: false)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.85)
                         }
                     }
 

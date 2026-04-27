@@ -11,11 +11,14 @@ settings:
     MARKETING_VERSION: 1.0.0
     CURRENT_PROJECT_VERSION: 1
     TARGETED_DEVICE_FAMILY: 1
-    DEVELOPMENT_ASSET_PATHS: "\"CareTap/Resources\""
+    # Do NOT set DEVELOPMENT_ASSET_PATHS to CareTap/Resources — Xcode omits those assets from
+    # Release/App Store builds (no Assets.car, no icons). Use a dedicated Preview-only folder if needed.
     DEVELOPMENT_TEAM: R662BH835Y
     CODE_SIGN_STYLE: Automatic
     CODE_SIGN_IDENTITY: Apple Development
     AD_HOC_CODE_SIGNING_ALLOWED: YES
+    # Allow post-build PlistBuddy to patch the bundled Info.plist (Xcode user script sandbox).
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
 schemes:
   CareTap:
     build:
@@ -45,7 +48,7 @@ targets:
     info:
       path: CareTap/Info.plist
       properties:
-        CFBundleDisplayName: CareTap
+        CFBundleDisplayName: TapCare
         CFBundleURLTypes:
           - CFBundleTypeRole: Editor
             CFBundleURLName: com.maxnguyen.caretap
@@ -62,9 +65,13 @@ targets:
         CareTapPremiumMonthlyProductID: com.maxnguyen.caretap.premium.monthly
         CareTapPremiumYearlyProductID: com.maxnguyen.caretap.premium.yearly
         CareTapAppGroupIdentifier: group.com.maxnguyen.caretap.shared
-        NFCReaderUsageDescription: CareTap uses NFC bottle and organizer tags so patients can log dose events with a simple tap.
+        NFCReaderUsageDescription: TapCare uses NFC tags on bottles and organizers so you can confirm daily routines with a simple tap.
         NSSupportsLiveActivities: true
         ITSAppUsesNonExemptEncryption: false
+        CFBundleIconName: AppIcon
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UIRequiresFullScreen: true
     sources:
       - path: CareTap/Sources/App
       - path: CareTap/Sources/DesignSystem
@@ -87,6 +94,30 @@ targets:
               /usr/bin/codesign --force --sign - --timestamp=none --generate-entitlement-der "${WIDGET_PATH}"
             fi
           fi
+      - name: Ensure CFBundleIconName and compiled asset catalog
+        basedOnDependencyAnalysis: false
+        script: |
+          set -euo pipefail
+          APP_DIR="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+          PLIST="${APP_DIR}/Info.plist"
+          CAR="${APP_DIR}/Assets.car"
+          if [[ ! -d "$APP_DIR" ]]; then
+            echo "warning: app bundle not found at ${APP_DIR}"
+            exit 0
+          fi
+          if [[ ! -f "$CAR" ]]; then
+            echo "error: Assets.car missing — AppIcon asset catalog did not compile into the app."
+            exit 1
+          fi
+          if [[ ! -f "$PLIST" ]]; then
+            echo "error: Info.plist missing in app bundle."
+            exit 1
+          fi
+          if /usr/libexec/PlistBuddy -c "Print :CFBundleIconName" "$PLIST" &>/dev/null; then
+            /usr/libexec/PlistBuddy -c "Set :CFBundleIconName AppIcon" "$PLIST"
+          else
+            /usr/libexec/PlistBuddy -c "Add :CFBundleIconName string AppIcon" "$PLIST"
+          fi
     dependencies:
       - target: CareTapWidgetExtension
         embed: true
@@ -97,6 +128,14 @@ targets:
         PRODUCT_NAME: CareTap
         GENERATE_INFOPLIST_FILE: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # iPhone-only thinning omits iPad icon slots; App Store still validates them for iPad multitasking.
+        ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS: YES
+        # Ensures keys are present in the built app Info.plist (merged with CareTap/Info.plist).
+        INFOPLIST_KEY_CFBundleIconName: AppIcon
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+        # iPhone only — runs on iPad in compatibility mode; avoids native iPad multitasking validation.
+        TARGETED_DEVICE_FAMILY: 1
+        INFOPLIST_KEY_UIRequiresFullScreen: YES
         CODE_SIGN_ENTITLEMENTS: CareTap/CareTap.entitlements
       configs:
         Debug:
@@ -108,7 +147,7 @@ targets:
     info:
       path: CareTapWidget/Info.plist
       properties:
-        CFBundleDisplayName: CareTap
+        CFBundleDisplayName: TapCare
         CareTapAppGroupIdentifier: group.com.maxnguyen.caretap.shared
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension

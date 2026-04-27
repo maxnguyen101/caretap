@@ -50,7 +50,7 @@ struct AutomationSetupWizardView: View {
             icon: "safari.fill",
             title: "Fallback: Search for \"Open URLs\"",
             instruction: "This fallback only matters if the CareTap shortcut action does not appear. Search for **open url** and choose **Open URLs**.",
-            highlight: "Only use this if CareTap is not available"
+            highlight: "Only use this if TapCare is not available"
         ),
         AutomationWizardStep(
             imageName: "AutomationGuide/automation_step_6",
@@ -301,7 +301,6 @@ struct AutomationSetupWizardView: View {
             .padding(.vertical, 8)
             .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
             .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
-            .shadow(color: CareTapTheme.shadow.opacity(0.14), radius: 12, x: 0, y: 4)
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 10)
@@ -366,7 +365,6 @@ private struct AutomationStepScreenshotView: View {
             RoundedRectangle(cornerRadius: 20, style: .continuous)
                 .stroke(CareTapTheme.stroke, lineWidth: 1)
         )
-        .shadow(color: CareTapTheme.shadow.opacity(0.1), radius: 12, x: 0, y: 4)
     }
 
     private func loadImage() -> UIImage? {

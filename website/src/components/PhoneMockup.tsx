@@ -60,7 +60,7 @@ function PhoneContent({ scene }: { scene: PhoneMockupProps["scene"] }) {
       </h2>
       <p className="text-[13px] text-inkSecondary">
         {scene === "due" && "Due now • 10mg"}
-        {scene === "tapping" && "Hold near the bottle…"}
+          {scene === "tapping" && "Hold near the bottle..."}
         {scene === "logged" && "Logged at 9:41 AM"}
       </p>
 

@@ -1,0 +1,1480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0219F4FF54347AB71EB69467 /* CareTapWidgetServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D6FA64AD32A5E98460E9B4 /* CareTapWidgetServiceProtocols.swift */; };
+		03602DB71A2064A67A72EF11 /* CareTapRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611B1A201FB1EA924BA326B3 /* CareTapRootView.swift */; };
+		04BE700ABF9E0B863D12433B /* CareTapDeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C28433D177EF84CA83762D /* CareTapDeepLink.swift */; };
+		06BB5BC3E6F79F0055DE83FB /* CareTapAppServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9C8A5F635E8C59F2CE7C977 /* CareTapAppServiceProtocols.swift */; };
+		06D0C18E9FD1BC72D3570909 /* CareTapWidgetServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D6FA64AD32A5E98460E9B4 /* CareTapWidgetServiceProtocols.swift */; };
+		0A0ACC95358609087B841E61 /* PhaseThreeDomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FA2DFF211065E71D4BAE70 /* PhaseThreeDomainTests.swift */; };
+		0D7A7828C11928E00EEA5802 /* CareTapSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1136C4F26DD875FD68D96 /* CareTapSegmentedControl.swift */; };
+		0E38793E3D00A27B3497CE5D /* CareTapDoseActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98181F284607FACF838B57F /* CareTapDoseActivityView.swift */; };
+		12A5D6027FCD08CCA5E74229 /* CareTapLiveActivityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116D0672F8D009B82DB925F /* CareTapLiveActivityModels.swift */; };
+		12D27ED8D201FC06DA823454 /* CareTapMedicationScheduleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C83B45EF11B184BBB3900C9 /* CareTapMedicationScheduleGenerator.swift */; };
+		19146E33804CBE860CF4C835 /* CareTapShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DCE1C74E5CDB85D65D24A5 /* CareTapShareSheet.swift */; };
+		1A1ECEDB1DB87D22354D08E6 /* CareTapRoleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF21B233B01C8A249C0505 /* CareTapRoleSelectionView.swift */; };
+		1B390624953617A05D5CB935 /* CareTapStateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8721512B2E6D6058340 /* CareTapStateViews.swift */; };
+		1B3C4521E78892D95A162B47 /* CareTapAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614112CCA2AA68429FDD2A22 /* CareTapAnimations.swift */; };
+		1BB1A36C0677089FC6C926CB /* CareTapPhaseTwoPreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF6B9C74AAFC82ED6AFB50 /* CareTapPhaseTwoPreviewScenarios.swift */; };
+		1E5EEA2096BF2060C9C0188C /* CareTapBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D86821D0795900004DF546 /* CareTapBottomBar.swift */; };
+		1E93B873E391BEA4FD98064D /* CareTapStateBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DC0EC721A2A0BE5540E69F /* CareTapStateBuilder.swift */; };
+		1F51ED2CCD20DD3B57BCC2C3 /* CareTapFlowScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57F6BA6260AA6B2081B8CD /* CareTapFlowScaffold.swift */; };
+		1F840E6C084058A694362DF7 /* CareTapLegalContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553245938ED3D0FB0ABBF640 /* CareTapLegalContent.swift */; };
+		2269E420B785719437B83BCC /* CareTapRefillEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F718E2A3891946F14B4DD4 /* CareTapRefillEstimator.swift */; };
+		22E9D65299744B5B2EB614F9 /* CareTapPremiumModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585F82B452B6B8BAA9DAD00 /* CareTapPremiumModels.swift */; };
+		27056796C24E9ABC826C69F3 /* CareTapPremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0281E1C673EB29C98974A8 /* CareTapPremiumView.swift */; };
+		29BB389D486B4DB86AFF5EE7 /* CareTapServiceProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EDBB7B42570EED48B5E730 /* CareTapServiceProtocols.swift */; };
+		2B8141FCE03957C29633A91C /* NFCPairingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F27B124739AC20F1DA1B58A /* NFCPairingView.swift */; };
+		2D500FD8EDD39BA4560F2013 /* PatientMedicationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F332E4B7567EAB1DD4B0B76 /* PatientMedicationDetailView.swift */; };
+		2D7F2BB301BB8C2C019461A0 /* AutomationSetupWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E99B97BB8148AA632AE5B7 /* AutomationSetupWizardView.swift */; };
+		2E84265C9DDB6FCFCF1A97F4 /* CareTapPhaseThreePreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EC59AC2983249499C9270 /* CareTapPhaseThreePreviewScenarios.swift */; };
+		2F5BBCC647C45D7D09016806 /* CareTapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E905E26C9891DE912A4E655 /* CareTapButtons.swift */; };
+		2F727E1C1926E8A69814791E /* TapKitShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E46107A79B4606A02C6CFA /* TapKitShopView.swift */; };
+		3004CC0BC127E74D44FA45BF /* CareTapMedicationPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E2291578F193218A14FF3 /* CareTapMedicationPhotoView.swift */; };
+		3057787E79CCE05302BCE43D /* CareTapBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D86821D0795900004DF546 /* CareTapBottomBar.swift */; };
+		30A8396D871669B63FA1FBA8 /* CareTapStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D77FE0BFEAD750A53D08CB /* CareTapStatusBadge.swift */; };
+		3210E198C2B452FCFF6D9AB4 /* PreviewHomeSnapshotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AACA513AC8C8EA8B48C03A /* PreviewHomeSnapshotService.swift */; };
+		3251E900B3921F5F4EA4177F /* CareTapDomainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A07B87475A007959F931B6 /* CareTapDomainModels.swift */; };
+		35EAE537C529767074941BEF /* WidgetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7757581ADB5104809F24CEF /* WidgetModels.swift */; };
+		371DD6C58B07B2FE3D197775 /* HomeSnapshotProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE90D6D0C673B05B7FC3E /* HomeSnapshotProviding.swift */; };
+		377C91C96E18BCE44E8ABE62 /* CareTapShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E880A296686EDB76882B02F /* CareTapShortcuts.swift */; };
+		393B1C23AA03FE6D23F4E7A9 /* BestNextStepWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5C90004A9CE608B4252506 /* BestNextStepWidgetView.swift */; };
+		3CAFBDBB9DBA8858B6B6C131 /* CareTeamAvatarStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2593533ADFB4678E45A384 /* CareTeamAvatarStack.swift */; };
+		3CCDAE107489D3CBC6002C8F /* CareTapScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE74481F8B0A097A0616C5 /* CareTapScreenBackground.swift */; };
+		3D1AA5F93E18CC6CE9F35CB5 /* CareTapProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F397DF07745A087B0915A16 /* CareTapProgressRing.swift */; };
+		3D30EA36194910FC9CBB8A1A /* TapKitPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43538AE0D263420B3B218E /* TapKitPack.swift */; };
+		3FAFB858430E75D7E3ED9633 /* CareTapInsightsDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4904DCA1175EC7489B5508 /* CareTapInsightsDashboard.swift */; };
+		429D08941ACDF959ED7CB465 /* CareTapGlassSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5BDCB30A51BFBD4E666F3A /* CareTapGlassSection.swift */; };
+		44E7910AC77F17561CC5CE2F /* CareTapServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815C10E127A5D7701F37707E /* CareTapServiceContainer.swift */; };
+		47A22B82CC0A9D651671B6F3 /* CareTapSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE1136C4F26DD875FD68D96 /* CareTapSegmentedControl.swift */; };
+		4A8431C72A714CB9E26BDFFF /* CareTapWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3FA7C0E5DA9BFCD8694F4A /* CareTapWidgetBundle.swift */; };
+		4C4781925F7B919E70F45DF0 /* CareTapPhaseTwoPreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3FF6B9C74AAFC82ED6AFB50 /* CareTapPhaseTwoPreviewScenarios.swift */; };
+		4F0AAB1EAB5CD17F7D9DCE28 /* PatientHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFC57A79ADD565E7917A07D /* PatientHomeView.swift */; };
+		5067FE7A73F453294B97CC0D /* CareTapSupabaseAuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5205171999967BA3DC9E8785 /* CareTapSupabaseAuthCoordinator.swift */; };
+		5081F4F49DCB35CF3AE8CF5D /* PhaseTwoStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999B8B11FE5BF449CFCF0490 /* PhaseTwoStateTests.swift */; };
+		5130185FB6211ADE6C8A2CA0 /* PhaseTwoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DF618E8295B332134EE4B /* PhaseTwoModels.swift */; };
+		533028ADFCD46E0B44FA4BE2 /* CareTapTabScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43BE06D0952645B9A896C3 /* CareTapTabScreenContainer.swift */; };
+		54B5CDFAF68BC4BD8385A137 /* CareTapButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E905E26C9891DE912A4E655 /* CareTapButtons.swift */; };
+		56B3BC59710D5C4B55124E30 /* CareTapPremiumGateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A26CF2E494D385536DC4E9 /* CareTapPremiumGateCard.swift */; };
+		57A0310C80A53DF14F54626C /* PatientScheduleSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815649B7653C1C09904B07E6 /* PatientScheduleSetupView.swift */; };
+		57EA1FF16AFC464EC179CE6A /* CareTapAppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D01505DBF6B7E4FB8BCA10 /* CareTapAppStore.swift */; };
+		58564FA3F46521519E4C3AC3 /* CareTapLegalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FE40467941DB1E8C280C7D /* CareTapLegalDetailView.swift */; };
+		59185AE5027258BE0D4D19EE /* HomeSnapshotProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5CE90D6D0C673B05B7FC3E /* HomeSnapshotProviding.swift */; };
+		595E493DC4CC6E9D2EF69ADC /* CareTapCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43319A305B59B143925440 /* CareTapCard.swift */; };
+		5A9CB886FAD269C2F4DD4AA9 /* CareTapDoseActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98181F284607FACF838B57F /* CareTapDoseActivityView.swift */; };
+		5B559B6D5C28A3919E970C7E /* CareTapSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F9485D289B88CF87D08B0F /* CareTapSectionHeader.swift */; };
+		5B8BC4C11C995A465FA60B7E /* TapKitPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C43538AE0D263420B3B218E /* TapKitPack.swift */; };
+		5C7FD95BF4B6E177133AFD10 /* TodaySnapshotWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986E7B8D12482A46CDCB03 /* TodaySnapshotWidgetView.swift */; };
+		5E8EF863ECF28D2452CC9E68 /* CoreNFCTagService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22974984A98A7F9F5EBE095 /* CoreNFCTagService.swift */; };
+		5F14DAF77C98E423BAD3C06E /* CareTapTapConfirmationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1FAF5511D85986D133C75 /* CareTapTapConfirmationSheet.swift */; };
+		5F42372A0337C342DD523DCF /* CareTapSupabaseRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72697B44DE97FA2AD6569EA7 /* CareTapSupabaseRows.swift */; };
+		6203EDD2F03645F2282B4BF3 /* CareTapInsightsDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4904DCA1175EC7489B5508 /* CareTapInsightsDashboard.swift */; };
+		64340E686F9E06D89CAADFC0 /* CareTapPhaseThreePreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67EC59AC2983249499C9270 /* CareTapPhaseThreePreviewScenarios.swift */; };
+		6B19AAD1EB115CF69CAC084C /* CareTapAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A3894A23418F18A24BF0 /* CareTapAvatarView.swift */; };
+		6BBDA0A836FDA7241B7679AF /* CareTapStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFF43ED3C3C6A0BA491C5BE /* CareTapStateTests.swift */; };
+		6C178AD6742C23ECFAD59BBE /* CareTapLiveActivityModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116D0672F8D009B82DB925F /* CareTapLiveActivityModels.swift */; };
+		738375679CE19BD0AA6604B6 /* CareTapAppFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0BDE025D665F79A896BAC5 /* CareTapAppFlowTests.swift */; };
+		7506612828F61E4AE4C6EBAF /* HomeScreenScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = F661A6481FB2ECD5C29C9A29 /* HomeScreenScaffold.swift */; };
+		7586112D0895C69BFDD9D1A2 /* CareTimelineStatusMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE11D422677B72DAC33151D /* CareTimelineStatusMarker.swift */; };
+		792F326EF0DBAF01B5B74BAF /* CareTapDeepLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C28433D177EF84CA83762D /* CareTapDeepLink.swift */; };
+		7A3BA780F2A7FE4B614F4253 /* CareTapStateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D8F8721512B2E6D6058340 /* CareTapStateViews.swift */; };
+		7A885D373CE03B343C55F4D8 /* CareTapFlowScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57F6BA6260AA6B2081B8CD /* CareTapFlowScaffold.swift */; };
+		7FDD03D2EDBEED4DFCE5957C /* PatientScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BF332C26337B5597D0825F /* PatientScheduleView.swift */; };
+		81B088C49FF2EE123E628AD0 /* PhaseTwoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2DF618E8295B332134EE4B /* PhaseTwoModels.swift */; };
+		81B165D59E48FB0047DEFEFF /* CareTapTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE9CF0E5A4376E3749AE1 /* CareTapTheme.swift */; };
+		81D5A1B40018B5AFD2D7502A /* CareTapDomainModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A07B87475A007959F931B6 /* CareTapDomainModels.swift */; };
+		85E3A23AB46A2FF518D8C55A /* CareTapPreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B84B0BEF6C15BEFD3CF10 /* CareTapPreviewScenarios.swift */; };
+		863E0EBAA26D3A09460810BD /* CareTapSupabaseTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2AADEA334CF0C5C3D1240E /* CareTapSupabaseTransport.swift */; };
+		882C04B4F17A70097C9112F9 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A677BFDF54D189B341766A7 /* AppEnvironment.swift */; };
+		894C6F66A84C002D6E1372AF /* CareTapGlassSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5BDCB30A51BFBD4E666F3A /* CareTapGlassSection.swift */; };
+		896DDC362E9001207FE96FB7 /* CareTapSetupComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8206E2790876D4B508CA9DB /* CareTapSetupComponents.swift */; };
+		8B4579A90D792C58CCF17F77 /* CareTapLocalPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731F18A8959F1040ACD9495D /* CareTapLocalPersistence.swift */; };
+		8BADF4C179F7EBF5D51C9ADA /* CareTapDoseSuccessOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0CC4E55D0F6F21C3D3AF4 /* CareTapDoseSuccessOverlay.swift */; };
+		8DF0DA9BE43272A93107515A /* CareTapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A49753928F14B1F6F2ADCB /* CareTapApp.swift */; };
+		8F0E420D444B783E4C970533 /* CareTapSupabaseBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C57E2453F73DD121616A925 /* CareTapSupabaseBootstrap.swift */; };
+		90D9F96A824FF2887B0AB753 /* CareTapWidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36279145645D45EE4F6AC671 /* CareTapWidgetSnapshotStore.swift */; };
+		926523E098E29A42DDD8BCD3 /* CareTapTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43879F0F66322E3998FBA17B /* CareTapTopBar.swift */; };
+		928D72C8ECF5FD3D85E1C3E9 /* CareTapRepositoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54108F0AA2D3EFFBA1E3B846 /* CareTapRepositoryProtocols.swift */; };
+		93E51A50D741C44D374E01B3 /* CareTapDoseSuccessOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD0CC4E55D0F6F21C3D3AF4 /* CareTapDoseSuccessOverlay.swift */; };
+		93E541A1B186ABB2DF390C77 /* CaregiverAppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8523B310D763E71153329813 /* CaregiverAppShellView.swift */; };
+		986375002BA5B51CE0274B4A /* CareTapTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43879F0F66322E3998FBA17B /* CareTapTopBar.swift */; };
+		987B5DFD3391602488AF5254 /* CareTapPremiumGateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A26CF2E494D385536DC4E9 /* CareTapPremiumGateCard.swift */; };
+		988A69557DB56EB53BE678BC /* RepositoryBackedDoseLoggingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5B3965E6821CF1992D64B6 /* RepositoryBackedDoseLoggingService.swift */; };
+		98C37A72021791364BE4898B /* CareTapAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19A3894A23418F18A24BF0 /* CareTapAvatarView.swift */; };
+		9909DC3189978FE2C033EF07 /* CareTapWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6E2F469935758208D8AA0238 /* CareTapWidgetExtension.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A27F092B8792B8F8E978980 /* CareTapSupabaseRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F431262858FFF20CC6F7D096 /* CareTapSupabaseRepositories.swift */; };
+		9E600D87E6956A5885A5DB65 /* CaregiverWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEEB1FC09805268D268A60C /* CaregiverWorkspaceView.swift */; };
+		9E9FCC5DD3D2C73511BFBD61 /* WidgetModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7757581ADB5104809F24CEF /* WidgetModels.swift */; };
+		A213A1EAE7F5A7A6AD64313A /* CareTapMiniChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388765E59A283B6629F28A70 /* CareTapMiniChip.swift */; };
+		A911E469DAB1E90D245F7517 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5111D7B1D44320908C41BF13 /* SettingsView.swift */; };
+		A916CD30DD104305273980BE /* CareTapEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86274100DD2B64FB21703F81 /* CareTapEmptyState.swift */; };
+		A95678CC0B351272AC1947C5 /* CaregiverSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038423DFDB5CF2C2E2FE629B /* CaregiverSupportView.swift */; };
+		AB6F1CDAE8F7FFC32C8E9A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84709FD7455910B0E9D0E3E /* Assets.xcassets */; };
+		AD20FBBE0D89A20353A14536 /* CareTapDoseActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F6A491D33646C28DC5A79A /* CareTapDoseActivityManager.swift */; };
+		AD5B9B9E084F0503C29C7AB8 /* CareTapScreenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE74481F8B0A097A0616C5 /* CareTapScreenBackground.swift */; };
+		B04636C638EE5122A67A11FB /* CareTapAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614112CCA2AA68429FDD2A22 /* CareTapAnimations.swift */; };
+		B4BCB52CF1532E4A6657AB63 /* TapKitCheckoutConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF47629C7C7BA69A4848919E /* TapKitCheckoutConfiguration.swift */; };
+		B4CC19C06575D80807B1EE23 /* CareTapCatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4AD5DBF4CEF014186975B /* CareTapCatalogModels.swift */; };
+		B5719B58BF463BC5A76B4F31 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C0DD9F2668EF1F275129B67F /* PrivacyInfo.xcprivacy */; };
+		B88D1E72CA229E5681C6630F /* NFCTapConfirmationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C857D9AFB0FDA6CC46721 /* NFCTapConfirmationState.swift */; };
+		B98D6E29A1F06EB7339FAB89 /* CareTapSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F9485D289B88CF87D08B0F /* CareTapSectionHeader.swift */; };
+		BABF84E9098A842CCF9B07B3 /* CareTapAppStateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63763792DA4DB2B6B1072640 /* CareTapAppStateStore.swift */; };
+		BC8E97E8F324910BCF7416A4 /* CareTapTabScreenContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC43BE06D0952645B9A896C3 /* CareTapTabScreenContainer.swift */; };
+		C06C650163702F006501CB1B /* CaregiverPersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB988ACC9212A9356107500 /* CaregiverPersonDetailView.swift */; };
+		C0A99F1DF6579635D3132F34 /* CareTapRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE7A5223DCA3BD4C5B0581 /* CareTapRole.swift */; };
+		C0EAE6047809483961296435 /* PhaseFourBackendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F379BBEF98C5F6913A7268FF /* PhaseFourBackendTests.swift */; };
+		C15A3B7C17791B2E4AFA4A8D /* PatientWorkspaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0864E4BE1A49F3E7358F1379 /* PatientWorkspaceView.swift */; };
+		C202DA3E4A1607EC622149D6 /* AppFlowModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99321AF65F195C0B9D4D1A97 /* AppFlowModels.swift */; };
+		C49EDC625621765B036ECAE7 /* CareTapSettingsComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4852908F662E98AB4988745 /* CareTapSettingsComponents.swift */; };
+		C5764B24FE4D112AB42972D0 /* CareTapLocalReminderScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DF9588089983900E4DE3D8 /* CareTapLocalReminderScheduler.swift */; };
+		C5F3E45437B9DD8D92FF7C1D /* CareTapTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9AE9CF0E5A4376E3749AE1 /* CareTapTheme.swift */; };
+		C63B2BF5C2B7F0D39A25378F /* CareTapSettingsComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4852908F662E98AB4988745 /* CareTapSettingsComponents.swift */; };
+		C77F32103D18EBC936E99DCB /* CareTapRecordStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8E6ADD39140D014AF3CD45 /* CareTapRecordStore.swift */; };
+		C974155516246CCBE49DC22E /* NFCTapConfirmationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C857D9AFB0FDA6CC46721 /* NFCTapConfirmationState.swift */; };
+		CABF20A4EFD3E3513607A5E4 /* BestNextStepWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5C90004A9CE608B4252506 /* BestNextStepWidgetView.swift */; };
+		CEFB7A5D3E1B957BF0E23064 /* PatientHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AED3458BBB6A016A55B68A /* PatientHistoryView.swift */; };
+		D1BEE26645A83AB16E377418 /* PatientAppShellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A16ED37CB894EBD44AA5A82 /* PatientAppShellView.swift */; };
+		D2E2B9BF0D28516FC9E6ACD7 /* CareTapCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A43319A305B59B143925440 /* CareTapCard.swift */; };
+		D3C4E93CB3704A7B85322C89 /* CareTapWidgetSnapshotStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36279145645D45EE4F6AC671 /* CareTapWidgetSnapshotStore.swift */; };
+		D41C3CF135FFDF8580767779 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B409098C76DD9B1CE8936 /* HomeModels.swift */; };
+		D42AF5066BA8490B31489C99 /* CareTapMedicationPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5E2291578F193218A14FF3 /* CareTapMedicationPhotoView.swift */; };
+		D4476CD7CAB17A07BF696002 /* CareTapProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F397DF07745A087B0915A16 /* CareTapProgressRing.swift */; };
+		D73C6EA734B64CC5FFEF8E78 /* CareTapBundledMedicationCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88905E82C84C6C060E703C1 /* CareTapBundledMedicationCatalog.swift */; };
+		D9290E5C5C4FA83FDBA7D2F8 /* CaregiverWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7385DBFFBDB361DED1FCDF /* CaregiverWelcomeView.swift */; };
+		DA825B4F2076D2C12925D8E1 /* AddMedicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2E41E875A7D288081DFDF1 /* AddMedicationView.swift */; };
+		DC6F03F674005D78B73F13E9 /* CareTapCatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD4AD5DBF4CEF014186975B /* CareTapCatalogModels.swift */; };
+		DD005B93F8A81736263F999A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7A87331DBBA55723BAFCD /* LaunchScreen.storyboard */; };
+		DE95B3A0412EC76FABDB1066 /* CareTapSyncPayloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CE84143B18F1E6F49DD6B7 /* CareTapSyncPayloads.swift */; };
+		DF85BAF10B371FF9E473F601 /* medication_catalog.json in Resources */ = {isa = PBXBuildFile; fileRef = 17A16B26334961E84BECEC7B /* medication_catalog.json */; };
+		E1AC015CDDF23738EA744409 /* CareTapPreviewScenarios.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74B84B0BEF6C15BEFD3CF10 /* CareTapPreviewScenarios.swift */; };
+		E3E1FFD9F6AC7CF687C4C906 /* CareTapRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CE7A5223DCA3BD4C5B0581 /* CareTapRole.swift */; };
+		E4816C3AFEC3E9DC9FBAA310 /* CareTapMiniChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388765E59A283B6629F28A70 /* CareTapMiniChip.swift */; };
+		E5F6347F0DE25099F4294CDB /* TapKitCheckoutSafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501B7F7C44033D419133534D /* TapKitCheckoutSafariView.swift */; };
+		E915051CE4893EF16DFE0366 /* CareTapOfflineFirstSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85A11A9821900B8B98157782 /* CareTapOfflineFirstSync.swift */; };
+		E9D0041575EF86B8A941E0EB /* CareTapPremiumModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = E585F82B452B6B8BAA9DAD00 /* CareTapPremiumModels.swift */; };
+		F2AE07B8D33A92AB46EC5E77 /* TodaySnapshotWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44986E7B8D12482A46CDCB03 /* TodaySnapshotWidgetView.swift */; };
+		F32593B7E2A21DA01DAC1419 /* PatientSetupCompletionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99F3FF456A9CC9C0F187EC3 /* PatientSetupCompletionView.swift */; };
+		F5257BF1791B684889241DAA /* CareTapEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86274100DD2B64FB21703F81 /* CareTapEmptyState.swift */; };
+		F78BE80588F132AA0F4B3011 /* PreviewHomeSnapshotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AACA513AC8C8EA8B48C03A /* PreviewHomeSnapshotService.swift */; };
+		F7E267638AF61FFED8AA2A50 /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404B409098C76DD9B1CE8936 /* HomeModels.swift */; };
+		FB267FB96051B158F53225EE /* CareTapStatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D77FE0BFEAD750A53D08CB /* CareTapStatusBadge.swift */; };
+		FC34CA3C5B00D81B38F96652 /* CaregiverHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB14D08CBAAC1B6FCB5776A3 /* CaregiverHomeView.swift */; };
+		FECC0F3B058662352748C580 /* CareTapPremiumStoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B2377BEAF12C2B6C84D8BB /* CareTapPremiumStoreKitService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0427CF1EA3A221AF45BC4FB2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8C1E5E0F777B700BE53B383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D941CD2DA835484A205010D9;
+			remoteInfo = CareTap;
+		};
+		B763337CF32B21203F27FDD1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8C1E5E0F777B700BE53B383 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B4E3CE20A943ED3F8D7A8D8A;
+			remoteInfo = CareTapWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AAB8C5E3AB6E15EE84A8C3B8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9909DC3189978FE2C033EF07 /* CareTapWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00F9485D289B88CF87D08B0F /* CareTapSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSectionHeader.swift; sourceTree = "<group>"; };
+		038423DFDB5CF2C2E2FE629B /* CaregiverSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverSupportView.swift; sourceTree = "<group>"; };
+		07A49753928F14B1F6F2ADCB /* CareTapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapApp.swift; sourceTree = "<group>"; };
+		0864E4BE1A49F3E7358F1379 /* PatientWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientWorkspaceView.swift; sourceTree = "<group>"; };
+		0A8E6ADD39140D014AF3CD45 /* CareTapRecordStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRecordStore.swift; sourceTree = "<group>"; };
+		0D0281E1C673EB29C98974A8 /* CareTapPremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPremiumView.swift; sourceTree = "<group>"; };
+		17A16B26334961E84BECEC7B /* medication_catalog.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = medication_catalog.json; sourceTree = "<group>"; };
+		18CE84143B18F1E6F49DD6B7 /* CareTapSyncPayloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSyncPayloads.swift; sourceTree = "<group>"; };
+		1A43319A305B59B143925440 /* CareTapCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapCard.swift; sourceTree = "<group>"; };
+		1C43538AE0D263420B3B218E /* TapKitPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapKitPack.swift; sourceTree = "<group>"; };
+		1E905E26C9891DE912A4E655 /* CareTapButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapButtons.swift; sourceTree = "<group>"; };
+		1F397DF07745A087B0915A16 /* CareTapProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapProgressRing.swift; sourceTree = "<group>"; };
+		23D01505DBF6B7E4FB8BCA10 /* CareTapAppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAppStore.swift; sourceTree = "<group>"; };
+		23D77FE0BFEAD750A53D08CB /* CareTapStatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapStatusBadge.swift; sourceTree = "<group>"; };
+		29FE40467941DB1E8C280C7D /* CareTapLegalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapLegalDetailView.swift; sourceTree = "<group>"; };
+		2AD0CC4E55D0F6F21C3D3AF4 /* CareTapDoseSuccessOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapDoseSuccessOverlay.swift; sourceTree = "<group>"; };
+		2F27B124739AC20F1DA1B58A /* NFCPairingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCPairingView.swift; sourceTree = "<group>"; };
+		31EE74481F8B0A097A0616C5 /* CareTapScreenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapScreenBackground.swift; sourceTree = "<group>"; };
+		32E99B97BB8148AA632AE5B7 /* AutomationSetupWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationSetupWizardView.swift; sourceTree = "<group>"; };
+		36279145645D45EE4F6AC671 /* CareTapWidgetSnapshotStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapWidgetSnapshotStore.swift; sourceTree = "<group>"; };
+		388765E59A283B6629F28A70 /* CareTapMiniChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapMiniChip.swift; sourceTree = "<group>"; };
+		3B4904DCA1175EC7489B5508 /* CareTapInsightsDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapInsightsDashboard.swift; sourceTree = "<group>"; };
+		3E880A296686EDB76882B02F /* CareTapShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapShortcuts.swift; sourceTree = "<group>"; };
+		3EE1136C4F26DD875FD68D96 /* CareTapSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSegmentedControl.swift; sourceTree = "<group>"; };
+		404B409098C76DD9B1CE8936 /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		43879F0F66322E3998FBA17B /* CareTapTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapTopBar.swift; sourceTree = "<group>"; };
+		43A07B87475A007959F931B6 /* CareTapDomainModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapDomainModels.swift; sourceTree = "<group>"; };
+		44986E7B8D12482A46CDCB03 /* TodaySnapshotWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaySnapshotWidgetView.swift; sourceTree = "<group>"; };
+		47AACA513AC8C8EA8B48C03A /* PreviewHomeSnapshotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewHomeSnapshotService.swift; sourceTree = "<group>"; };
+		48A26CF2E494D385536DC4E9 /* CareTapPremiumGateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPremiumGateCard.swift; sourceTree = "<group>"; };
+		4C5C90004A9CE608B4252506 /* BestNextStepWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestNextStepWidgetView.swift; sourceTree = "<group>"; };
+		4F332E4B7567EAB1DD4B0B76 /* PatientMedicationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientMedicationDetailView.swift; sourceTree = "<group>"; };
+		501B7F7C44033D419133534D /* TapKitCheckoutSafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapKitCheckoutSafariView.swift; sourceTree = "<group>"; };
+		5111D7B1D44320908C41BF13 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5205171999967BA3DC9E8785 /* CareTapSupabaseAuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSupabaseAuthCoordinator.swift; sourceTree = "<group>"; };
+		52F6A491D33646C28DC5A79A /* CareTapDoseActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapDoseActivityManager.swift; sourceTree = "<group>"; };
+		53B7A87331DBBA55723BAFCD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54108F0AA2D3EFFBA1E3B846 /* CareTapRepositoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRepositoryProtocols.swift; sourceTree = "<group>"; };
+		553245938ED3D0FB0ABBF640 /* CareTapLegalContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapLegalContent.swift; sourceTree = "<group>"; };
+		5AEEB1FC09805268D268A60C /* CaregiverWorkspaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverWorkspaceView.swift; sourceTree = "<group>"; };
+		5FD4AD5DBF4CEF014186975B /* CareTapCatalogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapCatalogModels.swift; sourceTree = "<group>"; };
+		60DC0EC721A2A0BE5540E69F /* CareTapStateBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapStateBuilder.swift; sourceTree = "<group>"; };
+		611B1A201FB1EA924BA326B3 /* CareTapRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRootView.swift; sourceTree = "<group>"; };
+		614112CCA2AA68429FDD2A22 /* CareTapAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAnimations.swift; sourceTree = "<group>"; };
+		620C857D9AFB0FDA6CC46721 /* NFCTapConfirmationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCTapConfirmationState.swift; sourceTree = "<group>"; };
+		63763792DA4DB2B6B1072640 /* CareTapAppStateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAppStateStore.swift; sourceTree = "<group>"; };
+		6A16ED37CB894EBD44AA5A82 /* PatientAppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientAppShellView.swift; sourceTree = "<group>"; };
+		6A3FA7C0E5DA9BFCD8694F4A /* CareTapWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapWidgetBundle.swift; sourceTree = "<group>"; };
+		6AE11D422677B72DAC33151D /* CareTimelineStatusMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTimelineStatusMarker.swift; sourceTree = "<group>"; };
+		6E2F469935758208D8AA0238 /* CareTapWidgetExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = CareTapWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		70D86821D0795900004DF546 /* CareTapBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapBottomBar.swift; sourceTree = "<group>"; };
+		71BF332C26337B5597D0825F /* PatientScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientScheduleView.swift; sourceTree = "<group>"; };
+		72697B44DE97FA2AD6569EA7 /* CareTapSupabaseRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSupabaseRows.swift; sourceTree = "<group>"; };
+		731F18A8959F1040ACD9495D /* CareTapLocalPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapLocalPersistence.swift; sourceTree = "<group>"; };
+		77EB8EE1D35C2F77AB6C2FCA /* CareTapTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CareTapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C28433D177EF84CA83762D /* CareTapDeepLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapDeepLink.swift; sourceTree = "<group>"; };
+		7C57E2453F73DD121616A925 /* CareTapSupabaseBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSupabaseBootstrap.swift; sourceTree = "<group>"; };
+		80EDBB7B42570EED48B5E730 /* CareTapServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapServiceProtocols.swift; sourceTree = "<group>"; };
+		815649B7653C1C09904B07E6 /* PatientScheduleSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientScheduleSetupView.swift; sourceTree = "<group>"; };
+		815C10E127A5D7701F37707E /* CareTapServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapServiceContainer.swift; sourceTree = "<group>"; };
+		81DF9588089983900E4DE3D8 /* CareTapLocalReminderScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapLocalReminderScheduler.swift; sourceTree = "<group>"; };
+		8523B310D763E71153329813 /* CaregiverAppShellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverAppShellView.swift; sourceTree = "<group>"; };
+		85A11A9821900B8B98157782 /* CareTapOfflineFirstSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapOfflineFirstSync.swift; sourceTree = "<group>"; };
+		86274100DD2B64FB21703F81 /* CareTapEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapEmptyState.swift; sourceTree = "<group>"; };
+		8CFF43ED3C3C6A0BA491C5BE /* CareTapStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapStateTests.swift; sourceTree = "<group>"; };
+		8EB988ACC9212A9356107500 /* CaregiverPersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverPersonDetailView.swift; sourceTree = "<group>"; };
+		90B2377BEAF12C2B6C84D8BB /* CareTapPremiumStoreKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPremiumStoreKitService.swift; sourceTree = "<group>"; };
+		98E46107A79B4606A02C6CFA /* TapKitShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapKitShopView.swift; sourceTree = "<group>"; };
+		99321AF65F195C0B9D4D1A97 /* AppFlowModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowModels.swift; sourceTree = "<group>"; };
+		999B8B11FE5BF449CFCF0490 /* PhaseTwoStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseTwoStateTests.swift; sourceTree = "<group>"; };
+		99CE7A5223DCA3BD4C5B0581 /* CareTapRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRole.swift; sourceTree = "<group>"; };
+		99CF21B233B01C8A249C0505 /* CareTapRoleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRoleSelectionView.swift; sourceTree = "<group>"; };
+		9A2593533ADFB4678E45A384 /* CareTeamAvatarStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTeamAvatarStack.swift; sourceTree = "<group>"; };
+		9A677BFDF54D189B341766A7 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		9C83B45EF11B184BBB3900C9 /* CareTapMedicationScheduleGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapMedicationScheduleGenerator.swift; sourceTree = "<group>"; };
+		9F5BDCB30A51BFBD4E666F3A /* CareTapGlassSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapGlassSection.swift; sourceTree = "<group>"; };
+		A116D0672F8D009B82DB925F /* CareTapLiveActivityModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapLiveActivityModels.swift; sourceTree = "<group>"; };
+		A3FF6B9C74AAFC82ED6AFB50 /* CareTapPhaseTwoPreviewScenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPhaseTwoPreviewScenarios.swift; sourceTree = "<group>"; };
+		A5AED3458BBB6A016A55B68A /* PatientHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHistoryView.swift; sourceTree = "<group>"; };
+		A7FA2DFF211065E71D4BAE70 /* PhaseThreeDomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseThreeDomainTests.swift; sourceTree = "<group>"; };
+		AA5E2291578F193218A14FF3 /* CareTapMedicationPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapMedicationPhotoView.swift; sourceTree = "<group>"; };
+		AF0BDE025D665F79A896BAC5 /* CareTapAppFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAppFlowTests.swift; sourceTree = "<group>"; };
+		AF2E41E875A7D288081DFDF1 /* AddMedicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationView.swift; sourceTree = "<group>"; };
+		B22974984A98A7F9F5EBE095 /* CoreNFCTagService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreNFCTagService.swift; sourceTree = "<group>"; };
+		B88905E82C84C6C060E703C1 /* CareTapBundledMedicationCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapBundledMedicationCatalog.swift; sourceTree = "<group>"; };
+		B99F3FF456A9CC9C0F187EC3 /* PatientSetupCompletionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientSetupCompletionView.swift; sourceTree = "<group>"; };
+		B9DCE1C74E5CDB85D65D24A5 /* CareTapShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapShareSheet.swift; sourceTree = "<group>"; };
+		BA57F6BA6260AA6B2081B8CD /* CareTapFlowScaffold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapFlowScaffold.swift; sourceTree = "<group>"; };
+		BC43BE06D0952645B9A896C3 /* CareTapTabScreenContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapTabScreenContainer.swift; sourceTree = "<group>"; };
+		BF47629C7C7BA69A4848919E /* TapKitCheckoutConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapKitCheckoutConfiguration.swift; sourceTree = "<group>"; };
+		BF9AE9CF0E5A4376E3749AE1 /* CareTapTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapTheme.swift; sourceTree = "<group>"; };
+		C0D8F8721512B2E6D6058340 /* CareTapStateViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapStateViews.swift; sourceTree = "<group>"; };
+		C0DD9F2668EF1F275129B67F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		C8206E2790876D4B508CA9DB /* CareTapSetupComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSetupComponents.swift; sourceTree = "<group>"; };
+		C8D6FA64AD32A5E98460E9B4 /* CareTapWidgetServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapWidgetServiceProtocols.swift; sourceTree = "<group>"; };
+		CB14D08CBAAC1B6FCB5776A3 /* CaregiverHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverHomeView.swift; sourceTree = "<group>"; };
+		CEABA2A43F9B840EB47A5AE5 /* CareTap.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CareTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A1FAF5511D85986D133C75 /* CareTapTapConfirmationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapTapConfirmationSheet.swift; sourceTree = "<group>"; };
+		D6F718E2A3891946F14B4DD4 /* CareTapRefillEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapRefillEstimator.swift; sourceTree = "<group>"; };
+		D7757581ADB5104809F24CEF /* WidgetModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetModels.swift; sourceTree = "<group>"; };
+		D9C8A5F635E8C59F2CE7C977 /* CareTapAppServiceProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAppServiceProtocols.swift; sourceTree = "<group>"; };
+		DD7385DBFFBDB361DED1FCDF /* CaregiverWelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaregiverWelcomeView.swift; sourceTree = "<group>"; };
+		DE2AADEA334CF0C5C3D1240E /* CareTapSupabaseTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSupabaseTransport.swift; sourceTree = "<group>"; };
+		E585F82B452B6B8BAA9DAD00 /* CareTapPremiumModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPremiumModels.swift; sourceTree = "<group>"; };
+		E84709FD7455910B0E9D0E3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E98181F284607FACF838B57F /* CareTapDoseActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapDoseActivityView.swift; sourceTree = "<group>"; };
+		EA19A3894A23418F18A24BF0 /* CareTapAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapAvatarView.swift; sourceTree = "<group>"; };
+		EB5CE90D6D0C673B05B7FC3E /* HomeSnapshotProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSnapshotProviding.swift; sourceTree = "<group>"; };
+		ED2DF618E8295B332134EE4B /* PhaseTwoModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseTwoModels.swift; sourceTree = "<group>"; };
+		F379BBEF98C5F6913A7268FF /* PhaseFourBackendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseFourBackendTests.swift; sourceTree = "<group>"; };
+		F431262858FFF20CC6F7D096 /* CareTapSupabaseRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSupabaseRepositories.swift; sourceTree = "<group>"; };
+		F4852908F662E98AB4988745 /* CareTapSettingsComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapSettingsComponents.swift; sourceTree = "<group>"; };
+		F661A6481FB2ECD5C29C9A29 /* HomeScreenScaffold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenScaffold.swift; sourceTree = "<group>"; };
+		F67EC59AC2983249499C9270 /* CareTapPhaseThreePreviewScenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPhaseThreePreviewScenarios.swift; sourceTree = "<group>"; };
+		F74B84B0BEF6C15BEFD3CF10 /* CareTapPreviewScenarios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareTapPreviewScenarios.swift; sourceTree = "<group>"; };
+		FB5B3965E6821CF1992D64B6 /* RepositoryBackedDoseLoggingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryBackedDoseLoggingService.swift; sourceTree = "<group>"; };
+		FFFC57A79ADD565E7917A07D /* PatientHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientHomeView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00073EEC28B8438209B9F4E9 /* Activities */ = {
+			isa = PBXGroup;
+			children = (
+				52F6A491D33646C28DC5A79A /* CareTapDoseActivityManager.swift */,
+			);
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		022ECF67307335EEB8AA9AF1 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				815649B7653C1C09904B07E6 /* PatientScheduleSetupView.swift */,
+				B99F3FF456A9CC9C0F187EC3 /* PatientSetupCompletionView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		02643A86DD5883C00F66374E /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				8523B310D763E71153329813 /* CaregiverAppShellView.swift */,
+				99CF21B233B01C8A249C0505 /* CareTapRoleSelectionView.swift */,
+				B9DCE1C74E5CDB85D65D24A5 /* CareTapShareSheet.swift */,
+				6A16ED37CB894EBD44AA5A82 /* PatientAppShellView.swift */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		03C01E05293EEF6D0DE8C13A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4256120FEC482A3436833943 /* Caregiver */,
+				B05BE7AAAEC5713F2BC0154D /* Patient */,
+				D85B7D1D109FB5E890ED6491 /* Shared */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		151584438246134B72ACE1B5 /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				D4A1FAF5511D85986D133C75 /* CareTapTapConfirmationSheet.swift */,
+				A5AED3458BBB6A016A55B68A /* PatientHistoryView.swift */,
+				4F332E4B7567EAB1DD4B0B76 /* PatientMedicationDetailView.swift */,
+				71BF332C26337B5597D0825F /* PatientScheduleView.swift */,
+			);
+			path = Patient;
+			sourceTree = "<group>";
+		};
+		17C2A04EE0ECCFFBC266F448 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				241CF833582BD38D53F37231 /* Components */,
+				A1CEF157B3E2CA118D23818D /* Foundation */,
+				CA8F2FE0A7F417AFB7A188AF /* Modifiers */,
+			);
+			name = DesignSystem;
+			path = CareTap/Sources/DesignSystem;
+			sourceTree = "<group>";
+		};
+		1FB59AF5FED2159B4CA65453 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				00073EEC28B8438209B9F4E9 /* Activities */,
+				8DB63A8471FFB3BA8024D808 /* AppFlow */,
+				3F0B59001B80103DC43DF8EC /* AppIntents */,
+				6028548109896C56D9ACB4FC /* Auth */,
+				625A8020C8B3554D76AFA3BA /* Backend */,
+				FDB936DF0B28BCB78ED53DD4 /* Data */,
+				78B4061C3916176D6313CA5C /* NFC */,
+				93B82026DA703B02EE551D09 /* Notifications */,
+				27038364D7FC4D796914BC94 /* Planning */,
+				4A030F775EF1B737665DB48E /* Premium */,
+				AD8EC529542574AAF1C070CD /* Stripe */,
+				9A831FDE016686EFF063BC52 /* Widgets */,
+				9A677BFDF54D189B341766A7 /* AppEnvironment.swift */,
+				815C10E127A5D7701F37707E /* CareTapServiceContainer.swift */,
+				47AACA513AC8C8EA8B48C03A /* PreviewHomeSnapshotService.swift */,
+			);
+			name = Infrastructure;
+			path = CareTap/Sources/Infrastructure;
+			sourceTree = "<group>";
+		};
+		241CF833582BD38D53F37231 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EA19A3894A23418F18A24BF0 /* CareTapAvatarView.swift */,
+				70D86821D0795900004DF546 /* CareTapBottomBar.swift */,
+				1E905E26C9891DE912A4E655 /* CareTapButtons.swift */,
+				1A43319A305B59B143925440 /* CareTapCard.swift */,
+				2AD0CC4E55D0F6F21C3D3AF4 /* CareTapDoseSuccessOverlay.swift */,
+				86274100DD2B64FB21703F81 /* CareTapEmptyState.swift */,
+				BA57F6BA6260AA6B2081B8CD /* CareTapFlowScaffold.swift */,
+				9F5BDCB30A51BFBD4E666F3A /* CareTapGlassSection.swift */,
+				3B4904DCA1175EC7489B5508 /* CareTapInsightsDashboard.swift */,
+				AA5E2291578F193218A14FF3 /* CareTapMedicationPhotoView.swift */,
+				388765E59A283B6629F28A70 /* CareTapMiniChip.swift */,
+				48A26CF2E494D385536DC4E9 /* CareTapPremiumGateCard.swift */,
+				1F397DF07745A087B0915A16 /* CareTapProgressRing.swift */,
+				31EE74481F8B0A097A0616C5 /* CareTapScreenBackground.swift */,
+				00F9485D289B88CF87D08B0F /* CareTapSectionHeader.swift */,
+				3EE1136C4F26DD875FD68D96 /* CareTapSegmentedControl.swift */,
+				F4852908F662E98AB4988745 /* CareTapSettingsComponents.swift */,
+				C0D8F8721512B2E6D6058340 /* CareTapStateViews.swift */,
+				23D77FE0BFEAD750A53D08CB /* CareTapStatusBadge.swift */,
+				BC43BE06D0952645B9A896C3 /* CareTapTabScreenContainer.swift */,
+				43879F0F66322E3998FBA17B /* CareTapTopBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		27038364D7FC4D796914BC94 /* Planning */ = {
+			isa = PBXGroup;
+			children = (
+				9C83B45EF11B184BBB3900C9 /* CareTapMedicationScheduleGenerator.swift */,
+				D6F718E2A3891946F14B4DD4 /* CareTapRefillEstimator.swift */,
+			);
+			path = Planning;
+			sourceTree = "<group>";
+		};
+		2E4B44600A6E31788FDA9895 /* AddMedication */ = {
+			isa = PBXGroup;
+			children = (
+				AF2E41E875A7D288081DFDF1 /* AddMedicationView.swift */,
+			);
+			path = AddMedication;
+			sourceTree = "<group>";
+		};
+		3F0B59001B80103DC43DF8EC /* AppIntents */ = {
+			isa = PBXGroup;
+			children = (
+				3E880A296686EDB76882B02F /* CareTapShortcuts.swift */,
+			);
+			path = AppIntents;
+			sourceTree = "<group>";
+		};
+		3FDDF3E5514CC300BAAEA6FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				99321AF65F195C0B9D4D1A97 /* AppFlowModels.swift */,
+				5FD4AD5DBF4CEF014186975B /* CareTapCatalogModels.swift */,
+				79C28433D177EF84CA83762D /* CareTapDeepLink.swift */,
+				43A07B87475A007959F931B6 /* CareTapDomainModels.swift */,
+				A116D0672F8D009B82DB925F /* CareTapLiveActivityModels.swift */,
+				E585F82B452B6B8BAA9DAD00 /* CareTapPremiumModels.swift */,
+				99CE7A5223DCA3BD4C5B0581 /* CareTapRole.swift */,
+				18CE84143B18F1E6F49DD6B7 /* CareTapSyncPayloads.swift */,
+				404B409098C76DD9B1CE8936 /* HomeModels.swift */,
+				620C857D9AFB0FDA6CC46721 /* NFCTapConfirmationState.swift */,
+				ED2DF618E8295B332134EE4B /* PhaseTwoModels.swift */,
+				1C43538AE0D263420B3B218E /* TapKitPack.swift */,
+				D7757581ADB5104809F24CEF /* WidgetModels.swift */,
+			);
+			name = Models;
+			path = CareTap/Sources/Models;
+			sourceTree = "<group>";
+		};
+		4256120FEC482A3436833943 /* Caregiver */ = {
+			isa = PBXGroup;
+			children = (
+				CB14D08CBAAC1B6FCB5776A3 /* CaregiverHomeView.swift */,
+			);
+			path = Caregiver;
+			sourceTree = "<group>";
+		};
+		4A030F775EF1B737665DB48E /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				90B2377BEAF12C2B6C84D8BB /* CareTapPremiumStoreKitService.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		4D623DD064E1DBE553D1E898 /* Caregiver */ = {
+			isa = PBXGroup;
+			children = (
+				8EB988ACC9212A9356107500 /* CaregiverPersonDetailView.swift */,
+				038423DFDB5CF2C2E2FE629B /* CaregiverSupportView.swift */,
+				DD7385DBFFBDB361DED1FCDF /* CaregiverWelcomeView.swift */,
+			);
+			path = Caregiver;
+			sourceTree = "<group>";
+		};
+		4FC615A83BB4E3E08B9E98FE /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				2E4B44600A6E31788FDA9895 /* AddMedication */,
+				7FFC0B3F891A3D34F45087D3 /* NFCPairing */,
+				C5C504D87B85E9272478F21B /* Shared */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
+		6028548109896C56D9ACB4FC /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5205171999967BA3DC9E8785 /* CareTapSupabaseAuthCoordinator.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		625A8020C8B3554D76AFA3BA /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				731F18A8959F1040ACD9495D /* CareTapLocalPersistence.swift */,
+				85A11A9821900B8B98157782 /* CareTapOfflineFirstSync.swift */,
+				7C57E2453F73DD121616A925 /* CareTapSupabaseBootstrap.swift */,
+				F431262858FFF20CC6F7D096 /* CareTapSupabaseRepositories.swift */,
+				72697B44DE97FA2AD6569EA7 /* CareTapSupabaseRows.swift */,
+				DE2AADEA334CF0C5C3D1240E /* CareTapSupabaseTransport.swift */,
+			);
+			path = Backend;
+			sourceTree = "<group>";
+		};
+		6786DA212C3C38029C809919 /* Workspace */ = {
+			isa = PBXGroup;
+			children = (
+				5AEEB1FC09805268D268A60C /* CaregiverWorkspaceView.swift */,
+				0864E4BE1A49F3E7358F1379 /* PatientWorkspaceView.swift */,
+			);
+			path = Workspace;
+			sourceTree = "<group>";
+		};
+		78B4061C3916176D6313CA5C /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				B22974984A98A7F9F5EBE095 /* CoreNFCTagService.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		7D1AF4BBF06ABF0E9C8BF17D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FEE64AC50CAA26E333ACBCC0 /* Repositories */,
+				D9C8A5F635E8C59F2CE7C977 /* CareTapAppServiceProtocols.swift */,
+				80EDBB7B42570EED48B5E730 /* CareTapServiceProtocols.swift */,
+				C8D6FA64AD32A5E98460E9B4 /* CareTapWidgetServiceProtocols.swift */,
+				EB5CE90D6D0C673B05B7FC3E /* HomeSnapshotProviding.swift */,
+			);
+			name = Services;
+			path = CareTap/Sources/Services;
+			sourceTree = "<group>";
+		};
+		7FFC0B3F891A3D34F45087D3 /* NFCPairing */ = {
+			isa = PBXGroup;
+			children = (
+				32E99B97BB8148AA632AE5B7 /* AutomationSetupWizardView.swift */,
+				2F27B124739AC20F1DA1B58A /* NFCPairingView.swift */,
+			);
+			path = NFCPairing;
+			sourceTree = "<group>";
+		};
+		834C55940F97B3A72F910A45 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				07A49753928F14B1F6F2ADCB /* CareTapApp.swift */,
+				611B1A201FB1EA924BA326B3 /* CareTapRootView.swift */,
+			);
+			name = App;
+			path = CareTap/Sources/App;
+			sourceTree = "<group>";
+		};
+		8DB63A8471FFB3BA8024D808 /* AppFlow */ = {
+			isa = PBXGroup;
+			children = (
+				63763792DA4DB2B6B1072640 /* CareTapAppStateStore.swift */,
+				23D01505DBF6B7E4FB8BCA10 /* CareTapAppStore.swift */,
+			);
+			path = AppFlow;
+			sourceTree = "<group>";
+		};
+		93B82026DA703B02EE551D09 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				81DF9588089983900E4DE3D8 /* CareTapLocalReminderScheduler.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		98B453A87A07CC8EB02BD476 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FD909C72E47DE4CCE88C48A6 /* Catalog */,
+				E84709FD7455910B0E9D0E3E /* Assets.xcassets */,
+				53B7A87331DBBA55723BAFCD /* LaunchScreen.storyboard */,
+				C0DD9F2668EF1F275129B67F /* PrivacyInfo.xcprivacy */,
+			);
+			name = Resources;
+			path = CareTap/Resources;
+			sourceTree = "<group>";
+		};
+		9A831FDE016686EFF063BC52 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				36279145645D45EE4F6AC671 /* CareTapWidgetSnapshotStore.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		A1C8326E539EFFC415C3C7A0 /* CareTapTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF0BDE025D665F79A896BAC5 /* CareTapAppFlowTests.swift */,
+				8CFF43ED3C3C6A0BA491C5BE /* CareTapStateTests.swift */,
+				F379BBEF98C5F6913A7268FF /* PhaseFourBackendTests.swift */,
+				A7FA2DFF211065E71D4BAE70 /* PhaseThreeDomainTests.swift */,
+				999B8B11FE5BF449CFCF0490 /* PhaseTwoStateTests.swift */,
+			);
+			path = CareTapTests;
+			sourceTree = "<group>";
+		};
+		A1CEF157B3E2CA118D23818D /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				BF9AE9CF0E5A4376E3749AE1 /* CareTapTheme.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		A546D52F7BE3C25B175C1AF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEABA2A43F9B840EB47A5AE5 /* CareTap.app */,
+				77EB8EE1D35C2F77AB6C2FCA /* CareTapTests.xctest */,
+				6E2F469935758208D8AA0238 /* CareTapWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8612C1D87E723A506C666FA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6A3FA7C0E5DA9BFCD8694F4A /* CareTapWidgetBundle.swift */,
+			);
+			name = Sources;
+			path = CareTapWidget/Sources;
+			sourceTree = "<group>";
+		};
+		AD8EC529542574AAF1C070CD /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				BF47629C7C7BA69A4848919E /* TapKitCheckoutConfiguration.swift */,
+				501B7F7C44033D419133534D /* TapKitCheckoutSafariView.swift */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
+		B055CBE60D0C5A4CC83E198F /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				4C5C90004A9CE608B4252506 /* BestNextStepWidgetView.swift */,
+				E98181F284607FACF838B57F /* CareTapDoseActivityView.swift */,
+				44986E7B8D12482A46CDCB03 /* TodaySnapshotWidgetView.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		B05BE7AAAEC5713F2BC0154D /* Patient */ = {
+			isa = PBXGroup;
+			children = (
+				FFFC57A79ADD565E7917A07D /* PatientHomeView.swift */,
+			);
+			path = Patient;
+			sourceTree = "<group>";
+		};
+		B3846170A1432C2FCF3B8C3C /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				F67EC59AC2983249499C9270 /* CareTapPhaseThreePreviewScenarios.swift */,
+				A3FF6B9C74AAFC82ED6AFB50 /* CareTapPhaseTwoPreviewScenarios.swift */,
+				F74B84B0BEF6C15BEFD3CF10 /* CareTapPreviewScenarios.swift */,
+			);
+			name = Previews;
+			path = CareTap/Sources/Previews;
+			sourceTree = "<group>";
+		};
+		C01286CB1903E48374478054 /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				0D0281E1C673EB29C98974A8 /* CareTapPremiumView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		C0650C3F81FF6A730BA1BDD8 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				553245938ED3D0FB0ABBF640 /* CareTapLegalContent.swift */,
+				29FE40467941DB1E8C280C7D /* CareTapLegalDetailView.swift */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		C5C504D87B85E9272478F21B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C8206E2790876D4B508CA9DB /* CareTapSetupComponents.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		CA8F2FE0A7F417AFB7A188AF /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				614112CCA2AA68429FDD2A22 /* CareTapAnimations.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		D0F5193AB3E9700C09CD18FA = {
+			isa = PBXGroup;
+			children = (
+				834C55940F97B3A72F910A45 /* App */,
+				A1C8326E539EFFC415C3C7A0 /* CareTapTests */,
+				17C2A04EE0ECCFFBC266F448 /* DesignSystem */,
+				F60AD74873B3097E31227FCF /* Features */,
+				1FB59AF5FED2159B4CA65453 /* Infrastructure */,
+				3FDDF3E5514CC300BAAEA6FF /* Models */,
+				B3846170A1432C2FCF3B8C3C /* Previews */,
+				98B453A87A07CC8EB02BD476 /* Resources */,
+				7D1AF4BBF06ABF0E9C8BF17D /* Services */,
+				A8612C1D87E723A506C666FA /* Sources */,
+				A546D52F7BE3C25B175C1AF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D85B7D1D109FB5E890ED6491 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9A2593533ADFB4678E45A384 /* CareTeamAvatarStack.swift */,
+				6AE11D422677B72DAC33151D /* CareTimelineStatusMarker.swift */,
+				F661A6481FB2ECD5C29C9A29 /* HomeScreenScaffold.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		DDE01683FE0CB99719080221 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				98E46107A79B4606A02C6CFA /* TapKitShopView.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		DE6FFE6464D2A551602BBEF7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5111D7B1D44320908C41BF13 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F60AD74873B3097E31227FCF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				02643A86DD5883C00F66374E /* AppFlow */,
+				4D623DD064E1DBE553D1E898 /* Caregiver */,
+				03C01E05293EEF6D0DE8C13A /* Home */,
+				C0650C3F81FF6A730BA1BDD8 /* Legal */,
+				022ECF67307335EEB8AA9AF1 /* Onboarding */,
+				151584438246134B72ACE1B5 /* Patient */,
+				C01286CB1903E48374478054 /* Premium */,
+				DE6FFE6464D2A551602BBEF7 /* Settings */,
+				4FC615A83BB4E3E08B9E98FE /* Setup */,
+				DDE01683FE0CB99719080221 /* Shop */,
+				B055CBE60D0C5A4CC83E198F /* Widgets */,
+				6786DA212C3C38029C809919 /* Workspace */,
+			);
+			name = Features;
+			path = CareTap/Sources/Features;
+			sourceTree = "<group>";
+		};
+		FD909C72E47DE4CCE88C48A6 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				17A16B26334961E84BECEC7B /* medication_catalog.json */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		FDB936DF0B28BCB78ED53DD4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B88905E82C84C6C060E703C1 /* CareTapBundledMedicationCatalog.swift */,
+				0A8E6ADD39140D014AF3CD45 /* CareTapRecordStore.swift */,
+				60DC0EC721A2A0BE5540E69F /* CareTapStateBuilder.swift */,
+				FB5B3965E6821CF1992D64B6 /* RepositoryBackedDoseLoggingService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FEE64AC50CAA26E333ACBCC0 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				54108F0AA2D3EFFBA1E3B846 /* CareTapRepositoryProtocols.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85566A6C50D1681EE15D99BD /* CareTapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 868FD498205DA0AF3FBDBDE4 /* Build configuration list for PBXNativeTarget "CareTapTests" */;
+			buildPhases = (
+				7C7E254A45DD575A4031B673 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				122F68A00AF5D37A4B61F9B4 /* PBXTargetDependency */,
+			);
+			name = CareTapTests;
+			packageProductDependencies = (
+			);
+			productName = CareTapTests;
+			productReference = 77EB8EE1D35C2F77AB6C2FCA /* CareTapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B4E3CE20A943ED3F8D7A8D8A /* CareTapWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04A53ED3D0B195D9A684582D /* Build configuration list for PBXNativeTarget "CareTapWidgetExtension" */;
+			buildPhases = (
+				A7F6C22C6D8B25137689DCF5 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CareTapWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = CareTapWidgetExtension;
+			productReference = 6E2F469935758208D8AA0238 /* CareTapWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D941CD2DA835484A205010D9 /* CareTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 86EC17E184FA798748D9333E /* Build configuration list for PBXNativeTarget "CareTap" */;
+			buildPhases = (
+				4992C64FD82F7140352CF2AF /* Sources */,
+				5561E0E0C593510E652DE975 /* Resources */,
+				AAB8C5E3AB6E15EE84A8C3B8 /* Embed Foundation Extensions */,
+				1E52F02DBA20CF3F14A44766 /* Ad Hoc Sign Embedded Widget For Simulator */,
+				9CFFAD357BD0667792B4AD44 /* Ensure CFBundleIconName and compiled asset catalog */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96C174CD9B3910E58DD9B121 /* PBXTargetDependency */,
+			);
+			name = CareTap;
+			packageProductDependencies = (
+			);
+			productName = CareTap;
+			productReference = CEABA2A43F9B840EB47A5AE5 /* CareTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8C1E5E0F777B700BE53B383 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					85566A6C50D1681EE15D99BD = {
+						DevelopmentTeam = R662BH835Y;
+						ProvisioningStyle = Automatic;
+					};
+					B4E3CE20A943ED3F8D7A8D8A = {
+						DevelopmentTeam = R662BH835Y;
+						ProvisioningStyle = Automatic;
+					};
+					D941CD2DA835484A205010D9 = {
+						DevelopmentTeam = R662BH835Y;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 51F6C393FDB4214623F7A73B /* Build configuration list for PBXProject "CareTap" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D0F5193AB3E9700C09CD18FA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D941CD2DA835484A205010D9 /* CareTap */,
+				85566A6C50D1681EE15D99BD /* CareTapTests */,
+				B4E3CE20A943ED3F8D7A8D8A /* CareTapWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5561E0E0C593510E652DE975 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6F1CDAE8F7FFC32C8E9A91 /* Assets.xcassets in Resources */,
+				DD005B93F8A81736263F999A /* LaunchScreen.storyboard in Resources */,
+				B5719B58BF463BC5A76B4F31 /* PrivacyInfo.xcprivacy in Resources */,
+				DF85BAF10B371FF9E473F601 /* medication_catalog.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E52F02DBA20CF3F14A44766 /* Ad Hoc Sign Embedded Widget For Simulator */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Ad Hoc Sign Embedded Widget For Simulator";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${PLATFORM_NAME}\" = \"iphonesimulator\" ]; then\n  WIDGET_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}/PlugIns/CareTapWidget.appex\"\n  if [ -d \"${WIDGET_PATH}\" ]; then\n    /usr/bin/codesign --force --sign - --timestamp=none --generate-entitlement-der \"${WIDGET_PATH}\"\n  fi\nfi\n";
+		};
+		9CFFAD357BD0667792B4AD44 /* Ensure CFBundleIconName and compiled asset catalog */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Ensure CFBundleIconName and compiled asset catalog";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -euo pipefail\nAPP_DIR=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\nPLIST=\"${APP_DIR}/Info.plist\"\nCAR=\"${APP_DIR}/Assets.car\"\nif [[ ! -d \"$APP_DIR\" ]]; then\n  echo \"warning: app bundle not found at ${APP_DIR}\"\n  exit 0\nfi\nif [[ ! -f \"$CAR\" ]]; then\n  echo \"error: Assets.car missing — AppIcon asset catalog did not compile into the app.\"\n  exit 1\nfi\nif [[ ! -f \"$PLIST\" ]]; then\n  echo \"error: Info.plist missing in app bundle.\"\n  exit 1\nfi\nif /usr/libexec/PlistBuddy -c \"Print :CFBundleIconName\" \"$PLIST\" &>/dev/null; then\n  /usr/libexec/PlistBuddy -c \"Set :CFBundleIconName AppIcon\" \"$PLIST\"\nelse\n  /usr/libexec/PlistBuddy -c \"Add :CFBundleIconName string AppIcon\" \"$PLIST\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4992C64FD82F7140352CF2AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA825B4F2076D2C12925D8E1 /* AddMedicationView.swift in Sources */,
+				882C04B4F17A70097C9112F9 /* AppEnvironment.swift in Sources */,
+				C202DA3E4A1607EC622149D6 /* AppFlowModels.swift in Sources */,
+				2D7F2BB301BB8C2C019461A0 /* AutomationSetupWizardView.swift in Sources */,
+				CABF20A4EFD3E3513607A5E4 /* BestNextStepWidgetView.swift in Sources */,
+				B04636C638EE5122A67A11FB /* CareTapAnimations.swift in Sources */,
+				8DF0DA9BE43272A93107515A /* CareTapApp.swift in Sources */,
+				06BB5BC3E6F79F0055DE83FB /* CareTapAppServiceProtocols.swift in Sources */,
+				BABF84E9098A842CCF9B07B3 /* CareTapAppStateStore.swift in Sources */,
+				57EA1FF16AFC464EC179CE6A /* CareTapAppStore.swift in Sources */,
+				6B19AAD1EB115CF69CAC084C /* CareTapAvatarView.swift in Sources */,
+				3057787E79CCE05302BCE43D /* CareTapBottomBar.swift in Sources */,
+				D73C6EA734B64CC5FFEF8E78 /* CareTapBundledMedicationCatalog.swift in Sources */,
+				2F5BBCC647C45D7D09016806 /* CareTapButtons.swift in Sources */,
+				D2E2B9BF0D28516FC9E6ACD7 /* CareTapCard.swift in Sources */,
+				B4CC19C06575D80807B1EE23 /* CareTapCatalogModels.swift in Sources */,
+				792F326EF0DBAF01B5B74BAF /* CareTapDeepLink.swift in Sources */,
+				81D5A1B40018B5AFD2D7502A /* CareTapDomainModels.swift in Sources */,
+				AD20FBBE0D89A20353A14536 /* CareTapDoseActivityManager.swift in Sources */,
+				0E38793E3D00A27B3497CE5D /* CareTapDoseActivityView.swift in Sources */,
+				93E51A50D741C44D374E01B3 /* CareTapDoseSuccessOverlay.swift in Sources */,
+				A916CD30DD104305273980BE /* CareTapEmptyState.swift in Sources */,
+				1F51ED2CCD20DD3B57BCC2C3 /* CareTapFlowScaffold.swift in Sources */,
+				894C6F66A84C002D6E1372AF /* CareTapGlassSection.swift in Sources */,
+				3FAFB858430E75D7E3ED9633 /* CareTapInsightsDashboard.swift in Sources */,
+				1F840E6C084058A694362DF7 /* CareTapLegalContent.swift in Sources */,
+				58564FA3F46521519E4C3AC3 /* CareTapLegalDetailView.swift in Sources */,
+				6C178AD6742C23ECFAD59BBE /* CareTapLiveActivityModels.swift in Sources */,
+				8B4579A90D792C58CCF17F77 /* CareTapLocalPersistence.swift in Sources */,
+				C5764B24FE4D112AB42972D0 /* CareTapLocalReminderScheduler.swift in Sources */,
+				D42AF5066BA8490B31489C99 /* CareTapMedicationPhotoView.swift in Sources */,
+				12D27ED8D201FC06DA823454 /* CareTapMedicationScheduleGenerator.swift in Sources */,
+				A213A1EAE7F5A7A6AD64313A /* CareTapMiniChip.swift in Sources */,
+				E915051CE4893EF16DFE0366 /* CareTapOfflineFirstSync.swift in Sources */,
+				2E84265C9DDB6FCFCF1A97F4 /* CareTapPhaseThreePreviewScenarios.swift in Sources */,
+				1BB1A36C0677089FC6C926CB /* CareTapPhaseTwoPreviewScenarios.swift in Sources */,
+				56B3BC59710D5C4B55124E30 /* CareTapPremiumGateCard.swift in Sources */,
+				E9D0041575EF86B8A941E0EB /* CareTapPremiumModels.swift in Sources */,
+				FECC0F3B058662352748C580 /* CareTapPremiumStoreKitService.swift in Sources */,
+				27056796C24E9ABC826C69F3 /* CareTapPremiumView.swift in Sources */,
+				85E3A23AB46A2FF518D8C55A /* CareTapPreviewScenarios.swift in Sources */,
+				3D1AA5F93E18CC6CE9F35CB5 /* CareTapProgressRing.swift in Sources */,
+				C77F32103D18EBC936E99DCB /* CareTapRecordStore.swift in Sources */,
+				2269E420B785719437B83BCC /* CareTapRefillEstimator.swift in Sources */,
+				928D72C8ECF5FD3D85E1C3E9 /* CareTapRepositoryProtocols.swift in Sources */,
+				E3E1FFD9F6AC7CF687C4C906 /* CareTapRole.swift in Sources */,
+				1A1ECEDB1DB87D22354D08E6 /* CareTapRoleSelectionView.swift in Sources */,
+				03602DB71A2064A67A72EF11 /* CareTapRootView.swift in Sources */,
+				AD5B9B9E084F0503C29C7AB8 /* CareTapScreenBackground.swift in Sources */,
+				B98D6E29A1F06EB7339FAB89 /* CareTapSectionHeader.swift in Sources */,
+				0D7A7828C11928E00EEA5802 /* CareTapSegmentedControl.swift in Sources */,
+				44E7910AC77F17561CC5CE2F /* CareTapServiceContainer.swift in Sources */,
+				29BB389D486B4DB86AFF5EE7 /* CareTapServiceProtocols.swift in Sources */,
+				C49EDC625621765B036ECAE7 /* CareTapSettingsComponents.swift in Sources */,
+				896DDC362E9001207FE96FB7 /* CareTapSetupComponents.swift in Sources */,
+				19146E33804CBE860CF4C835 /* CareTapShareSheet.swift in Sources */,
+				377C91C96E18BCE44E8ABE62 /* CareTapShortcuts.swift in Sources */,
+				1E93B873E391BEA4FD98064D /* CareTapStateBuilder.swift in Sources */,
+				7A3BA780F2A7FE4B614F4253 /* CareTapStateViews.swift in Sources */,
+				FB267FB96051B158F53225EE /* CareTapStatusBadge.swift in Sources */,
+				5067FE7A73F453294B97CC0D /* CareTapSupabaseAuthCoordinator.swift in Sources */,
+				8F0E420D444B783E4C970533 /* CareTapSupabaseBootstrap.swift in Sources */,
+				9A27F092B8792B8F8E978980 /* CareTapSupabaseRepositories.swift in Sources */,
+				5F42372A0337C342DD523DCF /* CareTapSupabaseRows.swift in Sources */,
+				863E0EBAA26D3A09460810BD /* CareTapSupabaseTransport.swift in Sources */,
+				DE95B3A0412EC76FABDB1066 /* CareTapSyncPayloads.swift in Sources */,
+				BC8E97E8F324910BCF7416A4 /* CareTapTabScreenContainer.swift in Sources */,
+				5F14DAF77C98E423BAD3C06E /* CareTapTapConfirmationSheet.swift in Sources */,
+				C5F3E45437B9DD8D92FF7C1D /* CareTapTheme.swift in Sources */,
+				926523E098E29A42DDD8BCD3 /* CareTapTopBar.swift in Sources */,
+				0219F4FF54347AB71EB69467 /* CareTapWidgetServiceProtocols.swift in Sources */,
+				90D9F96A824FF2887B0AB753 /* CareTapWidgetSnapshotStore.swift in Sources */,
+				3CAFBDBB9DBA8858B6B6C131 /* CareTeamAvatarStack.swift in Sources */,
+				7586112D0895C69BFDD9D1A2 /* CareTimelineStatusMarker.swift in Sources */,
+				93E541A1B186ABB2DF390C77 /* CaregiverAppShellView.swift in Sources */,
+				FC34CA3C5B00D81B38F96652 /* CaregiverHomeView.swift in Sources */,
+				C06C650163702F006501CB1B /* CaregiverPersonDetailView.swift in Sources */,
+				A95678CC0B351272AC1947C5 /* CaregiverSupportView.swift in Sources */,
+				D9290E5C5C4FA83FDBA7D2F8 /* CaregiverWelcomeView.swift in Sources */,
+				9E600D87E6956A5885A5DB65 /* CaregiverWorkspaceView.swift in Sources */,
+				5E8EF863ECF28D2452CC9E68 /* CoreNFCTagService.swift in Sources */,
+				D41C3CF135FFDF8580767779 /* HomeModels.swift in Sources */,
+				7506612828F61E4AE4C6EBAF /* HomeScreenScaffold.swift in Sources */,
+				371DD6C58B07B2FE3D197775 /* HomeSnapshotProviding.swift in Sources */,
+				2B8141FCE03957C29633A91C /* NFCPairingView.swift in Sources */,
+				B88D1E72CA229E5681C6630F /* NFCTapConfirmationState.swift in Sources */,
+				D1BEE26645A83AB16E377418 /* PatientAppShellView.swift in Sources */,
+				CEFB7A5D3E1B957BF0E23064 /* PatientHistoryView.swift in Sources */,
+				4F0AAB1EAB5CD17F7D9DCE28 /* PatientHomeView.swift in Sources */,
+				2D500FD8EDD39BA4560F2013 /* PatientMedicationDetailView.swift in Sources */,
+				57A0310C80A53DF14F54626C /* PatientScheduleSetupView.swift in Sources */,
+				7FDD03D2EDBEED4DFCE5957C /* PatientScheduleView.swift in Sources */,
+				F32593B7E2A21DA01DAC1419 /* PatientSetupCompletionView.swift in Sources */,
+				C15A3B7C17791B2E4AFA4A8D /* PatientWorkspaceView.swift in Sources */,
+				5130185FB6211ADE6C8A2CA0 /* PhaseTwoModels.swift in Sources */,
+				3210E198C2B452FCFF6D9AB4 /* PreviewHomeSnapshotService.swift in Sources */,
+				988A69557DB56EB53BE678BC /* RepositoryBackedDoseLoggingService.swift in Sources */,
+				A911E469DAB1E90D245F7517 /* SettingsView.swift in Sources */,
+				B4BCB52CF1532E4A6657AB63 /* TapKitCheckoutConfiguration.swift in Sources */,
+				E5F6347F0DE25099F4294CDB /* TapKitCheckoutSafariView.swift in Sources */,
+				5B8BC4C11C995A465FA60B7E /* TapKitPack.swift in Sources */,
+				2F727E1C1926E8A69814791E /* TapKitShopView.swift in Sources */,
+				F2AE07B8D33A92AB46EC5E77 /* TodaySnapshotWidgetView.swift in Sources */,
+				35EAE537C529767074941BEF /* WidgetModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C7E254A45DD575A4031B673 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				738375679CE19BD0AA6604B6 /* CareTapAppFlowTests.swift in Sources */,
+				6BBDA0A836FDA7241B7679AF /* CareTapStateTests.swift in Sources */,
+				C0EAE6047809483961296435 /* PhaseFourBackendTests.swift in Sources */,
+				0A0ACC95358609087B841E61 /* PhaseThreeDomainTests.swift in Sources */,
+				5081F4F49DCB35CF3AE8CF5D /* PhaseTwoStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A7F6C22C6D8B25137689DCF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				393B1C23AA03FE6D23F4E7A9 /* BestNextStepWidgetView.swift in Sources */,
+				1B3C4521E78892D95A162B47 /* CareTapAnimations.swift in Sources */,
+				98C37A72021791364BE4898B /* CareTapAvatarView.swift in Sources */,
+				1E5EEA2096BF2060C9C0188C /* CareTapBottomBar.swift in Sources */,
+				54B5CDFAF68BC4BD8385A137 /* CareTapButtons.swift in Sources */,
+				595E493DC4CC6E9D2EF69ADC /* CareTapCard.swift in Sources */,
+				DC6F03F674005D78B73F13E9 /* CareTapCatalogModels.swift in Sources */,
+				04BE700ABF9E0B863D12433B /* CareTapDeepLink.swift in Sources */,
+				3251E900B3921F5F4EA4177F /* CareTapDomainModels.swift in Sources */,
+				5A9CB886FAD269C2F4DD4AA9 /* CareTapDoseActivityView.swift in Sources */,
+				8BADF4C179F7EBF5D51C9ADA /* CareTapDoseSuccessOverlay.swift in Sources */,
+				F5257BF1791B684889241DAA /* CareTapEmptyState.swift in Sources */,
+				7A885D373CE03B343C55F4D8 /* CareTapFlowScaffold.swift in Sources */,
+				429D08941ACDF959ED7CB465 /* CareTapGlassSection.swift in Sources */,
+				6203EDD2F03645F2282B4BF3 /* CareTapInsightsDashboard.swift in Sources */,
+				12A5D6027FCD08CCA5E74229 /* CareTapLiveActivityModels.swift in Sources */,
+				3004CC0BC127E74D44FA45BF /* CareTapMedicationPhotoView.swift in Sources */,
+				E4816C3AFEC3E9DC9FBAA310 /* CareTapMiniChip.swift in Sources */,
+				64340E686F9E06D89CAADFC0 /* CareTapPhaseThreePreviewScenarios.swift in Sources */,
+				4C4781925F7B919E70F45DF0 /* CareTapPhaseTwoPreviewScenarios.swift in Sources */,
+				987B5DFD3391602488AF5254 /* CareTapPremiumGateCard.swift in Sources */,
+				22E9D65299744B5B2EB614F9 /* CareTapPremiumModels.swift in Sources */,
+				E1AC015CDDF23738EA744409 /* CareTapPreviewScenarios.swift in Sources */,
+				D4476CD7CAB17A07BF696002 /* CareTapProgressRing.swift in Sources */,
+				C0A99F1DF6579635D3132F34 /* CareTapRole.swift in Sources */,
+				3CCDAE107489D3CBC6002C8F /* CareTapScreenBackground.swift in Sources */,
+				5B559B6D5C28A3919E970C7E /* CareTapSectionHeader.swift in Sources */,
+				47A22B82CC0A9D651671B6F3 /* CareTapSegmentedControl.swift in Sources */,
+				C63B2BF5C2B7F0D39A25378F /* CareTapSettingsComponents.swift in Sources */,
+				1B390624953617A05D5CB935 /* CareTapStateViews.swift in Sources */,
+				30A8396D871669B63FA1FBA8 /* CareTapStatusBadge.swift in Sources */,
+				533028ADFCD46E0B44FA4BE2 /* CareTapTabScreenContainer.swift in Sources */,
+				81B165D59E48FB0047DEFEFF /* CareTapTheme.swift in Sources */,
+				986375002BA5B51CE0274B4A /* CareTapTopBar.swift in Sources */,
+				4A8431C72A714CB9E26BDFFF /* CareTapWidgetBundle.swift in Sources */,
+				06D0C18E9FD1BC72D3570909 /* CareTapWidgetServiceProtocols.swift in Sources */,
+				D3C4E93CB3704A7B85322C89 /* CareTapWidgetSnapshotStore.swift in Sources */,
+				F7E267638AF61FFED8AA2A50 /* HomeModels.swift in Sources */,
+				59185AE5027258BE0D4D19EE /* HomeSnapshotProviding.swift in Sources */,
+				C974155516246CCBE49DC22E /* NFCTapConfirmationState.swift in Sources */,
+				81B088C49FF2EE123E628AD0 /* PhaseTwoModels.swift in Sources */,
+				F78BE80588F132AA0F4B3011 /* PreviewHomeSnapshotService.swift in Sources */,
+				3D30EA36194910FC9CBB8A1A /* TapKitPack.swift in Sources */,
+				5C7FD95BF4B6E177133AFD10 /* TodaySnapshotWidgetView.swift in Sources */,
+				9E9FCC5DD3D2C73511BFBD61 /* WidgetModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		122F68A00AF5D37A4B61F9B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D941CD2DA835484A205010D9 /* CareTap */;
+			targetProxy = 0427CF1EA3A221AF45BC4FB2 /* PBXContainerItemProxy */;
+		};
+		96C174CD9B3910E58DD9B121 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B4E3CE20A943ED3F8D7A8D8A /* CareTapWidgetExtension */;
+			targetProxy = B763337CF32B21203F27FDD1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		176DE8414BB025AD747EAA1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AD_HOC_CODE_SIGNING_ALLOWED = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = R662BH835Y;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		25BE366223A0FD5D7A3FEAD6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AD_HOC_CODE_SIGNING_ALLOWED = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = R662BH835Y;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		387431AC591DF56FB1A65625 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = CareTap/CareTap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_DEBUG_DYLIB = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CareTap/Info.plist;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap;
+				PRODUCT_NAME = CareTap;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		55468444B47BE629160A83DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap.tests;
+				PRODUCT_NAME = CareTapTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CareTap.app/CareTap";
+			};
+			name = Debug;
+		};
+		64AA0180C25EF204BBF97C86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CareTapWidget/CareTapWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CareTapWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap.widget;
+				PRODUCT_NAME = CareTapWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) APP_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A99E8F843DB9262D58CB40A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = CareTapWidget/CareTapWidget.entitlements;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CareTapWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap.widget;
+				PRODUCT_NAME = CareTapWidget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) APP_EXTENSION";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DEB17E4218BC12C2CB582519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = CareTap/CareTap.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CareTap/Info.plist;
+				INFOPLIST_KEY_CFBundleIconName = AppIcon;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap;
+				PRODUCT_NAME = CareTap;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F5CE68C4650176AF2CFB08CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxnguyen.caretap.tests;
+				PRODUCT_NAME = CareTapTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CareTap.app/CareTap";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04A53ED3D0B195D9A684582D /* Build configuration list for PBXNativeTarget "CareTapWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64AA0180C25EF204BBF97C86 /* Debug */,
+				A99E8F843DB9262D58CB40A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		51F6C393FDB4214623F7A73B /* Build configuration list for PBXProject "CareTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25BE366223A0FD5D7A3FEAD6 /* Debug */,
+				176DE8414BB025AD747EAA1C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		868FD498205DA0AF3FBDBDE4 /* Build configuration list for PBXNativeTarget "CareTapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55468444B47BE629160A83DE /* Debug */,
+				F5CE68C4650176AF2CFB08CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		86EC17E184FA798748D9333E /* Build configuration list for PBXNativeTarget "CareTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				387431AC591DF56FB1A65625 /* Debug */,
+				DEB17E4218BC12C2CB582519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A8C1E5E0F777B700BE53B383 /* Project object */;
+}

@@ -345,7 +345,10 @@ struct NFCPairingView: View {
                 .background {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .fill(.white)
-                        .shadow(color: Color.black.opacity(0.16), radius: 10, x: 0, y: 4)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(CareTapTheme.stroke.opacity(0.35), lineWidth: 1)
+                        }
                 }
             }
             .padding(20)
@@ -367,7 +370,6 @@ struct NFCPairingView: View {
                         RoundedRectangle(cornerRadius: 22, style: .continuous)
                             .stroke(Color.white.opacity(0.2), lineWidth: 1)
                     }
-                    .shadow(color: CareTapTheme.sageStrong.opacity(0.28), radius: 16, x: 0, y: 8)
             }
         }
         .buttonStyle(.plain)
@@ -385,7 +387,7 @@ struct NFCPairingView: View {
     private var tapKitSubtitle: String {
         switch state.phase {
         case .success:
-            return "Spare CareTap-ready stickers for other containers and people."
+            return "Spare TapCare-ready stickers for other containers and routines."
         case .failure:
             return "A fresh TapKit is often the fastest fix when a sticker won’t write."
         case .ready, .writing:

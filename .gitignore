@@ -58,3 +58,9 @@ fastlane/test_output
 *.swp
 *.swo
 *~
+
+# Local tooling
+.claude/
+
+# Duplicate Xcode project; generate via XcodeGen → CareTap.xcodeproj
+CareTap 2.xcodeproj/

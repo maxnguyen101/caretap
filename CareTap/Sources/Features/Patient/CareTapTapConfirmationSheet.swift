@@ -374,7 +374,6 @@ struct CareTapTapConfirmationSheet: View {
                         RoundedRectangle(cornerRadius: 18, style: .continuous)
                             .stroke(Color.white.opacity(0.18), lineWidth: 1)
                     }
-                    .shadow(color: tone.color.opacity(0.3), radius: 12, x: 0, y: 6)
             }
         }
         .buttonStyle(CareTapPressableButtonStyle())

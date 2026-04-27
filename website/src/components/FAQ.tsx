@@ -5,61 +5,61 @@ import { useState } from "react";
 
 const FAQS = [
   {
-    q: "Do I need a special phone for NFC?",
-    a: "Any iPhone 7 or newer can read CareTap tags. The app pairs each tag in seconds — no extra hardware, no Bluetooth setup, no batteries.",
+    q: "Can I set this up for my parent?",
+    a: "Yes. You can order the kit, place tags on bottles or organizers, create the routines in the app, and use the included setup help if you want someone to walk through the first setup with you.",
   },
   {
-    q: "Is CareTap a replacement for my doctor or pharmacy?",
-    a: "No. CareTap is an adherence tracker. We help you remember what to take and give caregivers visibility — but your prescriptions, dosing, and medical advice still come from your provider.",
+    q: "What if my parent is not techy?",
+    a: "TapCare is built around a simple routine: tap the phone near the tag when the routine is done. Setup support is included so the first tags and routines do not have to be figured out alone.",
   },
   {
-    q: "What happens if I lose a tag?",
-    a: "Pair a fresh one. The app has a “re-pair” option in Settings, so you can swap any tag for another in under a minute. Spare tags ship with every TapKit.",
+    q: "Can it work with pill organizers?",
+    a: "Yes. TapCare tags can be placed on pill organizers, medication bottles, supplement tubs, vitamin containers, or another spot where the routine already happens.",
   },
   {
-    q: "Will the tag stick on my pill bottle?",
-    a: "Yes. TapKit stickers use a medical-grade adhesive that holds on plastic, glass, paperboard, and pill organizers. Reposition once if needed.",
+    q: "Can it work with vitamins and supplements?",
+    a: "Yes. TapCare is for daily routines, including medications, vitamins, supplements, and other repeat check-ins that are easier when there is a clear confirmation point.",
   },
   {
-    q: "Can multiple people use the same TapKit?",
-    a: "Yes — that’s actually the point. CareTap supports caregiver-patient pairs and shared households so the right tag logs to the right person, and everyone gets the right alerts.",
+    q: "What happens if a tag does not scan?",
+    a: "You can still log a routine manually in the app, and setup support is included if a tag needs troubleshooting, repositioning, or replacing.",
   },
   {
-    q: "How fast does TapKit ship?",
-    a: "Most orders ship within one business day from California, USPS first-class. Free shipping on orders $25+.",
+    q: "Is this medical advice?",
+    a: "No. TapCare is an organization and routine-support tool. It does not provide medical advice, diagnosis, or treatment. Always follow instructions from a qualified healthcare professional.",
   },
 ];
 
 export function FAQ() {
   return (
-    <section id="faq" className="bg-canvasMist/40 py-28 sm:py-36">
-      <div className="mx-auto max-w-3xl px-6">
+    <section
+      id="faq"
+      className="scroll-mt-24 border-y border-stroke bg-white py-24 sm:py-32"
+    >
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.65fr_1fr]">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-sageStrong">
+          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
             FAQ
           </p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] sm:leading-tight">
-            Questions, answered.
+          <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+            Practical answers before you order.
           </h2>
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-inkSecondary">
+            Clear answers for families who want support to feel simple,
+            respectful, and easy to start.
+          </p>
         </motion.div>
 
-        <div className="mt-12 divide-y divide-stroke rounded-3xl bg-white shadow-card">
+        <div className="divide-y divide-stroke rounded-lg border border-stroke bg-canvas shadow-card">
           {FAQS.map((item, i) => (
             <FAQItem key={item.q} item={item} defaultOpen={i === 0} />
           ))}
         </div>
-
-        <p className="mt-8 text-center text-sm text-inkSecondary">
-          Didn’t see your question?{" "}
-          <a className="font-semibold text-sageStrong underline-offset-4 hover:underline" href="mailto:hello@tapcare.app">
-            Email me directly.
-          </a>
-        </p>
       </div>
     </section>
   );
@@ -73,24 +73,32 @@ function FAQItem({
   defaultOpen: boolean;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+
   return (
-    <div className="px-6 py-5">
+    <div className="px-5 py-5 sm:px-6">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="flex w-full items-center justify-between gap-4 text-left"
+        className="flex w-full items-center justify-between gap-4 text-left focus:outline-none focus:ring-2 focus:ring-sage/20"
       >
         <span className="text-base font-semibold text-ink sm:text-lg">
           {item.q}
         </span>
         <span
-          className={`grid h-7 w-7 shrink-0 place-items-center rounded-full bg-canvas text-sageStrong transition ${
+          className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-white text-sageStrong transition ${
             open ? "rotate-45" : ""
           }`}
           aria-hidden
         >
-          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round">
+          <svg
+            viewBox="0 0 24 24"
+            className="h-4 w-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.6"
+            strokeLinecap="round"
+          >
             <path d="M12 5v14" />
             <path d="M5 12h14" />
           </svg>
@@ -102,10 +110,10 @@ function FAQItem({
           height: open ? "auto" : 0,
           opacity: open ? 1 : 0,
         }}
-        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
         className="overflow-hidden"
       >
-        <p className="pt-3 text-base leading-relaxed text-inkSecondary">
+        <p className="max-w-2xl pt-3 text-base leading-relaxed text-inkSecondary">
           {item.a}
         </p>
       </motion.div>

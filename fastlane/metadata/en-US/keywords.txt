@@ -1,0 +1,1 @@
+routine,medication,vitamin,supplement,caregiver,family,reminder,NFC,pill,check-in

@@ -52,7 +52,7 @@ final class LocalNotificationReminderScheduler: ReminderScheduling, @unchecked S
                             channel: channel,
                             fireDate: dueDate.addingTimeInterval(TimeInterval((followUpAfterMinutes * 60) * followUpIndex)),
                             title: "\(medication.name) still needs confirmation",
-                            body: "CareTap does not treat a dismissed reminder as a completed check-in.",
+                            body: "TapCare does not treat a dismissed reminder as a completed check-in.",
                             primaryActionLabel: medication.nfcTagID == nil ? "Manual Check-In" : "Tap Tag"
                         )
                     )

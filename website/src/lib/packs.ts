@@ -20,6 +20,8 @@ export type Pack = {
   highlight: PackHighlight;
   summary: string;
   perks: string[];
+  shippingNote: string;
+  supportNote: string;
   /** ENV variable name that holds the Stripe Payment Link for this pack. */
   paymentLinkEnv: string;
   /** Hardcoded fallback URL used when the env var is empty. */
@@ -34,8 +36,14 @@ export const packs: Pack[] = [
     tagCount: 5,
     priceCents: 1499,
     highlight: "none",
-    summary: "Perfect for one routine — bottle, organizer, or tray.",
-    perks: ["5 CareTap-ready stickers", "Pre-printed setup card", "Replacement-friendly"],
+    summary: "Best for one person getting started with up to five bottles or routines.",
+    perks: [
+      "5 TapCare-ready NFC stickers",
+      "Virtual setup support included",
+      "Hand-tested before shipping",
+    ],
+    shippingNote: "Standard U.S. shipping at checkout",
+    supportNote: "Setup help included",
     paymentLinkEnv: "NEXT_PUBLIC_STRIPE_LINK_STARTER",
     paymentLinkFallback: "https://buy.stripe.com/28E3cvelbbTN6Ad8riao800",
   },
@@ -46,8 +54,14 @@ export const packs: Pack[] = [
     tagCount: 10,
     priceCents: 2500,
     highlight: "mostPopular",
-    summary: "Ideal for a typical week of vitamins, meds, and refills.",
-    perks: ["10 CareTap-ready stickers", "Best per-tag price", "Free US shipping"],
+    summary: "Best for multiple bottles, vitamins, supplements, or shared household routines.",
+    perks: [
+      "10 TapCare-ready NFC stickers",
+      "Free U.S. shipping",
+      "Virtual setup support included",
+    ],
+    shippingNote: "Free U.S. shipping at $25+",
+    supportNote: "Setup help included",
     paymentLinkEnv: "NEXT_PUBLIC_STRIPE_LINK_FAMILY",
     paymentLinkFallback: "https://buy.stripe.com/eVqfZh3GxcXR1fTcHyao801",
   },
@@ -68,7 +82,7 @@ export function perTagPrice(pack: Pack): string {
 export function highlightLabel(highlight: PackHighlight): string | null {
   switch (highlight) {
     case "mostPopular":
-      return "Most Popular";
+      return "Best Value";
     default:
       return null;
   }
@@ -85,3 +99,10 @@ export function paymentLinkFor(pack: Pack): string {
   if (fromEnv && fromEnv.length > 0) return fromEnv;
   return pack.paymentLinkFallback;
 }
+
+export const tapKitPromises = [
+  "Free U.S. shipping on orders $25+",
+  "Virtual setup support included with every kit",
+  "Secure Stripe checkout",
+  "30-day returns",
+] as const;

@@ -73,7 +73,7 @@ struct PatientWorkspaceView: View {
                 .foregroundStyle(CareTapTheme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
             }
-            .layoutPriority(1)
+            .frame(maxWidth: .infinity, alignment: .leading)
 
             if selectedSection == .items {
                 Button(action: onAddMedication) {

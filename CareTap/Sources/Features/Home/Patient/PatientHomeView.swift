@@ -118,17 +118,17 @@ private struct PatientHomeHeroCard: View {
                                 .font(CareTapTypography.title)
                                 .foregroundStyle(CareTapTheme.textPrimary)
                                 .lineLimit(2)
+                                .minimumScaleFactor(0.85)
                                 .fixedSize(horizontal: false, vertical: true)
 
                             Text(currentDose.medicationName)
                                 .font(CareTapTypography.bodyStrong)
                                 .foregroundStyle(CareTapTheme.textSecondary)
                                 .lineLimit(2)
+                                .minimumScaleFactor(0.85)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
-                        .layoutPriority(1)
-
-                        Spacer(minLength: 0)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
 
                     CareTapPrimaryActionButton(
@@ -206,8 +206,7 @@ private struct PatientHomeSnapshotRow: View {
                         .minimumScaleFactor(0.85)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-
-                Spacer(minLength: 0)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
@@ -227,15 +226,16 @@ private struct PatientHomeSnapshotRow: View {
                         .font(CareTapTypography.bodyStrong)
                         .foregroundStyle(CareTapTheme.textPrimary)
                         .lineLimit(2)
+                        .minimumScaleFactor(0.85)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(upcomingMedication.title)
                         .font(CareTapTypography.footnote)
                         .foregroundStyle(CareTapTheme.textSecondary)
                         .lineLimit(2)
+                        .minimumScaleFactor(0.85)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-
-                Spacer(minLength: 0)
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
     }
@@ -274,20 +274,25 @@ private struct PatientUpcomingSection: View {
                             Text(item.title)
                                 .font(CareTapTypography.bodyStrong)
                                 .foregroundStyle(CareTapTheme.textPrimary)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.85)
                                 .fixedSize(horizontal: false, vertical: true)
                             Text(item.contextLabel)
                                 .font(CareTapTypography.footnote)
                                 .foregroundStyle(CareTapTheme.textSecondary)
+                                .lineLimit(2)
+                                .minimumScaleFactor(0.85)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
-                        .layoutPriority(1)
-
-                        Spacer()
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
                         Text(item.timeText)
                             .font(CareTapTypography.footnote.weight(.semibold))
                             .foregroundStyle(CareTapTheme.textSecondary)
-                            .fixedSize(horizontal: true, vertical: false)
+                            .lineLimit(2)
+                            .minimumScaleFactor(0.75)
+                            .multilineTextAlignment(.trailing)
+                            .frame(minWidth: 0, alignment: .trailing)
                     }
                     .padding(.horizontal, 14)
                     .padding(.vertical, 12)

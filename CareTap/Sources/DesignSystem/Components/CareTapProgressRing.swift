@@ -27,7 +27,6 @@ struct CareTapProgressRing: View {
                 Circle()
                     .fill(CareTapTheme.sageStrong)
                     .frame(width: 8, height: 8)
-                    .shadow(color: CareTapTheme.sage.opacity(0.5), radius: 4)
                     .offset(y: -25)
                     .rotationEffect(.degrees(360 * animatedFraction - 90))
             }

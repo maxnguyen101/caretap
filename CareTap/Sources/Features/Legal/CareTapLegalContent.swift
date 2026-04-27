@@ -57,25 +57,25 @@ extension CareTapLegalPage {
     static let privacyPolicyText: String = """
     Effective: April 13, 2026
 
-    CareTap ("we," "us," "our") operates the CareTap mobile application. This Privacy Policy explains what information we collect, how we use it, and your choices.
+    TapCare ("we," "us," "our") operates the TapCare mobile application. This Privacy Policy explains what information we collect, how we use it, and your choices.
 
     1. Information We Collect
 
     Account information. When you create an account we collect your email address or Apple ID identifier, display name, and the role you choose (personal or caregiver). If you sign in with Apple and choose to share your name or email, Apple provides that information to us.
 
-    Health and medication data. CareTap stores the medications you add, the schedule rules you set, dose occurrence records, dose logs (including timestamps, source such as NFC tap or manual entry, and optional notes), reminder preferences, and refill estimates. This data is considered consumer health data.
+    Health and routine data. TapCare stores the medications, vitamins, supplements, or routines you add, the schedule rules you set, check-in records, logs (including timestamps, source such as NFC tap or manual entry, and optional notes), reminder preferences, and refill estimates. This data is considered consumer health data.
 
-    Device and usage data. CareTap uses your device time zone and locale so schedules, reminders, and dates display correctly on your device. We do not include third-party analytics SDKs or advertising SDKs.
+    Device and usage data. TapCare uses your device time zone and locale so schedules, reminders, and dates display correctly on your device. We do not include third-party analytics SDKs or advertising SDKs.
 
-    NFC tag data. When you pair an NFC sticker, CareTap writes a payload identifier to the tag and stores the association between the tag and a medication locally and in your synced account.
+    NFC tag data. When you pair an NFC sticker, TapCare writes a payload identifier to the tag and stores the association between the tag and a routine locally and in your synced account.
 
-    Caregiver relationship data. If you link a caregiver or accept an invitation, we store the relationship record and the invitation status so both parties can view shared medication schedules and logs.
+    Shared support data. If you link a trusted family member or support person, we store the relationship record and invitation status so both parties can view the schedules and logs you choose to share.
 
     2. How We Use Your Information
 
-    • To operate CareTap — displaying your medication schedule, logging doses, sending reminders, and syncing across sessions.
+    • To operate TapCare — displaying your routine schedule, logging check-ins, sending reminders, and syncing across sessions.
     • To authenticate your identity and maintain your session securely.
-    • To enable caregiver relationships you explicitly create.
+    • To enable shared support relationships you explicitly create.
     • To generate local notifications and Live Activities on your device.
     • To present reminder timing and dates correctly for your locale and time zone.
 
@@ -101,11 +101,11 @@ extension CareTapLegalPage {
 
     6. Children's Privacy
 
-    CareTap is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.
+    TapCare is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us and we will delete it promptly.
 
     7. International Users
 
-    Our servers are located in the United States. By using CareTap you consent to the transfer of your data to the United States.
+    Our servers are located in the United States. By using TapCare you consent to the transfer of your data to the United States.
 
     8. Changes to This Policy
 
@@ -113,7 +113,7 @@ extension CareTapLegalPage {
 
     9. Contact
 
-    CareTap
+    TapCare
     Email: support@tapcare.app
     """
 
@@ -122,19 +122,19 @@ extension CareTapLegalPage {
     static let termsOfServiceText: String = """
     Effective: April 13, 2026
 
-    Please read these Terms of Service ("Terms") carefully before using CareTap.
+    Please read these Terms of Service ("Terms") carefully before using TapCare.
 
     1. Acceptance
 
-    By creating an account or using CareTap you agree to these Terms. If you do not agree, do not use the app.
+    By creating an account or using TapCare you agree to these Terms. If you do not agree, do not use the app.
 
     2. Description of Service
 
-    CareTap is a medication tracking and reminder application. It lets you log doses via NFC taps or manual entry, set reminders, view schedules, track refill estimates, and optionally share access with a caregiver. CareTap is not a medical device and does not provide medical advice, diagnosis, or treatment.
+    TapCare is a routine-support application. It lets you log check-ins via NFC taps or manual entry, set reminders, view schedules, track refill estimates, and optionally share visibility with a trusted family member or support person. TapCare does not provide medical advice, diagnosis, or treatment.
 
     3. Not Medical Advice
 
-    CareTap is a personal organization tool. It does not replace professional medical guidance. Always follow your healthcare provider's instructions regarding medications. We are not liable for any health outcome related to your use of CareTap.
+    TapCare is a personal organization tool. It does not replace professional medical guidance. Always follow your healthcare provider's instructions regarding medications. We are not liable for any health outcome related to your use of TapCare.
 
     4. Account Responsibilities
 
@@ -143,7 +143,7 @@ extension CareTapLegalPage {
     5. Acceptable Use
 
     You agree not to:
-    • Use CareTap for any unlawful purpose.
+    • Use TapCare for any unlawful purpose.
     • Attempt to reverse-engineer, decompile, or disassemble the app.
     • Interfere with or disrupt the service or its infrastructure.
     • Impersonate another person or misrepresent your affiliation.
@@ -151,31 +151,31 @@ extension CareTapLegalPage {
 
     6. Intellectual Property
 
-    CareTap, its design, code, icons, and content are owned by CareTap and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.
+    TapCare, its design, code, icons, and content are owned by TapCare and protected by intellectual property laws. You receive a limited, non-exclusive, non-transferable license to use the app for personal, non-commercial purposes.
 
     7. Caregiver Features
 
-    When you invite a caregiver, you grant that person read access to your medication schedule and dose logs. You can revoke this access at any time. You are responsible for managing who you share access with.
+    When you invite a support person, you grant that person read access to the schedules and logs you choose to share. You can revoke this access at any time. You are responsible for managing who you share access with.
 
     8. Availability and Updates
 
-    We strive to keep CareTap available but do not guarantee uninterrupted access. We may release updates, change features, or discontinue the service at our discretion. We will make reasonable efforts to notify you of material changes.
+    We strive to keep TapCare available but do not guarantee uninterrupted access. We may release updates, change features, or discontinue the service at our discretion. We will make reasonable efforts to notify you of material changes.
 
     9. Limitation of Liability
 
-    To the maximum extent permitted by law, CareTap and its officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of CareTap, including but not limited to missed doses, medication errors, data loss, or health outcomes. Our total liability for any claim shall not exceed the amount you paid us in the twelve months preceding the claim, or $50, whichever is greater.
+    To the maximum extent permitted by law, TapCare and its officers, employees, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of TapCare, including but not limited to incorrect entries, medication errors, data loss, or health outcomes. Our total liability for any claim shall not exceed the amount you paid us in the twelve months preceding the claim, or $50, whichever is greater.
 
     10. Disclaimer of Warranties
 
-    CareTap is provided "as is" and "as available" without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
+    TapCare is provided "as is" and "as available" without warranties of any kind, whether express or implied, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
 
     11. Indemnification
 
-    You agree to indemnify and hold harmless CareTap from any claims, damages, or expenses arising from your use of CareTap or violation of these Terms.
+    You agree to indemnify and hold harmless TapCare from any claims, damages, or expenses arising from your use of TapCare or violation of these Terms.
 
     12. Termination
 
-    We may suspend or terminate your account if you violate these Terms. You may delete your account at any time through Settings. Upon termination, your right to use CareTap ceases immediately.
+    We may suspend or terminate your account if you violate these Terms. You may delete your account at any time through Settings. Upon termination, your right to use TapCare ceases immediately.
 
     13. Governing Law
 
@@ -183,7 +183,7 @@ extension CareTapLegalPage {
 
     14. Dispute Resolution
 
-    Any dispute arising from these Terms or your use of CareTap shall be resolved through binding arbitration under the rules of the American Arbitration Association, conducted in San Francisco, California. You waive any right to participate in a class action.
+    Any dispute arising from these Terms or your use of TapCare shall be resolved through binding arbitration under the rules of the American Arbitration Association, conducted in San Francisco, California. You waive any right to participate in a class action.
 
     15. Severability
 
@@ -191,11 +191,11 @@ extension CareTapLegalPage {
 
     16. Entire Agreement
 
-    These Terms, together with our Privacy Policy and Consumer Health Data Policy, constitute the entire agreement between you and CareTap regarding CareTap.
+    These Terms, together with our Privacy Policy and Consumer Health Data Policy, constitute the entire agreement between you and TapCare regarding TapCare.
 
     17. Contact
 
-    CareTap
+    TapCare
     Email: support@tapcare.app
     """
 
@@ -208,40 +208,40 @@ extension CareTapLegalPage {
 
     1. What Is Consumer Health Data?
 
-    Consumer health data means personal information that is linked or reasonably linkable to you and identifies your past, present, or future physical or mental health status. In CareTap this includes:
-    • Medication names, dosages, and instructions you enter.
-    • Dose schedules, occurrence records, and completion logs.
-    • Timestamps and sources of dose confirmations (NFC tap, manual entry, caregiver log).
+    Consumer health data means personal information that is linked or reasonably linkable to you and identifies your past, present, or future physical or mental health status. In TapCare this includes:
+    • Medication, vitamin, supplement, or routine names, dosages, and instructions you enter.
+    • Schedules, occurrence records, and completion logs.
+    • Timestamps and sources of check-in confirmations (NFC tap, manual entry, support-person log).
     • Reminder preferences and refill estimates.
     • Notes you attach to dose logs.
 
     2. How We Collect Health Data
 
-    We collect health data only when you directly provide it by adding medications, logging doses, setting schedules, or writing notes within CareTap. We do not infer health data from other sources, purchase health data, or derive it from non-health signals.
+    We collect health data only when you directly provide it by adding routines, logging check-ins, setting schedules, or writing notes within TapCare. We do not infer health data from other sources, purchase health data, or derive it from non-health signals.
 
     3. Purpose of Collection
 
     We collect and process your health data solely to:
-    • Display your medication schedule and dose history.
+    • Display your routine schedule and check-in history.
     • Send you reminders at times you configure.
     • Sync your data between sessions so it persists across sign-ins.
-    • Enable caregiver access you explicitly authorize.
+    • Enable shared support access you explicitly authorize.
     • Generate on-device refill estimates.
 
     4. Consent
 
-    By adding medication data to CareTap you consent to our collection and processing of that data for the purposes above. You may withdraw consent at any time by deleting your data or your account.
+    By adding routine data to TapCare you consent to our collection and processing of that data for the purposes above. You may withdraw consent at any time by deleting your data or your account.
 
     5. Sharing
 
     We do not sell consumer health data. We do not share it for advertising. Health data is shared only:
-    • With caregivers you invite and authorize.
+    • With support people you invite and authorize.
     • With our infrastructure provider (Supabase Inc.) for storage and sync, under a data processing agreement that restricts their use of your data.
     • When required by law.
 
     6. Data Retention and Deletion
 
-    Health-related routine data is retained while your account is active. You can export your information or delete your entire account at any time. Account deletion permanently removes the associated CareTap data from our servers within 30 days. See our Data Deletion page for step-by-step instructions.
+    Health-related routine data is retained while your account is active. You can export your information or delete your entire account at any time. Account deletion permanently removes the associated TapCare data from our servers within 30 days. See our Data Deletion page for step-by-step instructions.
 
     7. Security
 
@@ -264,7 +264,7 @@ extension CareTapLegalPage {
 
     10. Contact
 
-    CareTap
+    TapCare
     Email: support@tapcare.app
     """
 
@@ -273,11 +273,11 @@ extension CareTapLegalPage {
     static let dataDeletionText: String = """
     Effective: April 13, 2026
 
-    CareTap gives you full control over your data. You can export your information or delete your entire account at any time.
+    TapCare gives you full control over your data. You can export your information or delete your entire account at any time.
 
     How to Delete Your Account
 
-    1. Open CareTap and go to Settings (tap the gear icon or navigate to the Settings tab).
+    1. Open TapCare and go to Settings (tap the gear icon or navigate to the Settings tab).
     2. Scroll to the Account section.
     3. Tap "Delete account."
     4. Confirm the deletion when prompted.
@@ -285,10 +285,10 @@ extension CareTapLegalPage {
     What Happens When You Delete Your Account
 
     • Your authentication record is permanently removed from our servers.
-    • All medications, schedules, dose logs, reminders, NFC tag associations, caregiver relationships, and invitations tied to your account are permanently deleted from our database within 30 days.
+    • All routines, schedules, logs, reminders, NFC tag associations, shared support relationships, and invitations tied to your account are permanently deleted from our database within 30 days.
     • Locally cached data on the device that initiated the deletion is erased immediately.
-    • Any caregiver links are severed — caregivers will no longer see your data.
-    • If you signed in with Apple, CareTap's access to your Apple ID is revoked. You can also revoke it manually in your Apple ID settings under Sign-In & Security > Sign in with Apple.
+    • Any shared support links are severed, so linked people will no longer see your data.
+    • If you signed in with Apple, TapCare's access to your Apple ID is revoked. You can also revoke it manually in your Apple ID settings under Sign-In & Security > Sign in with Apple.
 
     Deleting Individual Data
 
@@ -309,23 +309,23 @@ extension CareTapLegalPage {
     static let privacyChoicesText: String = """
     Effective: April 13, 2026
 
-    CareTap is designed to give you control over your information. Here are the choices available to you.
+    TapCare is designed to give you control over your information. Here are the choices available to you.
 
     Sign-In Method
 
     You can choose to sign in with Apple (which can hide your real email address) or with an email and password. Sign in with Apple's "Hide My Email" feature generates a private relay address so your real email is never shared with us.
 
-    Caregiver Sharing
+    Family Support Sharing
 
-    Sharing is always opt-in. You decide whether to invite a caregiver and can revoke their access at any time from Settings. Caregivers only see the medication schedule and dose logs you have shared — they cannot modify your medications or account.
+    Sharing is always opt-in. You decide whether to invite a support person and can revoke their access at any time from Settings. Support people only see the schedules and logs you have shared, and they cannot modify your routines or account.
 
     Notifications and Reminders
 
-    You control whether CareTap can send notifications. You can enable or disable reminders entirely, adjust the lead time, and configure quiet hours from Settings. CareTap never sends marketing or promotional notifications.
+    You control whether TapCare can send notifications. You can enable or disable reminders entirely, adjust the lead time, and configure quiet hours from Settings. TapCare never sends marketing or promotional notifications.
 
     Data Export
 
-    You can export a copy of your medication data at any time from Settings > Export data. The export is provided as a human-readable file you can save or share as you choose.
+    You can export a copy of your routine data at any time from Settings > Export data. The export is provided as a human-readable file you can save or share as you choose.
 
     Data Deletion
 
@@ -333,15 +333,15 @@ extension CareTapLegalPage {
 
     Analytics and Tracking
 
-    CareTap does not use third-party analytics, advertising SDKs, or cross-app tracking. We do not participate in ad networks. We do not fingerprint your device. If you choose to share Apple diagnostics with Apple, that setting remains under your control in Settings > Privacy & Security > Analytics & Improvements.
+    TapCare does not use third-party analytics, advertising SDKs, or cross-app tracking. We do not participate in ad networks. We do not fingerprint your device. If you choose to share Apple diagnostics with Apple, that setting remains under your control in Settings > Privacy & Security > Analytics & Improvements.
 
     Location Data
 
-    CareTap does not request or collect location data.
+    TapCare does not request or collect location data.
 
     Contacts and Photos
 
-    CareTap does not access your contacts or camera. If you add a bottle photo during setup, iOS presents the system photo picker so you can choose an image to store locally on your device.
+    TapCare does not access your contacts or camera. If you add a bottle photo during setup, iOS presents the system photo picker so you can choose an image to store locally on your device.
 
     Changes to Your Choices
 
@@ -385,9 +385,9 @@ extension CareTapLegalPage {
 
     Feedback and Feature Requests
 
-    We love hearing what would make CareTap more useful for you. Send ideas to the same email address — every message is read.
+    We love hearing what would make TapCare more useful for you. Send ideas to the same email address — every message is read.
 
-    CareTap
+    TapCare
     support@tapcare.app
     """
 }

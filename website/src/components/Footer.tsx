@@ -1,37 +1,75 @@
+import { LogoMark } from "./LogoMark";
+
 export function Footer() {
   return (
-    <footer className="border-t border-stroke bg-canvas py-12">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="bg-canvas py-12">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[1fr_auto]">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-sage-gradient text-white">
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2v4" />
-                <path d="m4.93 10.93 2.83 2.83" />
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 18v4" />
-              </svg>
-            </span>
+          <div className="flex items-center gap-3">
+            <LogoMark />
             <span className="text-base font-semibold tracking-tight text-ink">
               TapCare
             </span>
           </div>
-          <p className="mt-3 max-w-md text-sm text-inkSecondary">
-            Built in Los Angeles by Max Nguyen. Designed to make medication
-            adherence less work for everyone in the room.
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-inkSecondary">
+            TapCare helps families support daily routines with simple
+            tap-to-confirm check-ins. It is an organization tool, not medical
+            advice.
           </p>
         </div>
 
-        <div className="flex flex-col gap-3 text-sm text-inkSecondary sm:items-end">
-          <div className="flex gap-6">
-            <a className="transition hover:text-ink" href="mailto:hello@tapcare.app">Contact</a>
-            <a className="transition hover:text-ink" href="/privacy">Privacy</a>
-            <a className="transition hover:text-ink" href="/terms">Terms</a>
+        <div className="grid gap-6 text-sm text-inkSecondary sm:grid-cols-3 lg:text-right">
+          <div>
+            <p className="font-semibold text-ink">Product</p>
+            <div className="mt-3 grid gap-2">
+              <a className="transition hover:text-ink" href="#how">
+                How it works
+              </a>
+              <a className="transition hover:text-ink" href="#kits">
+                Kits
+              </a>
+              <a className="transition hover:text-ink" href="#support">
+                Support
+              </a>
+            </div>
           </div>
-          <p className="text-xs text-inkTertiary">
-            © {new Date().getFullYear()} TapCare. All rights reserved.
-          </p>
+          <div>
+            <p className="font-semibold text-ink">Help</p>
+            <div className="mt-3 grid gap-2">
+              <a className="transition hover:text-ink" href="mailto:support@tapcare.app">
+                Email support
+              </a>
+              <a className="transition hover:text-ink" href="/legal/support">
+                Support policy
+              </a>
+              <a className="transition hover:text-ink" href="/legal/data-deletion">
+                Data deletion
+              </a>
+            </div>
+          </div>
+          <div>
+            <p className="font-semibold text-ink">Legal</p>
+            <div className="mt-3 grid gap-2">
+              <a className="transition hover:text-ink" href="/legal/privacy">
+                Privacy
+              </a>
+              <a className="transition hover:text-ink" href="/legal/terms">
+                Terms
+              </a>
+              <a
+                className="transition hover:text-ink"
+                href="/legal/consumer-health-data"
+              >
+                Health data
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-3 border-t border-stroke px-5 pt-6 text-xs text-inkTertiary sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <p>© {new Date().getFullYear()} TapCare. All rights reserved.</p>
+        <p>Secure checkout by Stripe. Free U.S. shipping on orders $25+.</p>
       </div>
     </footer>
   );

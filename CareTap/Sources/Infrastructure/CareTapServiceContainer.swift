@@ -417,7 +417,7 @@ struct StubReminderScheduler: ReminderScheduling, Sendable {
                         channel: channel,
                         fireDate: dueDate.addingTimeInterval(TimeInterval(followUpAfterMinutes * 60)),
                         title: "\(medication.name) still needs confirmation",
-                        body: "CareTap can keep nudging without treating a dismissal as a completed check-in.",
+                        body: "TapCare can keep nudging without treating a dismissal as a completed check-in.",
                         primaryActionLabel: "Check In"
                     )
                 )

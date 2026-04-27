@@ -238,9 +238,8 @@ private struct MedicationRowTile: View {
                     }
                 }
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .layoutPriority(1)
-
-            Spacer()
 
             VStack(alignment: .trailing, spacing: 4) {
                 Text(medication.hasCurrentOpenDose ? "Open now" : "Next")
@@ -252,20 +251,22 @@ private struct MedicationRowTile: View {
                     .foregroundStyle(CareTapTheme.textSecondary)
                     .multilineTextAlignment(.trailing)
                     .lineLimit(2)
+                    .minimumScaleFactor(0.8)
                     .fixedSize(horizontal: false, vertical: true)
 
                 if let dosesRemainingEstimate = medication.dosesRemainingEstimate {
                     Text("\(dosesRemainingEstimate) left")
                         .font(CareTapTypography.micro)
                         .foregroundStyle(CareTapTheme.textTertiary)
-                        .fixedSize(horizontal: true, vertical: false)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
                 }
 
                 Image(systemName: "chevron.right")
                     .font(.system(size: 11, weight: .semibold))
                     .foregroundStyle(CareTapTheme.textTertiary)
             }
-            .fixedSize(horizontal: true, vertical: false)
+            .frame(minWidth: 0, alignment: .trailing)
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)

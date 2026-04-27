@@ -10,3 +10,4 @@ build/
 .env.production.local
 .vercel
 next-env.d.ts
+tsconfig.tsbuildinfo

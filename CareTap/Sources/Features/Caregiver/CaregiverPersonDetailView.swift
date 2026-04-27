@@ -96,7 +96,7 @@ struct CaregiverPersonDetailView: View {
     private var historySection: some View {
         CareTapGlassSection(title: "Recent activity") {
             if historyRows.isEmpty {
-                emptyRow(icon: "clock.arrow.circlepath", text: "Recent monitored activity will show up here.")
+                emptyRow(icon: "clock.arrow.circlepath", text: "Recent shared check-ins will show up here.")
             } else {
                 VStack(spacing: 10) {
                     ForEach(historyRows.prefix(5)) { row in

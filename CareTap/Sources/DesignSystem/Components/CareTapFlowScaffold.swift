@@ -190,6 +190,5 @@ struct CareTapFooterActionBar: View {
         .padding(.vertical, 8)
         .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
         .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
-        .shadow(color: CareTapTheme.shadow.opacity(0.14), radius: 12, x: 0, y: 4)
     }
 }

@@ -128,7 +128,7 @@ struct QuickLogIntent: AppIntent {
     @MainActor
     func perform() async throws -> some IntentResult & ProvidesDialog {
         guard let firstItem = try? await CareTapShortcutsBootstrap.taggedItems().first else {
-            return .result(dialog: "No paired items found. Open CareTap and pair an NFC tag first.")
+            return .result(dialog: "No paired items found. Open TapCare and pair an NFC tag first.")
         }
 
         guard let url = CareTapDeepLink.tagURL(

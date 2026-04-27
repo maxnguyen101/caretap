@@ -48,7 +48,6 @@ struct CareTapDoseSuccessOverlay: View {
                                 )
                             )
                             .frame(width: 80, height: 80)
-                            .shadow(color: CareTapTheme.sage.opacity(0.4), radius: 20)
                             .scaleEffect(checkScale)
                             .overlay {
                                 Image(systemName: "checkmark")

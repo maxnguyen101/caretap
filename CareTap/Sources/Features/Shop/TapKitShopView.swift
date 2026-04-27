@@ -23,7 +23,7 @@ struct TapKitShopView: View {
                     trustStrip
                     packSelectorSection
                     featuresSection
-                    founderNoteCard
+                    setupSupportCard
                     detailsSection
                 }
             } footer: {
@@ -108,8 +108,6 @@ struct TapKitShopView: View {
                     RoundedRectangle(cornerRadius: 22, style: .continuous)
                         .stroke(Color.white.opacity(0.45), lineWidth: 1)
                 }
-                .shadow(color: CareTapTheme.shadow.opacity(0.4), radius: 18, x: 0, y: 10)
-
             VStack(spacing: 6) {
                 RoundedRectangle(cornerRadius: 6, style: .continuous)
                     .fill(CareTapTheme.sageStrong.opacity(0.25))
@@ -129,7 +127,6 @@ struct TapKitShopView: View {
                 .foregroundStyle(CareTapTheme.warm)
                 .padding(10)
                 .background(.white.opacity(0.85), in: Circle())
-                .shadow(color: CareTapTheme.shadow.opacity(0.35), radius: 8, x: 0, y: 4)
                 .offset(x: 36, y: 44)
         }
     }
@@ -142,7 +139,7 @@ struct TapKitShopView: View {
                 .padding(12)
                 .background(.white.opacity(0.7), in: RoundedRectangle(cornerRadius: 14))
 
-            Text("Tap once.\nLogged.")
+            Text("Tap.\nConfirmed.")
                 .font(.system(size: 14, weight: .semibold))
                 .foregroundStyle(CareTapTheme.textPrimary)
                 .lineSpacing(2)
@@ -242,9 +239,9 @@ struct TapKitShopView: View {
         }
     }
 
-    // MARK: Founder Note
+    // MARK: Setup Support
 
-    private var founderNoteCard: some View {
+    private var setupSupportCard: some View {
         HStack(alignment: .top, spacing: 14) {
             ZStack {
                 Circle()
@@ -257,18 +254,18 @@ struct TapKitShopView: View {
                     )
                     .frame(width: 44, height: 44)
 
-                Text("M")
-                    .font(.system(size: 18, weight: .semibold))
+                Image(systemName: "person.text.rectangle.fill")
+                    .font(.system(size: 17, weight: .semibold))
                     .foregroundStyle(.white)
             }
 
             VStack(alignment: .leading, spacing: 6) {
-                Text("A note from the founder")
+                Text("Setup support included")
                     .font(CareTapTypography.micro)
                     .foregroundStyle(CareTapTheme.textTertiary)
                     .tracking(0.4)
 
-                Text(state.founderNote)
+                Text(state.setupNote)
                     .font(CareTapTypography.footnote)
                     .foregroundStyle(CareTapTheme.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -285,9 +282,9 @@ struct TapKitShopView: View {
     private var detailsSection: some View {
         CareTapGlassSection(title: "How it fits") {
             VStack(spacing: 10) {
-                workflowRow(step: "1", title: "Pair once", detail: "Set up each sticker in CareTap during the tap setup step.")
+                workflowRow(step: "1", title: "Pair once", detail: "Set up each sticker in TapCare during the tap setup step.")
                 workflowRow(step: "2", title: "Place it where it helps", detail: "Bottles, organizers, trays, packets — wherever the routine already lives.")
-                workflowRow(step: "3", title: "Tap to log", detail: "The same physical tap becomes the easiest way to stay on track.")
+                workflowRow(step: "3", title: "Tap to confirm", detail: "The same physical tap becomes the easiest way to keep the routine clear.")
             }
         }
     }
@@ -343,7 +340,7 @@ struct TapKitShopView: View {
                 } label: {
                     HStack(spacing: 12) {
                         VStack(alignment: .leading, spacing: 1) {
-                            Text("Buy \(state.selectedPack.title)")
+                    Text("Order \(state.selectedPack.title)")
                                 .font(CareTapTypography.bodyStrong)
                                 .foregroundStyle(.white)
                             Text("\(state.selectedPack.priceText) • Apple Pay or card")
@@ -375,7 +372,6 @@ struct TapKitShopView: View {
                                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                                     .stroke(Color.white.opacity(0.2), lineWidth: 1)
                             }
-                            .shadow(color: CareTapTheme.sageStrong.opacity(0.28), radius: 14, x: 0, y: 6)
                     }
                 }
                 .buttonStyle(.plain)
@@ -394,7 +390,6 @@ struct TapKitShopView: View {
         .padding(.vertical, 10)
         .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
         .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
-        .shadow(color: CareTapTheme.shadow.opacity(0.16), radius: 14, x: 0, y: 6)
     }
 }
 
@@ -422,12 +417,6 @@ private struct TapKitPackCard: View {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .stroke(borderColor, lineWidth: isSelected ? 1.6 : 1)
             }
-            .shadow(
-                color: isSelected ? CareTapTheme.sageStrong.opacity(0.16) : CareTapTheme.shadow.opacity(0.08),
-                radius: isSelected ? 16 : 8,
-                x: 0,
-                y: isSelected ? 6 : 3
-            )
             .animation(.spring(duration: 0.32, bounce: 0.18), value: isSelected)
         }
         .buttonStyle(.plain)
@@ -551,7 +540,7 @@ private struct TapKitOrderConfirmationOverlay: View {
                     CareTapHaptics.tap()
                     onClose()
                 } label: {
-                    Text("Back to CareTap")
+                    Text("Back to TapCare")
                         .font(CareTapTypography.bodyStrong)
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)

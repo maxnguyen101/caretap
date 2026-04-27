@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { LogoMark } from "@/components/LogoMark";
 
 type Props = {
   searchParams: Promise<{ pack?: string }>;
 };
 
 export const metadata = {
-  title: "Thanks — TapKit on the way",
+  title: "Thanks - TapKit on the way",
 };
 
 export default async function ThanksPage({ searchParams }: Props) {
@@ -22,51 +23,47 @@ export default async function ThanksPage({ searchParams }: Props) {
   })();
 
   return (
-    <main className="grid min-h-screen place-items-center bg-porcelain-mesh px-6 py-16">
-      <div className="w-full max-w-md rounded-3xl bg-white p-8 text-center shadow-cardLg">
-        <div className="mx-auto grid h-16 w-16 place-items-center rounded-full bg-sage-gradient text-white shadow-sage">
-          <svg
-            viewBox="0 0 24 24"
-            className="h-8 w-8"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M5 12.5 10 17.5 19.5 8" />
-          </svg>
+    <main className="grid min-h-screen place-items-center bg-canvas px-5 py-16">
+      <div className="w-full max-w-lg rounded-lg border border-stroke bg-white p-6 shadow-cardLg sm:p-8">
+        <div className="flex items-center gap-3">
+          <LogoMark className="h-11 w-11" />
+          <div>
+            <p className="text-sm font-semibold text-ink">TapCare</p>
+            <p className="text-xs text-inkTertiary">Order confirmed</p>
+          </div>
         </div>
 
-        <h1 className="mt-6 text-3xl font-semibold tracking-tight text-ink">
-          Order confirmed
+        <h1 className="mt-8 text-3xl font-semibold tracking-tight text-ink">
+          Your kit is on the way.
         </h1>
-        <p className="mt-3 text-inkSecondary">
-          Your <span className="font-semibold text-ink">{packLabel}</span> is
-          on the way. Stripe will email you a receipt and tracking once it
-          ships.
+        <p className="mt-3 leading-relaxed text-inkSecondary">
+          Your <span className="font-semibold text-ink">{packLabel}</span> order
+          is confirmed. Stripe will email your receipt, and we will send
+          shipping updates when the kit is fulfilled.
         </p>
 
-        <div className="mt-6 rounded-2xl bg-canvas p-4 text-left text-sm text-inkSecondary">
-          <p className="font-semibold text-ink">Next step</p>
-          <p className="mt-1">
-            If you haven’t already, download CareTap on iPhone and pair the
-            tags when they arrive.
+        <div className="mt-6 grid gap-3 rounded-lg border border-stroke bg-canvas p-4 text-sm text-inkSecondary">
+          <p>
+            <span className="font-semibold text-ink">Next step:</span> when the
+            tags arrive, place the first one where the routine already happens
+            and pair it in the TapCare iPhone app.
+          </p>
+          <p>
+            <span className="font-semibold text-ink">Need help?</span> Virtual
+            setup support is included with your kit.
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3">
+        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <a
-            href="https://apps.apple.com/app/caretap/id000000000"
-            target="_blank"
-            rel="noopener"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-sage-gradient px-5 py-3 text-sm font-semibold text-white shadow-sage transition hover:brightness-110"
+            href="mailto:support@tapcare.app"
+            className="inline-flex flex-1 items-center justify-center rounded-lg bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:bg-sageStrong"
           >
-            Download CareTap
+            Email setup support
           </a>
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-1.5 rounded-full px-5 py-3 text-sm font-semibold text-ink ring-1 ring-stroke transition hover:bg-canvas"
+            className="inline-flex flex-1 items-center justify-center rounded-lg px-5 py-3 text-sm font-semibold text-ink ring-1 ring-stroke transition hover:bg-canvas"
           >
             Back to TapCare
           </Link>

@@ -129,7 +129,7 @@ enum CareTapPhaseTwoPreviewScenarios {
         bottleLabel: nfcReady.bottleLabel,
         phase: .failure,
         helperTitle: "Try these fixes",
-        helperMessage: "CareTap can continue with manual confirmation now, and you can return to pairing later from NFC tools.",
+        helperMessage: "TapCare can continue with manual confirmation now, and you can return to pairing later from NFC tools.",
         helpItems: [
             NFCHelpItemState(title: "Check the tag type", detail: "Some stickers are read-only and can't store a CareTap ID."),
             NFCHelpItemState(title: "Move to a quieter surface", detail: "Metal countertops and pill cases can interfere."),
@@ -155,7 +155,7 @@ enum CareTapPhaseTwoPreviewScenarios {
                 rows: [
                     SettingsRowState(symbolName: "person.crop.circle.fill", tone: .sage, title: "Signed in as", subtitle: "Ella Caregiver", accessory: .label("Apple"), actionKind: .accountInfo),
                     SettingsRowState(symbolName: "person.2.fill", tone: .mist, title: "Current role", subtitle: "Support view", accessory: .label("Support view"), actionKind: .currentRole),
-                    SettingsRowState(symbolName: "trash.fill", tone: .alert, title: "Delete account", subtitle: "Permanently remove your CareTap account and synced data.", accessory: .chevron, actionKind: .deleteAccount)
+                    SettingsRowState(symbolName: "trash.fill", tone: .alert, title: "Delete account", subtitle: "Permanently remove your TapCare account and synced data.", accessory: .chevron, actionKind: .deleteAccount)
                 ]
             ),
             SettingsSectionState(
@@ -175,8 +175,8 @@ enum CareTapPhaseTwoPreviewScenarios {
             SettingsSectionState(
                 title: "NFC Tools",
                 rows: [
-                    SettingsRowState(symbolName: "bag.fill", tone: .warm, title: "Tap Kit", subtitle: "Order CareTap-ready NFC stickers.", accessory: .chevron, actionKind: .openTapKitShop),
-                    SettingsRowState(symbolName: "dot.radiowaves.left.and.right", tone: .sage, title: "Pair or replace a tag", subtitle: "Write a new CareTap tag to a bottle, tub, tray, or organizer", accessory: .chevron, actionKind: .rePairCurrentTag),
+                    SettingsRowState(symbolName: "bag.fill", tone: .warm, title: "Tap Kit", subtitle: "Order TapCare-ready NFC stickers.", accessory: .chevron, actionKind: .openTapKitShop),
+                    SettingsRowState(symbolName: "dot.radiowaves.left.and.right", tone: .sage, title: "Pair or replace a tag", subtitle: "Write a new TapCare tag to a bottle, tub, tray, or organizer", accessory: .chevron, actionKind: .rePairCurrentTag),
                     SettingsRowState(symbolName: "wave.3.forward.circle", tone: .neutral, title: "Test current tag", subtitle: "Check whether a tap still resolves the right item", accessory: .chevron, actionKind: .testCurrentTag)
                 ]
             ),

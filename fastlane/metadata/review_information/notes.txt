@@ -1,0 +1,24 @@
+TapCare is a routine support app for medication, vitamin, and supplement check-ins. Optional NFC tags make check-ins faster, but manual logging is always available. TapCare Premium and in-app purchases are not included in this release.
+
+Reviewer-friendly test path:
+1. Launch the app.
+2. Choose "For me".
+3. Choose "Continue on This iPhone" to use TapCare locally without creating an account.
+4. Add a medication and schedule through the setup flow.
+5. Skip NFC pairing if no NFC tag is available.
+6. Manually log a check-in to test the full routine workflow without NFC hardware.
+7. If NFC hardware is available, pair an NFC tag from setup or settings and tap the tag to log a dose.
+8. Review settings for privacy, legal links, data export, and deletion/account options.
+
+NFC is optional. Manual check-ins are available without NFC tags. A demo account is not required because the app supports local use on one iPhone. Optional sync sign-in is available with Sign in with Apple or email.
+
+TapCare collects consumer health data such as medication names, vitamin or supplement names, schedules, reminder preferences, refill estimates, and check-in history solely for app functionality. No data is shared with third parties for advertising, and the app does not use third-party analytics or cross-app tracking.
+
+Legal pages are available in the app and on the web:
+Privacy Policy: https://tapcare.app/legal/privacy
+Terms: https://tapcare.app/legal/terms
+Consumer Health Data Policy: https://tapcare.app/legal/consumer-health-data
+Data Deletion: https://tapcare.app/legal/data-deletion
+Support: https://tapcare.app/legal/support
+
+TapCare is a personal organization and routine-support tool. It does not provide medical advice, diagnosis, or treatment. Users should always follow their healthcare provider's instructions.

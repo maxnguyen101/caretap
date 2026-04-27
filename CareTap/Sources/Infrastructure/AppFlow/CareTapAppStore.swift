@@ -46,7 +46,7 @@ final class CareTapAppStore: ObservableObject {
     )
     @Published var nfcPairingState: NFCPairingViewState = CareTapPhaseTwoPreviewScenarios.nfcReady
     @Published var completionState = SetupCompletionViewState(
-        title: "CareTap is ready",
+        title: "TapCare is ready",
         message: "The first item is ready and future check-ins can happen from Home.",
         summaryItems: [],
         primaryActionTitle: "Open Home"
@@ -368,7 +368,7 @@ final class CareTapAppStore: ObservableObject {
         do {
             try await services.auth.deleteAccount()
             isBusy = false
-            await resetSessionState(infoBanner: "Your CareTap account and local data were removed from this iPhone.")
+            await resetSessionState(infoBanner: "Your TapCare account and local data were removed from this iPhone.")
         } catch {
             isBusy = false
             infoMessage = nil
@@ -642,7 +642,7 @@ final class CareTapAppStore: ObservableObject {
             switch outcome {
             case .purchased:
                 isPresentingPremiumSheet = false
-                infoMessage = "CareTap Premium is active."
+                infoMessage = "TapCare Premium is active."
             case .pending:
                 infoMessage = "The App Store is still confirming that purchase."
             case .cancelled:
@@ -668,8 +668,8 @@ final class CareTapAppStore: ObservableObject {
             applyPremiumSnapshot(snapshot)
             await refreshPremiumDependentState()
             infoMessage = snapshot.isPremiumActive
-                ? "Your CareTap Premium access was restored."
-                : "No active CareTap Premium subscription was found on this Apple Account."
+                ? "Your TapCare Premium access was restored."
+                : "No active TapCare Premium subscription was found on this Apple Account."
         } catch {
             if let localizedError = error as? LocalizedError,
                let description = localizedError.errorDescription,
@@ -956,7 +956,7 @@ final class CareTapAppStore: ObservableObject {
         )
 
         completionState = SetupCompletionViewState(
-            title: "CareTap is ready",
+            title: "TapCare is ready",
             message: "Setup is complete. From Home, you can tap the container when it is due and still use manual fallback anytime.",
             summaryItems: [
                 draft.medicationName.isEmpty ? "You can add more items later" : "\(draft.medicationName) is ready",
@@ -1280,7 +1280,7 @@ extension CareTapAppStore {
             : persistedState.patientSetupDraft.medicationName.trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard !medicationName.isEmpty else {
-            errorMessage = "Add a name first so CareTap can build the first schedule around something real."
+            errorMessage = "Add a name first so TapCare can build the first schedule around something real."
             return
         }
 
@@ -1305,13 +1305,13 @@ extension CareTapAppStore {
 
     func continueFromScheduleStep() async {
         guard let user = currentUser else {
-            errorMessage = "Sign in first so CareTap can save this setup."
+            errorMessage = "Sign in first so TapCare can save this setup."
             return
         }
 
         let medicationName = persistedState.patientSetupDraft.medicationName.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !medicationName.isEmpty else {
-            errorMessage = "This item still needs a name before CareTap can save it."
+            errorMessage = "This item still needs a name before TapCare can save it."
             return
         }
 
@@ -1805,7 +1805,7 @@ extension CareTapAppStore {
         guard currentUser != nil else {
             pendingIncomingURL = CareTapDeepLink.tagURL(payloadIdentifier: payloadIdentifier)
             route = .onboarding(.roleSelection)
-            infoMessage = "Open CareTap after signing in to finish this tag tap."
+            infoMessage = "Open TapCare after signing in to finish this tag tap."
             return
         }
 
@@ -2855,7 +2855,7 @@ extension CareTapAppStore {
         }
 
         if shouldStoreNotice(message: message), previousValue != message {
-            appendNotice(title: "CareTap", message: message, tone: .mist)
+            appendNotice(title: "TapCare", message: message, tone: .mist)
         }
 
         scheduleBannerDismiss(matching: message, seconds: 3.5, kind: .info)
@@ -2965,7 +2965,7 @@ extension CareTapAppStore {
 
     func acceptInviteCode() async {
         guard let user = currentUser else {
-            errorMessage = "Sign in first so CareTap can link this caregiver account."
+            errorMessage = "Sign in first so TapCare can link this support account."
             return
         }
 
@@ -3005,7 +3005,7 @@ extension CareTapAppStore {
 
         do {
             try await services.recordStore.declineInvitation(token: trimmedCode)
-            infoMessage = "That invite was declined. CareTap can still continue in caregiver mode without linking yet."
+            infoMessage = "That invite was declined. TapCare can still continue in family support mode without linking yet."
             inviteCode = ""
             await completeCaregiverOnboardingWithoutInvite()
         } catch {
@@ -3350,7 +3350,7 @@ extension CareTapAppStore {
         switch title {
         case "Current role":
             return .currentRole
-        case "CareTap Premium", "Premium":
+        case "TapCare Premium", "CareTap Premium", "Premium":
             return .openPremium
         case "Lead time":
             return .manageReminderLeadTime
@@ -3368,7 +3368,7 @@ extension CareTapAppStore {
             return .testCurrentTag
         case "Export support package", "Export medication history":
             return .exportSupportPackage
-        case "How confirmation works", "How CareTap confirms doses", "Help with reminders", "Report a pairing problem":
+        case "How confirmation works", "How TapCare confirms doses", "How CareTap confirms doses", "Help with reminders", "Report a pairing problem":
             return .showSupportGuide
         case "Sign out":
             return .signOut
@@ -3600,7 +3600,7 @@ extension CareTapAppStore {
             try data.write(to: fileURL, options: .atomic)
             exportURL = fileURL
         } catch {
-            errorMessage = "CareTap couldn’t prepare the support package yet."
+            errorMessage = "TapCare couldn’t prepare the support package yet."
         }
     }
 
@@ -3645,7 +3645,7 @@ extension CareTapAppStore {
         do {
             try await refreshRoleExperience()
         } catch {
-            errorMessage = "CareTap Premium changed, but the app couldn’t refresh every screen yet."
+            errorMessage = "TapCare Premium changed, but the app couldn’t refresh every screen yet."
         }
     }
 

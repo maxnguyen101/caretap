@@ -31,7 +31,7 @@ private struct CareTapRootContainerView: View {
                     } else if let message = store.infoMessage {
                         CareTapNoticeBanner(
                             tone: .mist,
-                            title: "CareTap",
+                            title: "TapCare",
                             message: message,
                             onDismiss: store.clearInfo
                         )
@@ -131,7 +131,7 @@ private struct CareTapRootContainerView: View {
                 )
             }
             .alert(
-                "Delete Your CareTap Account?",
+                "Delete Your TapCare Account?",
                 isPresented: Binding(
                     get: { store.isPresentingDeleteAccountConfirmation },
                     set: { if !$0 { store.dismissDeleteAccountConfirmation() } }
@@ -146,7 +146,7 @@ private struct CareTapRootContainerView: View {
                     store.dismissDeleteAccountConfirmation()
                 }
             } message: {
-                Text("This permanently removes your CareTap account, medication history, and all synced data. Caregivers linked to you will lose access. This cannot be undone.")
+                Text("This permanently removes your TapCare account, routine history, and all synced data. People linked to you will lose access. This cannot be undone.")
             }
     }
 
@@ -381,7 +381,7 @@ private struct CareTapProfileEditorView: View {
 
                 VStack(alignment: .leading, spacing: 24) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("What should CareTap call you?")
+                        Text("What should TapCare call you?")
                             .font(CareTapTypography.title)
                             .foregroundStyle(CareTapTheme.textPrimary)
                             .fixedSize(horizontal: false, vertical: true)
@@ -551,7 +551,6 @@ private struct CareTapLaunchView: View {
                         RoundedRectangle(cornerRadius: 28, style: .continuous)
                             .fill(CareTapTheme.surface.opacity(0.94))
                             .frame(width: 92, height: 92)
-                            .shadow(color: CareTapTheme.shadow.opacity(0.32), radius: 14, x: 0, y: 8)
 
                         RoundedRectangle(cornerRadius: 32, style: .continuous)
                             .stroke(CareTapTheme.stroke.opacity(0.45), lineWidth: 1)

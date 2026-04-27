@@ -44,10 +44,10 @@ struct CareTapPrimaryActionButton: View {
                             .stroke(Color.white.opacity(0.18), lineWidth: 1)
                     }
                     .shadow(
-                        color: CareTapTheme.sageStrong.opacity(0.28),
-                        radius: 14,
+                        color: CareTapTheme.sageStrong.opacity(0.12),
+                        radius: 6,
                         x: 0,
-                        y: 6
+                        y: 3
                     )
             }
         }

@@ -119,7 +119,7 @@ enum NFCPairingPhase: String, Hashable, CaseIterable {
     var message: String {
         switch self {
         case .ready:
-            return "When the tag is close, CareTap writes a secure local ID so future taps log the right check-in."
+            return "When the tag is close, TapCare writes a secure local ID so future taps log the right check-in."
         case .writing:
             return "Keep the phone steady for a moment while the tag is written and checked."
         case .success:
@@ -241,7 +241,7 @@ struct TapKitShopViewState: Hashable {
     let selectedPackSlug: TapKitPack.Slug
     let supportURL: URL?
     let isCheckoutConfigured: Bool
-    let founderNote: String
+    let setupNote: String
     let confirmation: TapKitOrderConfirmationState?
     let primaryActionTitle: String
     let secondaryActionTitle: String
@@ -260,40 +260,40 @@ struct TapKitShopViewState: Hashable {
         return TapKitShopViewState(
             badgeText: "TapKit",
             title: "Order your TapKit",
-            subtitle: "Pre-printed NFC stickers built to pair with CareTap in one tap.",
-            detail: "Pick the pack that fits your routine. Free US shipping on orders $25+. We typically ship within one business day.",
+            subtitle: "TapCare-ready tags for medication, vitamin, supplement, and organizer routines.",
+            detail: "Choose the pack that fits the routines you want to tag. Free U.S. shipping on orders $25+. Virtual setup support is included.",
             checkoutNote: isCheckoutConfigured
-                ? "Secure Stripe checkout opens inside CareTap. Apple Pay and major cards supported."
+                ? "Secure Stripe checkout opens from TapCare. Apple Pay and major cards supported."
                 : "Stripe checkout will be connected for this build soon. You can still browse pack options.",
             features: [
                 TapKitFeatureState(
                     symbolName: "tag.fill",
-                    title: "Pre-tested NFC stickers",
-                    detail: "Each tag is verified to write cleanly with iPhone before it ships."
+                    title: "Tap-to-confirm check-ins",
+                    detail: "Pair a tag once, then use the bottle or organizer as the check-in point."
                 ),
                 TapKitFeatureState(
                     symbolName: "shippingbox.fill",
                     title: "Made for real containers",
-                    detail: "Sized for bottles, organizers, trays, and packet boxes."
+                    detail: "Works with bottles, supplement tubs, weekly organizers, trays, and packet boxes."
                 ),
                 TapKitFeatureState(
-                    symbolName: "bolt.badge.checkmark.fill",
-                    title: "Fast CareTap pairing",
-                    detail: "Pair once in the app, then use tap-to-log every day."
+                    symbolName: "person.text.rectangle.fill",
+                    title: "Setup help included",
+                    detail: "Virtual setup support is included so you do not have to figure it out alone."
                 ),
                 TapKitFeatureState(
                     symbolName: "person.2.wave.2.fill",
-                    title: "Designed for shared care",
-                    detail: "Helpful when more than one person keeps a routine on track."
+                    title: "Support without hovering",
+                    detail: "Shared routines can help family feel confident without another check-in text."
                 )
             ],
             packs: packs,
             selectedPackSlug: selectedPack.slug,
-            supportURL: URL(string: "mailto:support@tapcare.app?subject=CareTap%20TapKit"),
+            supportURL: URL(string: "mailto:support@tapcare.app?subject=TapCare%20TapKit"),
             isCheckoutConfigured: isCheckoutConfigured,
-            founderNote: "I’m Max — a USC pre-med student building TapCare. Every kit is hand-tested before it leaves my desk so it works the moment it arrives.",
+            setupNote: "Every TapKit includes simple setup support. We can help with the first tag, routine names, and placement so the system feels clear from day one.",
             confirmation: confirmation,
-            primaryActionTitle: "Buy TapKit",
+            primaryActionTitle: "Order TapKit",
             secondaryActionTitle: "Questions"
         )
     }

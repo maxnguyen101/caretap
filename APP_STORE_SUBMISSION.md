@@ -20,7 +20,7 @@ Prepared locally:
 Not done automatically:
 
 - Final click on "Submit for Review"
-- App Review contact phone number, because it must be a real reachable number
+- App Review contact phone number, because it must be a real reachable number supplied by you
 - App Store Connect upload, because both local `.p8` keys failed API authentication
 - Any App Store Connect login challenge or account permission issue after valid credentials are provided
 
@@ -77,7 +77,7 @@ Create or confirm the App Store Connect app:
 | Field | Fill in |
 |---|---|
 | Name | `TapCare` |
-| Subtitle | `Medication Reminders with NFC` |
+| Subtitle | `Routine Check-Ins for Families` |
 | Primary Category | Health & Fitness |
 | Secondary Category | Medical |
 | Content Rights | The app does not contain, show, or access third-party content. |
@@ -156,7 +156,7 @@ Use these answers for the current build:
 | Override to Higher Age Rating | Not Applicable |
 | Age Suitability URL | Leave blank |
 
-If App Store Connect asks whether TapCare is a regulated medical device, answer No. TapCare is a personal organization and reminder tool; it does not provide medical advice, diagnosis, or treatment.
+If App Store Connect asks whether TapCare is regulated health hardware/software, answer No. TapCare is a personal organization and routine-support tool; it does not provide medical advice, diagnosis, or treatment.
 
 ## Version Metadata
 
@@ -165,9 +165,9 @@ The exact text is already stored in `fastlane/metadata/en-US`.
 | Field | Value |
 |---|---|
 | Name | `TapCare` |
-| Subtitle | `Medication Reminders with NFC` |
-| Promotional Text | `Track medication routines with NFC taps or manual logging, reminders, refill estimates, and optional caregiver support.` |
-| Keywords | `medication,NFC,reminder,pill,dose,tracker,health,caregiver,schedule,refill` |
+| Subtitle | `Routine Check-Ins for Families` |
+| Promotional Text | `Support medication, vitamin, and supplement routines with simple check-ins, reminders, refill estimates, and optional family visibility.` |
+| Keywords | `routine,medication,vitamin,supplement,caregiver,family,reminder,NFC,pill,check-in` |
 | Support URL | `https://tapcare.app/legal/support` |
 | Marketing URL | `https://tapcare.app` |
 | Privacy URL | `https://tapcare.app/legal/privacy` |
@@ -188,7 +188,7 @@ Then use:
 | First name | `Maxwell` |
 | Last name | `Nguyen` |
 | Phone | Your real reachable review phone number |
-| Email | `support@tapcareapp.com` |
+| Email | `support@tapcare.app` |
 | Sign-in required | No |
 | Demo username | Leave blank |
 | Demo password | Leave blank |

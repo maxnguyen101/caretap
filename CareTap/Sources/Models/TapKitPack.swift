@@ -71,7 +71,7 @@ struct TapKitPack: Identifiable, Hashable {
     var highlightText: String? {
         switch highlight {
         case .none: return nil
-        case .mostPopular: return "Most Popular"
+        case .mostPopular: return "Best Value"
         }
     }
 
@@ -95,8 +95,8 @@ extension TapKitPack {
             tagCount: 5,
             priceCents: 1499,
             highlight: .none,
-            summary: "Perfect for one routine — bottle, organizer, or tray.",
-            perks: ["5 CareTap-ready stickers", "Pre-printed setup card", "Replacement-friendly"]
+            summary: "Best for one person getting started with up to five bottles or routines.",
+            perks: ["5 TapCare-ready NFC stickers", "Virtual setup support included", "Hand-tested before shipping"]
         ),
         TapKitPack(
             slug: .family,
@@ -105,8 +105,8 @@ extension TapKitPack {
             tagCount: 10,
             priceCents: 2500,
             highlight: .mostPopular,
-            summary: "Ideal for a typical week of vitamins, meds, and refills.",
-            perks: ["10 CareTap-ready stickers", "Best per-tag price", "Free US shipping"]
+            summary: "Best for multiple bottles, vitamins, supplements, or shared household routines.",
+            perks: ["10 TapCare-ready NFC stickers", "Free U.S. shipping", "Virtual setup support included"]
         ),
     ]
 
@@ -120,8 +120,8 @@ extension TapKitPack {
 /// Shipping policy copy displayed alongside the catalog.
 enum TapKitShippingPolicy {
     static let freeShippingThresholdCents: Int = 2500
-    static let freeShippingText: String = "Free US shipping on orders $25+"
+    static let freeShippingText: String = "Free U.S. shipping on orders $25+"
     static let returnsText: String = "30-day returns"
     static let secureCheckoutText: String = "Secure Stripe checkout"
-    static let worksInstantlyText: String = "Works instantly with iPhone"
+    static let worksInstantlyText: String = "Setup help included"
 }

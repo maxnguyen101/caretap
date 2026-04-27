@@ -27,17 +27,6 @@ enum CareTapCardStyle: Equatable {
         }
     }
 
-    var shadowOpacity: Double {
-        switch self {
-        case .elevated:
-            return 0.12
-        case .muted:
-            return 0.01
-        case .transparent:
-            return 0
-        }
-    }
-
     var tint: Color {
         switch self {
         case .elevated:
@@ -61,11 +50,11 @@ struct CareTapCard<Content: View>: View {
 
     var body: some View {
         content
-            .padding(CareTapSpacing.cardPadding)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(CareTapSpacing.cardPadding)
             .background { cardBackground }
             .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
-            .shadow(color: CareTapTheme.shadow.opacity(style.shadowOpacity), radius: 14, x: 0, y: 4)
+            .clipped()
     }
 
     @ViewBuilder

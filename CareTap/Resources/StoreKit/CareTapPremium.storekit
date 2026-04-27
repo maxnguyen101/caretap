@@ -11,11 +11,11 @@
       "localizations" : [
         {
           "description" : "Unlock deeper history patterns, refill outlook, and care circle summaries.",
-          "displayName" : "CareTap Premium",
+          "displayName" : "TapCare Premium",
           "locale" : "en_US"
         }
       ],
-      "name" : "CareTap Premium",
+      "name" : "TapCare Premium",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -28,14 +28,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Monthly access to CareTap Premium features.",
-              "displayName" : "CareTap Premium Monthly",
+              "description" : "Monthly access to TapCare Premium features.",
+              "displayName" : "TapCare Premium Monthly",
               "locale" : "en_US"
             }
           ],
           "productID" : "com.maxnguyen.caretap.premium.monthly",
           "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "CareTap Premium Monthly",
+          "referenceName" : "TapCare Premium Monthly",
           "subscriptionGroupID" : "A7D91F23",
           "type" : "RecurringSubscription"
         },
@@ -50,14 +50,14 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Yearly access to CareTap Premium features.",
-              "displayName" : "CareTap Premium Yearly",
+              "description" : "Yearly access to TapCare Premium features.",
+              "displayName" : "TapCare Premium Yearly",
               "locale" : "en_US"
             }
           ],
           "productID" : "com.maxnguyen.caretap.premium.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
-          "referenceName" : "CareTap Premium Yearly",
+          "referenceName" : "TapCare Premium Yearly",
           "subscriptionGroupID" : "A7D91F23",
           "type" : "RecurringSubscription"
         }

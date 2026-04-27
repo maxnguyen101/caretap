@@ -1,0 +1,39 @@
+TapCare helps families support daily medication, vitamin, and supplement routines with simple check-ins, reminders, refill estimates, and optional family visibility.
+
+Care for them without hovering.
+
+TapCare is built for the in-between stage: someone is still independent, but a little more clarity would make daily routines feel calmer. The app keeps the routine simple for the person doing it and gives trusted family members a clearer way to support from a distance.
+
+HOW IT WORKS
+Set up a medication, vitamin, supplement, or daily routine.
+Add reminder times and refill details if helpful.
+Confirm a routine manually with one tap.
+Pair an NFC tag to a bottle, tub, organizer, or tray if you want tap-to-confirm support.
+Invite a trusted family member only if you want shared visibility.
+
+FOR FAMILIES
+TapCare helps reduce the everyday "Did you take it?" guessing.
+Shared access is opt-in and revocable.
+Family members can see simple routine status without changing the schedule.
+
+FEATURES
+Manual routine check-ins
+Optional NFC tag check-ins
+Custom schedules with multiple time slots
+Local notifications and Live Activities for reminders
+Refill estimates for day-to-day planning
+Check-in history with source tracking
+Optional family visibility
+Data export for sharing or backup
+Sign in with Apple or email for secure sync
+Local use on one iPhone without creating an account
+
+PRIVACY & SECURITY
+Your health data is used for app functionality.
+TapCare does not sell your data or use it for advertising.
+No third-party analytics or cross-app tracking.
+Privacy, support, consumer health data, and data deletion information are available in the app and on the web.
+
+IMPORTANT: TapCare is a personal organization and routine-support tool. It does not provide medical advice, diagnosis, or treatment. Always follow your healthcare provider's instructions.
+
+NFC is optional. Manual check-ins work without NFC tags.

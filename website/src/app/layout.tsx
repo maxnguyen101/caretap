@@ -2,23 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "TapCare — Tap once. Logged.",
+  title: "TapCare - Care for Them Without Hovering",
   description:
-    "TapCare turns medication adherence into a single tap. Pre-printed NFC tags pair with the iPhone app so people remember what to take, and caregivers know it's done.",
+    "TapCare helps families support daily medication, vitamin, and supplement routines with simple tap-to-confirm check-ins.",
   metadataBase: new URL("https://tapcare.app"),
   openGraph: {
-    title: "TapCare — Tap once. Logged.",
+    title: "TapCare - Care for them without hovering.",
     description:
-      "Medication adherence, reimagined. Tap a CareTap-ready NFC tag and the dose is logged.",
+      "Less guessing, less nagging, and more peace of mind for families supporting daily routines from a distance.",
     type: "website",
     url: "https://tapcare.app",
     siteName: "TapCare",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TapCare — Tap once. Logged.",
+    title: "TapCare - Care for them without hovering.",
     description:
-      "Medication adherence, reimagined. Tap a CareTap-ready NFC tag and the dose is logged.",
+      "Simple tap-to-confirm check-ins for medication, vitamin, and supplement routines.",
   },
 };
 

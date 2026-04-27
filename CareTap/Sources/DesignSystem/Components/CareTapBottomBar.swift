@@ -62,7 +62,6 @@ struct CareTapBottomBar: View {
                     barShape
                         .stroke(CareTapTheme.stroke.opacity(0.18), lineWidth: 0.75)
                 }
-                .shadow(color: Color.black.opacity(0.07), radius: 16, y: 8)
         } else {
             barShape
                 .fill(CareTapTheme.surface.opacity(0.94))
@@ -71,7 +70,6 @@ struct CareTapBottomBar: View {
                     barShape
                         .stroke(CareTapTheme.stroke.opacity(0.45), lineWidth: 0.5)
                 }
-                .shadow(color: Color.black.opacity(0.05), radius: 14, y: 6)
         }
     }
 

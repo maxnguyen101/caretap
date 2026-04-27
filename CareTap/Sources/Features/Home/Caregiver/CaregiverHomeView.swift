@@ -42,6 +42,8 @@ struct CaregiverHomeView: View {
                         Text(state.lovedOne.displayName)
                             .font(CareTapTypography.hero)
                             .foregroundStyle(CareTapTheme.textPrimary)
+                            .lineLimit(3)
+                            .minimumScaleFactor(0.75)
                             .fixedSize(horizontal: false, vertical: true)
 
                         ViewThatFits(in: .vertical) {
@@ -51,7 +53,8 @@ struct CaregiverHomeView: View {
                                 Text(state.alertDetail)
                                     .font(CareTapTypography.footnote)
                                     .foregroundStyle(CareTapTheme.textSecondary)
-                                    .lineLimit(1)
+                                    .lineLimit(2)
+                                    .minimumScaleFactor(0.85)
                             }
 
                             VStack(alignment: .leading, spacing: 8) {
@@ -64,9 +67,7 @@ struct CaregiverHomeView: View {
                             }
                         }
                     }
-                    .layoutPriority(1)
-
-                    Spacer()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
                 HStack(spacing: 10) {
@@ -182,9 +183,7 @@ struct CaregiverHomeView: View {
                             .foregroundStyle(card.tone == .alert ? CareTapTheme.alert : CareTapTheme.textPrimary)
                             .fixedSize(horizontal: false, vertical: true)
                     }
-                    .layoutPriority(1)
-
-                    Spacer()
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .padding(14)
                 .careTapGlassFill(opacity: 0.5)
@@ -270,13 +269,15 @@ struct CaregiverHomeView: View {
                     .foregroundStyle(CareTapTheme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            .layoutPriority(1)
-
-            Spacer()
+            .frame(maxWidth: .infinity, alignment: .leading)
 
             Text(event.status.label)
                 .font(CareTapTypography.footnote.weight(.semibold))
                 .foregroundStyle(event.status.tone.color)
+                .lineLimit(2)
+                .minimumScaleFactor(0.8)
+                .multilineTextAlignment(.trailing)
+                .frame(minWidth: 0, alignment: .trailing)
         }
     }
 
