@@ -70,7 +70,7 @@ export function AppSection() {
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
             className="relative"
           >
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="flex flex-col items-center gap-5 sm:flex-row sm:items-end sm:justify-center">
               <ScreenshotCard
                 src="/assets/app-home-dashboard.png"
                 alt="TapCare home dashboard showing a dose check-in, progress, and upcoming medication"
@@ -105,20 +105,20 @@ function ScreenshotCard({
   return (
     <div
       className={[
-        "relative overflow-hidden rounded-lg border border-stroke bg-white shadow-card",
+        "relative w-full max-w-[230px] overflow-hidden rounded-[30px] border border-stroke bg-[#111314] p-1.5 shadow-card sm:max-w-[250px]",
         offset,
       ].join(" ")}
     >
-      <div className="absolute left-4 top-4 z-10 rounded-md border border-stroke bg-white/88 px-3 py-1.5 text-xs font-semibold text-ink">
+      <div className="absolute left-4 top-4 z-10 rounded-md border border-stroke bg-white/90 px-3 py-1.5 text-xs font-semibold text-ink">
         {label}
       </div>
-      <div className="relative aspect-[1320/2868]">
+      <div className="relative aspect-[1320/2868] overflow-hidden rounded-[24px] bg-canvas">
         <Image
           src={src}
           alt={alt}
           fill
-          sizes="(min-width: 1024px) 24vw, (min-width: 640px) 44vw, 88vw"
-          className="object-cover"
+          sizes="(min-width: 1024px) 250px, (min-width: 640px) 230px, 82vw"
+          className="object-contain"
         />
       </div>
     </div>
