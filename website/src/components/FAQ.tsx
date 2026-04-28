@@ -43,10 +43,7 @@ export function FAQ() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-            FAQ
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
             Practical answers before you order.
           </h2>
           <p className="mt-5 max-w-md text-lg leading-relaxed text-inkSecondary">

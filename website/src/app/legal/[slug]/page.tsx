@@ -202,7 +202,7 @@ export default async function LegalPage({ params }: Props) {
           Back to TapCare
         </Link>
 
-        <p className="mt-10 text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
+        <p className="mt-10 text-sm font-semibold text-sageStrong">
           Effective {effectiveDate}
         </p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight text-ink">

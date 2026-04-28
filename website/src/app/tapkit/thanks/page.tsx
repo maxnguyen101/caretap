@@ -24,7 +24,7 @@ export default async function ThanksPage({ searchParams }: Props) {
 
   return (
     <main className="grid min-h-screen place-items-center bg-canvas px-5 py-16">
-      <div className="w-full max-w-lg rounded-lg border border-stroke bg-white p-6 shadow-cardLg sm:p-8">
+      <div className="w-full max-w-lg rounded-lg border border-stroke bg-white p-6 shadow-card sm:p-8">
         <div className="flex items-center gap-3">
           <LogoMark className="h-11 w-11" />
           <div>

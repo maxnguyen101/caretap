@@ -12,10 +12,7 @@ export function ProblemSection() {
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-            Built for the in-between stage
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+          <h2 className="text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
             It is hard to know without asking again.
           </h2>
         </motion.div>

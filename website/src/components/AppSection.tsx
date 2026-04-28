@@ -37,10 +37,7 @@ export function AppSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           >
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-              The app behind the tap
-            </p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+            <h2 className="max-w-2xl text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
               Built for the daily handoff between routine and reassurance.
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-inkSecondary">
@@ -108,11 +105,11 @@ function ScreenshotCard({
   return (
     <div
       className={[
-        "relative overflow-hidden rounded-lg border border-stroke bg-white shadow-cardLg",
+        "relative overflow-hidden rounded-lg border border-stroke bg-white shadow-card",
         offset,
       ].join(" ")}
     >
-      <div className="absolute left-4 top-4 z-10 rounded-md bg-white/88 px-3 py-1.5 text-xs font-semibold text-ink shadow-card backdrop-blur">
+      <div className="absolute left-4 top-4 z-10 rounded-md border border-stroke bg-white/88 px-3 py-1.5 text-xs font-semibold text-ink">
         {label}
       </div>
       <div className="relative aspect-[1320/2868]">

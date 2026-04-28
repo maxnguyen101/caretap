@@ -21,32 +21,16 @@ const config: Config = {
         sans: [
           "-apple-system",
           "BlinkMacSystemFont",
-          "Inter",
-          "Segoe UI",
-          "Roboto",
+          '"SF Pro Display"',
+          '"SF Pro Text"',
+          '"Helvetica Neue"',
           "sans-serif",
         ],
       },
       boxShadow: {
-        card: "0 6px 24px -8px rgba(0, 0, 0, 0.08)",
-        cardLg: "0 18px 60px -20px rgba(0, 0, 0, 0.16)",
-        sage: "0 12px 32px -12px rgba(66, 108, 100, 0.32)",
-      },
-      backgroundImage: {
-        "sage-gradient":
-          "linear-gradient(135deg, #426C64 0%, #587D76 50%, rgba(88,125,118,0.85) 100%)",
-        "porcelain-mesh":
-          "radial-gradient(circle at 15% 12%, rgba(180,138,101,0.18), transparent 55%), radial-gradient(circle at 85% 0%, rgba(88,125,118,0.22), transparent 50%), linear-gradient(180deg, #F6F5F1 0%, #E7EEEA 100%)",
-      },
-      animation: {
-        floatSlow: "float 8s ease-in-out infinite",
-        floatSlower: "float 12s ease-in-out infinite reverse",
-      },
-      keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
+        card: "0 2px 10px -6px rgba(0, 0, 0, 0.12)",
+        cardLg: "0 8px 28px -18px rgba(0, 0, 0, 0.22)",
+        sage: "0 4px 14px -10px rgba(66, 108, 100, 0.28)",
       },
     },
   },

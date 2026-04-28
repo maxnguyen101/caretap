@@ -13,10 +13,7 @@ export function CTABand() {
         className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_auto] lg:items-end"
       >
         <div>
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-white/55">
-            Ready when the routine is
-          </p>
-          <h2 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl">
+          <h2 className="max-w-3xl text-4xl font-semibold leading-[1.06] tracking-tight sm:text-5xl">
             Start with the kit, then set up the first routine with help if you
             need it.
           </h2>

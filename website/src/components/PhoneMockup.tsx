@@ -52,7 +52,7 @@ function PhoneContent({ scene }: { scene: PhoneMockupProps["scene"] }) {
         </div>
       </div>
 
-      <p className="mt-6 text-[11px] uppercase tracking-wider text-inkTertiary">
+      <p className="mt-6 text-[11px] font-medium text-inkTertiary">
         Today
       </p>
       <h2 className="mt-1 text-[22px] font-semibold leading-tight">
@@ -65,7 +65,7 @@ function PhoneContent({ scene }: { scene: PhoneMockupProps["scene"] }) {
       </p>
 
       {/* Hero card */}
-      <div className="mt-5 flex-1 rounded-3xl bg-white p-4 shadow-card">
+      <div className="mt-5 flex-1 rounded-2xl bg-white p-4 shadow-card">
         <div className="flex items-center gap-3">
           <div className="grid h-10 w-10 place-items-center rounded-xl bg-sage/15 text-sage">
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
@@ -96,7 +96,7 @@ function PhoneContent({ scene }: { scene: PhoneMockupProps["scene"] }) {
                 animate={{ scale: [0.9, 1.1, 0.9], opacity: [0.7, 0.3, 0.7] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
               />
-              <div className="grid h-20 w-20 place-items-center rounded-full bg-sage-gradient text-white shadow-sage">
+              <div className="grid h-20 w-20 place-items-center rounded-full bg-sageStrong text-white">
                 <svg viewBox="0 0 24 24" className="h-9 w-9" fill="currentColor">
                   <path d="M5 4h14a2 2 0 0 1 2 2v3h-2V6H5v12h3v2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm10 9 6 6-2.4 2.4-3-3V22h-3v-7h7l-3-3 2.4-2.4Z" />
                 </svg>
@@ -106,7 +106,7 @@ function PhoneContent({ scene }: { scene: PhoneMockupProps["scene"] }) {
 
           {scene === "due" && (
             <div className="relative grid place-items-center pt-2">
-              <div className="grid h-20 w-20 place-items-center rounded-full bg-sage-gradient text-white shadow-sage">
+              <div className="grid h-20 w-20 place-items-center rounded-full bg-sageStrong text-white">
                 <svg viewBox="0 0 24 24" className="h-10 w-10" fill="currentColor">
                   <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm1 11h-4v-2h2V7h2Z" />
                 </svg>

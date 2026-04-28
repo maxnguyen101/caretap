@@ -7,7 +7,6 @@ import { PhoneMockup } from "./PhoneMockup";
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-canvas pt-24">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sage/40 to-transparent" />
       <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-14 pt-12 sm:px-8 lg:min-h-[calc(100svh-2rem)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-12 lg:pt-20">
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -15,11 +14,7 @@ export function Hero() {
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-3xl"
         >
-          <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-            Family routine support
-          </p>
-
-          <h1 className="mt-5 max-w-3xl text-[44px] font-semibold leading-[0.98] tracking-tight text-ink sm:text-[64px] lg:text-[74px]">
+          <h1 className="max-w-3xl text-[44px] font-semibold leading-[0.98] tracking-tight text-ink sm:text-[64px] lg:text-[74px]">
             Care for them without hovering.
           </h1>
 
@@ -57,7 +52,7 @@ export function Hero() {
               ease: [0.16, 1, 0.3, 1],
               delay: 0.14,
             }}
-            className="mt-8 overflow-hidden rounded-lg border border-stroke bg-white shadow-cardLg lg:hidden"
+            className="mt-8 overflow-hidden rounded-lg border border-stroke bg-white shadow-card lg:hidden"
           >
             <div className="relative h-[245px] bg-canvasMist">
               <Image
@@ -84,7 +79,7 @@ export function Hero() {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
           className="relative hidden lg:block"
         >
-          <div className="relative overflow-hidden rounded-lg border border-stroke bg-white shadow-cardLg">
+          <div className="liquid-surface relative overflow-hidden rounded-lg border border-stroke shadow-card">
             <div className="grid min-h-[560px] grid-cols-1 lg:grid-cols-[0.92fr_1fr]">
               <div className="relative order-2 min-h-[330px] bg-canvasMist/45 lg:order-1 lg:min-h-full">
                 <Image
@@ -104,23 +99,19 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="relative order-1 flex min-h-[520px] items-center justify-center bg-[linear-gradient(180deg,#ffffff_0%,#f3f6f4_100%)] px-6 py-10 lg:order-2">
-                <div className="absolute left-6 top-6 rounded-lg border border-stroke bg-white/85 px-3 py-2 text-xs font-semibold text-sageStrong shadow-card backdrop-blur">
+              <div className="relative order-1 flex min-h-[520px] items-center justify-center bg-canvas px-6 py-10 lg:order-2">
+                <div className="absolute left-6 top-6 rounded-md border border-stroke bg-white/85 px-3 py-2 text-xs font-semibold text-sageStrong">
                   TapCare app
                 </div>
                 <PhoneMockup scene="logged" className="max-w-[270px]" />
-                <motion.div
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute bottom-8 right-5 hidden max-w-[220px] rounded-lg border border-stroke bg-white/92 p-4 shadow-cardLg backdrop-blur sm:block"
-                >
+                <div className="absolute bottom-8 right-5 hidden max-w-[220px] rounded-lg border border-stroke bg-white/92 p-4 shadow-card sm:block">
                   <p className="text-sm font-semibold text-ink">
                     Not monitoring. Just support.
                   </p>
                   <p className="mt-1 text-xs leading-relaxed text-inkSecondary">
                     A simple confirmation point for routines they already do.
                   </p>
-                </motion.div>
+                </div>
               </div>
             </div>
           </div>
@@ -132,8 +123,8 @@ export function Hero() {
 
 function ProofPoint({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg border border-stroke bg-white/70 p-4 shadow-card backdrop-blur">
-      <p className="text-xs font-semibold uppercase tracking-wider text-inkTertiary">
+    <div className="rounded-lg border border-stroke bg-white p-4">
+      <p className="text-sm font-medium text-inkTertiary">
         {label}
       </p>
       <p className="mt-1 text-xl font-semibold tracking-tight text-ink tabular">

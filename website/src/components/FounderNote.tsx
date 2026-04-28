@@ -14,10 +14,7 @@ export function FounderNote() {
           className="grid gap-10 rounded-lg border border-stroke bg-white p-6 shadow-card lg:grid-cols-[0.72fr_1fr] lg:p-10"
         >
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-              Setup help included
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
               Not techy? We help with setup.
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-inkSecondary">
@@ -69,7 +66,7 @@ function SupportStat({ value, label }: { value: string; label: string }) {
       <p className="text-2xl font-semibold tracking-tight text-ink tabular">
         {value}
       </p>
-      <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-inkTertiary">
+      <p className="mt-1 text-xs font-medium text-inkTertiary">
         {label}
       </p>
     </div>

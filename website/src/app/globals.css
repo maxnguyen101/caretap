@@ -15,6 +15,7 @@ body {
   color: #171a1c;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt";
 }
 
 ::selection {
@@ -31,4 +32,10 @@ body {
    older versions; we add a tiny helper here. */
 .tabular {
   font-variant-numeric: tabular-nums;
+}
+
+.liquid-surface {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(145%);
+  -webkit-backdrop-filter: blur(18px) saturate(145%);
 }

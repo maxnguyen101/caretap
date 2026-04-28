@@ -47,11 +47,8 @@ export function HowItWorks() {
     <section
       id="how"
       ref={containerRef}
-      className="relative overflow-hidden scroll-mt-24 bg-[linear-gradient(180deg,#eef4f1_0%,#f6f5f1_58%,#ffffff_100%)]"
+      className="relative overflow-hidden scroll-mt-24 bg-canvas"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sage/35 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(66,108,100,0.06)_1px,transparent_1px),linear-gradient(180deg,rgba(66,108,100,0.05)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:linear-gradient(180deg,transparent_0%,black_18%,black_72%,transparent_100%)]" />
-
       <div className="relative mx-auto max-w-6xl px-6 pb-10 pt-24 sm:pt-28">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -60,10 +57,7 @@ export function HowItWorks() {
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           className="max-w-2xl"
         >
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-sageStrong">
-            How it works
-          </p>
-          <h2 className="mt-4 text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] sm:leading-tight">
+          <h2 className="text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-[2.75rem] sm:leading-tight">
             The bottle becomes the check-in point.
           </h2>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-inkSecondary">
@@ -115,7 +109,7 @@ function Step({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ amount: 0.55, once: false }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="max-w-xl rounded-lg border border-stroke bg-white/88 p-5 shadow-card backdrop-blur transition-shadow hover:shadow-cardLg sm:p-6"
+      className="max-w-xl rounded-lg border border-stroke bg-white p-5 shadow-card sm:p-6"
     >
       <div className="flex gap-5">
         <div className="relative shrink-0">
@@ -127,7 +121,7 @@ function Step({
           )}
         </div>
         <div>
-          <p className="text-[12px] font-semibold uppercase tracking-wider text-sageStrong">
+          <p className="text-sm font-semibold text-sageStrong">
             Step {index + 1}
           </p>
           <h3 className="mt-2 text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-3xl lg:text-4xl">
@@ -160,17 +154,14 @@ function RoutineFlowPanel({
   return (
     <div
       className={[
-        "relative w-full max-w-[520px] overflow-hidden rounded-lg border border-sage/14 bg-white/72 shadow-cardLg backdrop-blur-xl",
+        "liquid-surface relative w-full max-w-[520px] overflow-hidden rounded-lg border border-sage/14 shadow-card",
         compact ? "min-h-[500px]" : "min-h-[600px]",
       ].join(" ")}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(231,238,234,0.78)_55%,rgba(246,245,241,0.9))]" />
-      <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-sage/50 to-transparent" />
-
       <div className="relative p-5 sm:p-6">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
+            <p className="text-sm font-semibold text-sageStrong">
               Live routine flow
             </p>
             <p className="mt-1 text-sm text-inkSecondary">
@@ -225,7 +216,7 @@ function RoutineFlowPanel({
             className="absolute left-0 top-2 z-10 w-[210px] rounded-lg border border-stroke bg-white p-4 shadow-card"
           >
             <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold uppercase tracking-wider text-inkTertiary">
+              <p className="text-xs font-semibold text-inkTertiary">
                 Tag placed
               </p>
               <span className="rounded-md bg-warm/12 px-2 py-1 text-[10px] font-semibold text-warm">
@@ -266,10 +257,10 @@ function RoutineFlowPanel({
 
           <motion.div
             style={{ opacity: appOpacity }}
-            className="absolute right-0 top-[128px] z-10 w-[230px] rounded-lg border border-stroke bg-[#fbfaf7]/95 p-4 shadow-cardLg"
+            className="absolute right-0 top-[128px] z-10 w-[230px] rounded-lg border border-stroke bg-[#fbfaf7]/95 p-4 shadow-card"
           >
             <div className="flex items-center justify-between">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sageStrong">
+              <p className="text-xs font-semibold text-sageStrong">
                 TapCare app
               </p>
               <span className="h-2 w-2 rounded-full bg-sageStrong shadow-sage" />
@@ -302,7 +293,7 @@ function RoutineFlowPanel({
             style={{ opacity: familyOpacity }}
             className="absolute left-3 top-[302px] z-10 w-[220px] rounded-lg border border-stroke bg-white p-4 shadow-card"
           >
-            <p className="text-xs font-semibold uppercase tracking-wider text-inkTertiary">
+            <p className="text-xs font-semibold text-inkTertiary">
               Family view
             </p>
             <p className="mt-3 text-lg font-semibold leading-tight text-ink">

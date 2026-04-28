@@ -61,10 +61,7 @@ export function TapKitSection() {
             transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
             className="max-w-xl"
           >
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-sageStrong">
-              Choose a TapKit
-            </p>
-            <h2 className="mt-4 text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
+            <h2 className="text-4xl font-semibold leading-[1.06] tracking-tight text-ink sm:text-5xl">
               How many bottles or routines do you want to tag?
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-inkSecondary">
@@ -82,7 +79,7 @@ export function TapKitSection() {
                   className={[
                     "rounded-lg border p-4 text-left transition focus:outline-none focus:ring-2 focus:ring-sage/25",
                     selection === option.id
-                      ? "border-sage/45 bg-canvasMist shadow-card"
+                      ? "border-sage/45 bg-canvasMist"
                       : "border-stroke bg-canvas hover:bg-white",
                   ].join(" ")}
                 >
@@ -157,14 +154,14 @@ function PackCard({
       className={[
         "group flex min-h-[390px] flex-col rounded-lg border p-6 transition focus:outline-none focus:ring-2 focus:ring-sage/25",
         isRecommended
-          ? "border-sage/55 bg-canvasMist/45 shadow-cardLg"
-          : "border-stroke bg-canvas shadow-card hover:border-sage/30 hover:bg-white",
+          ? "border-sage/55 bg-canvasMist/45 shadow-card"
+          : "border-stroke bg-canvas hover:border-sage/30 hover:bg-white",
       ].join(" ")}
     >
       <div className="flex items-start justify-between gap-4">
         <div>
           {label && (
-            <span className="mb-3 inline-flex rounded-md bg-sageStrong px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white">
+            <span className="mb-3 inline-flex rounded-md bg-sageStrong px-2.5 py-1 text-[11px] font-semibold text-white">
               {label}
             </span>
           )}
@@ -188,7 +185,7 @@ function PackCard({
       <ul className="mt-6 space-y-3 text-sm text-ink">
         {pack.perks.map((perk) => (
           <li key={perk} className="flex items-start gap-3">
-            <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md bg-white text-sageStrong shadow-card">
+            <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-md bg-white text-sageStrong">
               <CheckIcon />
             </span>
             <span>{perk}</span>

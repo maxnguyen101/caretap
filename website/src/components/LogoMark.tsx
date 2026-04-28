@@ -2,13 +2,12 @@ export function LogoMark({ className = "" }: { className?: string }) {
   return (
     <span
       className={[
-        "relative grid h-9 w-9 place-items-center overflow-hidden rounded-lg border border-sage/18 bg-white shadow-card",
+        "relative grid h-9 w-9 place-items-center overflow-hidden rounded-lg border border-stroke bg-white",
         className,
       ].join(" ")}
       aria-hidden
     >
-      <span className="absolute inset-0 bg-[linear-gradient(135deg,#fbfaf7_0%,#e8f0eb_58%,#d8e5df_100%)]" />
-      <span className="relative grid h-5 w-5 place-items-center rounded-md bg-sageStrong text-white shadow-sage">
+      <span className="relative grid h-5 w-5 place-items-center rounded-md bg-sageStrong text-white">
         <svg
           viewBox="0 0 24 24"
           className="h-3.5 w-3.5"
