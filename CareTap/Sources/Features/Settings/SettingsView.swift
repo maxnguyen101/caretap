@@ -82,19 +82,12 @@ struct SettingsView: View {
                 }
 
                 if !statusChips.isEmpty {
-                    ViewThatFits(in: .vertical) {
-                        HStack(spacing: 8) {
-                            ForEach(statusChips, id: \.title) { chip in
-                                statusChip(title: chip.title, value: chip.value)
-                            }
-                        }
-
-                        VStack(alignment: .leading, spacing: 8) {
-                            ForEach(statusChips, id: \.title) { chip in
-                                statusChip(title: chip.title, value: chip.value)
-                            }
+                    VStack(alignment: .leading, spacing: 8) {
+                        ForEach(statusChips, id: \.title) { chip in
+                            statusChip(title: chip.title, value: chip.value)
                         }
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.top, 4)
                 }
             }
@@ -103,8 +96,9 @@ struct SettingsView: View {
         }
         .padding(16)
         .careTapGlassFill(opacity: 0.6)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 20)
-        .careTapGlassStroke(cornerRadius: 20, opacity: 0.3)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.28)
+        .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
     }
 
     @ViewBuilder
@@ -210,8 +204,8 @@ struct SettingsView: View {
                 }
             }
             .careTapGlassFill(opacity: 0.5)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.25)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
 
             Text("v1.0 · TapCare · \(Calendar.current.component(.year, from: .now))")
                 .font(.system(size: 10))
@@ -273,15 +267,23 @@ struct SettingsView: View {
             Text(value)
                 .font(CareTapTypography.footnote.weight(.semibold))
                 .foregroundStyle(CareTapTheme.textPrimary)
-                .lineLimit(2)
-                .minimumScaleFactor(0.75)
+                .lineLimit(3)
+                .minimumScaleFactor(0.8)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 10)
         .padding(.vertical, 8)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 12)
+        .background {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(CareTapTheme.surfaceMuted.opacity(0.7))
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(CareTapTheme.stroke.opacity(0.25), lineWidth: 0.5)
+        }
     }
 
     private func spotlightCard(for row: SettingsRowState) -> some View {
@@ -295,7 +297,7 @@ struct SettingsView: View {
                     .frame(width: 42, height: 42)
                     .background(
                         (row.tone == .neutral ? CareTapTheme.surfaceMuted : row.tone.color.opacity(0.12)),
-                        in: RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        in: RoundedRectangle(cornerRadius: 8, style: .continuous)
                     )
 
                 VStack(alignment: .leading, spacing: 4) {
@@ -327,10 +329,10 @@ struct SettingsView: View {
             .careTapGlassFill(opacity: 0.58)
             .careTapLiquidGlass(
                 tint: CareTapTheme.warm.opacity(0.04),
-                cornerRadius: 18,
+                cornerRadius: CareTapSpacing.cornerRadiusCard,
                 interactive: true
             )
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.24)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
         }
         .buttonStyle(.plain)
     }

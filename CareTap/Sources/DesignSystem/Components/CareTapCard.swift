@@ -3,6 +3,7 @@ import SwiftUI
 enum CareTapCardStyle: Equatable {
     case elevated
     case muted
+    case completed
     case transparent
 
     var topColor: Color {
@@ -11,6 +12,8 @@ enum CareTapCardStyle: Equatable {
             return CareTapTheme.surface
         case .muted:
             return CareTapTheme.surfaceMuted
+        case .completed:
+            return CareTapTheme.successSurface
         case .transparent:
             return .clear
         }
@@ -19,9 +22,11 @@ enum CareTapCardStyle: Equatable {
     var strokeOpacity: Double {
         switch self {
         case .elevated:
-            return 0.52
-        case .muted:
             return 0.42
+        case .muted:
+            return 0.32
+        case .completed:
+            return 1
         case .transparent:
             return 0
         }
@@ -30,11 +35,35 @@ enum CareTapCardStyle: Equatable {
     var tint: Color {
         switch self {
         case .elevated:
-            return CareTapTheme.glassTint.opacity(0.1)
-        case .muted:
             return CareTapTheme.glassTint.opacity(0.05)
+        case .muted:
+            return CareTapTheme.glassTint.opacity(0.025)
+        case .completed:
+            return .clear
         case .transparent:
             return .clear
+        }
+    }
+
+    var usesLiquidGlass: Bool {
+        switch self {
+        case .completed, .transparent:
+            return false
+        case .elevated, .muted:
+            return true
+        }
+    }
+
+    var fillOpacity: Double {
+        switch self {
+        case .elevated:
+            return 0.82
+        case .muted:
+            return 0.82
+        case .completed:
+            return 1
+        case .transparent:
+            return 0
         }
     }
 }
@@ -59,16 +88,15 @@ struct CareTapCard<Content: View>: View {
 
     @ViewBuilder
     private var cardBackground: some View {
-        if #available(iOS 26, *) {
-            // On iOS 26, the glass effect provides the background.
-            // No solid fill underneath — that causes visible white boxes.
+        if style == .transparent {
+            Color.clear
+        } else if style.usesLiquidGlass {
             RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
-                .fill(Color.clear)
+                .fill(style.topColor.opacity(style.fillOpacity))
                 .careTapLiquidGlass(
                     tint: style.tint,
                     cornerRadius: CareTapSpacing.cornerRadiusCard
                 )
-                .opacity(style == .transparent ? 0 : 1)
                 .overlay {
                     RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                         .stroke(CareTapTheme.stroke.opacity(style.strokeOpacity), lineWidth: 1)
@@ -78,14 +106,12 @@ struct CareTapCard<Content: View>: View {
                 .fill(style.topColor)
                 .overlay {
                     RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
-                        .fill(Color.clear)
-                        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
-                        .opacity(style == .transparent ? 0 : 1)
-                }
-                .overlay {
-                    RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
-                        .stroke(CareTapTheme.stroke.opacity(style.strokeOpacity), lineWidth: 1)
+                        .stroke(completedStrokeColor, lineWidth: 1)
                 }
         }
+    }
+
+    private var completedStrokeColor: Color {
+        style == .completed ? CareTapTheme.successStroke : CareTapTheme.stroke.opacity(style.strokeOpacity)
     }
 }

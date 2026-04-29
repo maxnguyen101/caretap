@@ -247,8 +247,8 @@ struct CareTapSetupWalkthroughCard: View {
                     .padding(.horizontal, 14)
                 }
             }
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.2)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.2)
         }
     }
 }
@@ -414,10 +414,10 @@ struct DailyTimeSelectionTile: View {
             .padding(.horizontal, 8)
             .careTapLiquidGlass(
                 tint: slot.isSelected ? CareTapTheme.sage.opacity(0.05) : CareTapTheme.glassTint.opacity(0.02),
-                cornerRadius: 18
+                cornerRadius: CareTapSpacing.cornerRadiusCompact
             )
             .overlay {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                     .stroke(
                         slot.isSelected ? CareTapTheme.sage.opacity(0.5) : CareTapTheme.stroke.opacity(0.25),
                         lineWidth: slot.isSelected ? 1.5 : 1
@@ -425,7 +425,7 @@ struct DailyTimeSelectionTile: View {
             }
         }
         .buttonStyle(.plain)
-        .animation(.spring(duration: 0.25), value: slot.isSelected)
+        .animation(.easeInOut(duration: 0.18), value: slot.isSelected)
         .accessibilityElement(children: .combine)
         .accessibilityAddTraits(slot.isSelected ? [.isSelected] : [])
     }
@@ -463,7 +463,7 @@ private extension MedicationSuggestionTile {
             .padding(.vertical, 3)
             .background(
                 suggestion.tone.accentColor.opacity(0.08),
-                in: Capsule(style: .continuous)
+                in: RoundedRectangle(cornerRadius: 6, style: .continuous)
             )
     }
 }

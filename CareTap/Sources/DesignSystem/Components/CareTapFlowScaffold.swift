@@ -1,4 +1,7 @@
 import SwiftUI
+#if canImport(UIKit)
+import UIKit
+#endif
 
 struct CareTapFlowScaffold<Content: View>: View {
     let leadingSystemImage: String?
@@ -48,16 +51,12 @@ struct CareTapFlowScaffold<Content: View>: View {
                     header
                 }
 
-                ScrollView(.vertical) {
+                CareTapViewportScrollView(
+                    topPadding: 8,
+                    bottomPadding: footer == nil ? 48 : 144
+                ) {
                     content
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding(.horizontal, CareTapSpacing.screenPadding)
-                        .padding(.top, 8)
-                        .padding(.bottom, footer == nil ? 48 : 144)
                 }
-                .scrollIndicators(.hidden)
-                .scrollDismissesKeyboard(.interactively)
-                .scrollBounceBehavior(.basedOnSize)
             }
         }
         .safeAreaInset(edge: .bottom) {
@@ -68,7 +67,7 @@ struct CareTapFlowScaffold<Content: View>: View {
                     .padding(.bottom, 10)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
     }
 
     private var header: some View {
@@ -81,13 +80,13 @@ struct CareTapFlowScaffold<Content: View>: View {
                     Image(systemName: leadingSystemImage)
                         .font(.system(size: 15, weight: .semibold))
                         .foregroundStyle(CareTapTheme.textPrimary)
-                        .frame(width: 44, height: 44)
+                        .frame(width: 40, height: 40)
                         .careTapLiquidGlass(
-                            tint: CareTapTheme.glassTint.opacity(0.06),
-                            cornerRadius: 22,
+                            tint: CareTapTheme.glassTint.opacity(0.04),
+                            cornerRadius: 12,
                             interactive: true
                         )
-                        .careTapGlassStroke(cornerRadius: 22, opacity: 0.3)
+                        .careTapGlassStroke(cornerRadius: 12, opacity: 0.28)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel(leadingAccessibilityLabel)
@@ -102,10 +101,10 @@ struct CareTapFlowScaffold<Content: View>: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 5)
                     .careTapLiquidGlass(
-                        tint: CareTapTheme.glassTint.opacity(0.04),
-                        cornerRadius: 12
+                        tint: CareTapTheme.glassTint.opacity(0.03),
+                        cornerRadius: 8
                     )
-                    .careTapGlassStroke(cornerRadius: 12, opacity: 0.25)
+                    .careTapGlassStroke(cornerRadius: 8, opacity: 0.22)
             }
         }
         .padding(.horizontal, CareTapSpacing.screenPadding)
@@ -115,6 +114,55 @@ struct CareTapFlowScaffold<Content: View>: View {
 
     private var backgroundLayer: some View {
         CareTapScreenBackground()
+    }
+}
+
+struct CareTapViewportScrollView<Content: View>: View {
+    var horizontalPadding: CGFloat = CareTapSpacing.screenPadding
+    var topPadding: CGFloat = 0
+    var bottomPadding: CGFloat = 0
+    private let content: Content
+
+    init(
+        horizontalPadding: CGFloat = CareTapSpacing.screenPadding,
+        topPadding: CGFloat = 0,
+        bottomPadding: CGFloat = 0,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.horizontalPadding = horizontalPadding
+        self.topPadding = topPadding
+        self.bottomPadding = bottomPadding
+        self.content = content()
+    }
+
+    var body: some View {
+        GeometryReader { proxy in
+            ScrollView(.vertical) {
+                content
+                    .frame(width: contentWidth(for: proxy.size.width), alignment: .topLeading)
+                    .padding(.horizontal, horizontalPadding)
+                    .padding(.top, topPadding)
+                    .padding(.bottom, bottomPadding)
+            }
+            .frame(width: proxy.size.width, height: proxy.size.height, alignment: .top)
+            .scrollIndicators(.hidden)
+            .scrollDismissesKeyboard(.interactively)
+            .scrollBounceBehavior(.basedOnSize)
+        }
+    }
+
+    private func contentWidth(for proposedWidth: CGFloat) -> CGFloat {
+        max(0, boundedViewportWidth(for: proposedWidth) - (horizontalPadding * 2))
+    }
+
+    private func boundedViewportWidth(for proposedWidth: CGFloat) -> CGFloat {
+        #if canImport(UIKit) && !APP_EXTENSION
+        let screen = UIScreen.main
+        let logicalWidth = screen.nativeBounds.width / max(screen.scale, 1)
+        return min(proposedWidth, screen.bounds.width, logicalWidth)
+        #else
+        return proposedWidth
+        #endif
     }
 }
 
@@ -140,11 +188,11 @@ struct CareTapFooterActionBar: View {
                     .frame(minHeight: 52)
                     .contentShape(Rectangle())
                     .careTapLiquidGlass(
-                        tint: CareTapTheme.glassTint.opacity(0.04),
-                        cornerRadius: 16,
+                        tint: CareTapTheme.glassTint.opacity(0.03),
+                        cornerRadius: CareTapSpacing.cornerRadiusCompact,
                         interactive: true
                     )
-                    .careTapGlassStroke(cornerRadius: 16, opacity: 0.22)
+                    .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.22)
             }
             .buttonStyle(CareTapPressableButtonStyle())
             .accessibilityLabel(secondaryTitle)
@@ -167,17 +215,11 @@ struct CareTapFooterActionBar: View {
                 .frame(minHeight: 52)
                 .contentShape(Rectangle())
                 .background {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(
-                            LinearGradient(
-                                colors: [CareTapTheme.sageStrong, CareTapTheme.sage],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            )
-                        )
+                    RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                        .fill(CareTapTheme.sageStrong)
                         .overlay {
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                                .stroke(Color.white.opacity(0.14), lineWidth: 1)
                         }
                 }
             }
@@ -188,7 +230,7 @@ struct CareTapFooterActionBar: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 8)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 16)
+        .careTapGlassStroke(cornerRadius: 16, opacity: 0.24)
     }
 }

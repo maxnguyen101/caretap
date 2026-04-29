@@ -23,12 +23,12 @@ struct CareTapSegmentedControl<ID: Hashable>: View {
                 segment(item)
             }
         }
-        .padding(6)
+        .padding(4)
         .careTapLiquidGlass(
-            tint: CareTapTheme.glassTint.opacity(0.05),
-            cornerRadius: 20
+            tint: CareTapTheme.glassTint.opacity(0.035),
+            cornerRadius: 12
         )
-        .careTapGlassStroke(cornerRadius: 20, opacity: 0.22)
+        .careTapGlassStroke(cornerRadius: 12, opacity: 0.24)
     }
 
     private func segment(_ item: CareTapSegmentedItem<ID>) -> some View {
@@ -59,16 +59,16 @@ struct CareTapSegmentedControl<ID: Hashable>: View {
                 }
             }
             .frame(maxWidth: .infinity)
-            .frame(minHeight: item.subtitle == nil ? 52 : 60)
-            .padding(.horizontal, 12)
+            .frame(minHeight: item.subtitle == nil ? 44 : 52)
+            .padding(.horizontal, 10)
             .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(isSelected ? CareTapTheme.surface.opacity(0.88) : Color.clear)
+                RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .fill(isSelected ? CareTapTheme.surface.opacity(0.9) : Color.clear)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        RoundedRectangle(cornerRadius: 9, style: .continuous)
                             .stroke(
                                 isSelected
-                                    ? CareTapTheme.stroke.opacity(0.72)
+                                    ? CareTapTheme.stroke.opacity(0.52)
                                     : Color.clear,
                                 lineWidth: 1
                             )

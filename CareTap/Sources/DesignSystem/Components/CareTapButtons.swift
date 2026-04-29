@@ -27,28 +27,16 @@ struct CareTapPrimaryActionButton: View {
             }
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity)
-            .frame(minHeight: 56)
-            .padding(.horizontal, 20)
+            .frame(minHeight: 48)
+            .padding(.horizontal, 14)
             .contentShape(Rectangle())
             .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [CareTapTheme.sageStrong, CareTapTheme.sage],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                    .fill(CareTapTheme.sageStrong)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                            .stroke(Color.white.opacity(0.14), lineWidth: 1)
                     }
-                    .shadow(
-                        color: CareTapTheme.sageStrong.opacity(0.12),
-                        radius: 6,
-                        x: 0,
-                        y: 3
-                    )
             }
         }
         .buttonStyle(CareTapPressableButtonStyle())
@@ -76,15 +64,15 @@ struct CareTapSecondaryPillButton: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity)
-                .frame(minHeight: 46)
+                .frame(minHeight: 42)
                 .padding(.horizontal, 10)
                 .contentShape(Rectangle())
                 .careTapLiquidGlass(
-                    tint: backgroundColor.opacity(0.24),
-                    cornerRadius: 14,
+                    tint: backgroundColor.opacity(0.12),
+                    cornerRadius: 10,
                     interactive: true
                 )
-                .careTapGlassStroke(cornerRadius: 14, opacity: 0.42)
+                .careTapGlassStroke(cornerRadius: 10, opacity: 0.36)
         }
         .buttonStyle(CareTapPressableButtonStyle())
         .accessibilityLabel(title)
@@ -121,13 +109,11 @@ struct CareTapQuickActionButton: View {
             action()
         } label: {
             HStack(spacing: 10) {
-                ZStack {
-                    Circle()
-                        .fill(iconBackground)
-                        .frame(width: 34, height: 34)
-                    Image(systemName: systemImage)
-                        .font(.system(size: 14, weight: .semibold))
-                }
+                Image(systemName: systemImage)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(iconColor)
+                    .frame(width: 28, height: 28)
+
                 Text(title)
                     .font(CareTapTypography.bodyStrong)
                     .lineLimit(2)
@@ -137,26 +123,26 @@ struct CareTapQuickActionButton: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             .foregroundStyle(foregroundColor)
-            .padding(.horizontal, 18)
+            .padding(.horizontal, 14)
             .padding(.vertical, 10)
             .frame(maxWidth: .infinity)
-            .frame(minHeight: 54)
+            .frame(minHeight: 48)
             .contentShape(Rectangle())
             .background {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                     .fill(backgroundColor)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                             .fill(Color.clear)
                             .careTapLiquidGlass(
-                                tint: tone == .sage ? Color.white.opacity(0.08) : CareTapTheme.glassTint.opacity(0.06),
-                                cornerRadius: 16,
+                                tint: tone == .sage ? Color.white.opacity(0.05) : CareTapTheme.glassTint.opacity(0.04),
+                                cornerRadius: CareTapSpacing.cornerRadiusCompact,
                                 interactive: true
                             )
                     }
                     .overlay {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .stroke(CareTapTheme.stroke.opacity(0.42), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                            .stroke(CareTapTheme.stroke.opacity(0.36), lineWidth: 1)
                     }
             }
         }
@@ -172,8 +158,8 @@ struct CareTapQuickActionButton: View {
         tone == .sage ? .white : CareTapTheme.textPrimary
     }
 
-    private var iconBackground: Color {
-        tone == .sage ? Color.white.opacity(0.18) : CareTapTheme.sage.opacity(0.12)
+    private var iconColor: Color {
+        tone == .sage ? .white.opacity(0.95) : tone.color
     }
 }
 
@@ -182,8 +168,8 @@ struct CareTapQuickActionButton: View {
 struct CareTapPressableButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .scaleEffect(configuration.isPressed ? 0.98 : 1.0)
-            .opacity(configuration.isPressed ? 0.92 : 1.0)
-            .animation(.spring(duration: 0.18, bounce: 0.18), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.992 : 1.0)
+            .opacity(configuration.isPressed ? 0.88 : 1.0)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
     }
 }

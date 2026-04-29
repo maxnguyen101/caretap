@@ -10,7 +10,7 @@ struct CareTapStateCard: View {
     var body: some View {
         HStack(spacing: 14) {
             ZStack {
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                RoundedRectangle(cornerRadius: 8, style: .continuous)
                     .fill(tone.color.opacity(0.1))
                     .frame(width: 40, height: 40)
 
@@ -38,9 +38,9 @@ struct CareTapStateCard: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapGlassFill(opacity: 0.5)
-        .careTapLiquidGlass(tint: tone.color.opacity(0.03), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.25)
+        .careTapGlassFill(opacity: 0.58)
+        .careTapLiquidGlass(tint: tone.color.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
         .accessibilityElement(children: .combine)
     }
 }
@@ -57,7 +57,7 @@ struct CareTapInlineBanner: View {
                 .font(.system(size: 15, weight: .semibold))
                 .foregroundStyle(tone.color)
                 .frame(width: 32, height: 32)
-                .background(tone.color.opacity(0.1), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .background(tone.color.opacity(0.1), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
@@ -74,8 +74,8 @@ struct CareTapInlineBanner: View {
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(tone.color.opacity(0.03))
-        .careTapLiquidGlass(tint: tone.color.opacity(0.04), cornerRadius: 16)
-        .careTapGlassStroke(cornerRadius: 16, opacity: 0.25)
+        .careTapLiquidGlass(tint: tone.color.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.24)
         .accessibilityElement(children: .combine)
     }
 }

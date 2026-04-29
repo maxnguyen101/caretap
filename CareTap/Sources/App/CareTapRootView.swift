@@ -16,6 +16,7 @@ private struct CareTapRootContainerView: View {
 
     var body: some View {
         rootContent
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
             .safeAreaInset(edge: .top) {
                 Group {
                     if let message = store.errorMessage {
@@ -471,7 +472,7 @@ private struct CareTapNotificationCenterView: View {
                                                     .foregroundStyle(CareTapTheme.alert)
                                                     .padding(.horizontal, 8)
                                                     .padding(.vertical, 4)
-                                                    .background(CareTapTheme.alert.opacity(0.12), in: Capsule())
+                                                    .background(CareTapTheme.alert.opacity(0.12), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
                                             }
 
                                             Spacer()
@@ -524,40 +525,23 @@ private struct CareTapLaunchView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    CareTapTheme.canvas,
-                    CareTapTheme.canvasWarm,
-                    CareTapTheme.canvasMist.opacity(0.55)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .ignoresSafeArea()
-
-            Image("PremiumHeroArt")
-                .resizable()
-                .scaledToFill()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .opacity(0.12)
-                .blur(radius: 24)
-                .ignoresSafeArea()
+            CareTapScreenBackground()
 
             VStack(spacing: 24) {
                 Spacer()
 
                 VStack(spacing: 18) {
                     ZStack {
-                        RoundedRectangle(cornerRadius: 28, style: .continuous)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                             .fill(CareTapTheme.surface.opacity(0.94))
-                            .frame(width: 92, height: 92)
+                            .frame(width: 82, height: 82)
 
-                        RoundedRectangle(cornerRadius: 32, style: .continuous)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusLarge, style: .continuous)
                             .stroke(CareTapTheme.stroke.opacity(0.45), lineWidth: 1)
-                            .frame(width: 104, height: 104)
+                            .frame(width: 94, height: 94)
 
                         Image(systemName: "heart.text.square.fill")
-                            .font(.system(size: 30, weight: .semibold))
+                            .font(.system(size: 28, weight: .semibold))
                             .foregroundStyle(CareTapTheme.sageStrong)
                     }
 

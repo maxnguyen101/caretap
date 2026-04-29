@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// A titled section with glass-morphism card styling.
+/// A titled section with restrained glass card styling.
 /// Consolidates the repeated `glassSection(title:content:)` pattern found
 /// across feature views into a single design system component.
 struct CareTapGlassSection<Content: View>: View {
@@ -14,17 +14,16 @@ struct CareTapGlassSection<Content: View>: View {
             VStack(alignment: .leading, spacing: 12) {
                 content()
             }
-            .padding(14)
+            .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .careTapGlassFill(opacity: 0.5)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.25)
+            .careTapGlassFill(opacity: 0.58)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.26)
         }
     }
 }
 
-/// Uppercase micro-label used as a section divider in settings, support, and
-/// detail views. Replaces duplicated inline Text styling across the codebase.
+/// Small section divider used in settings, support, and detail views.
 struct CareTapSectionLabel: View {
     let title: String
 
@@ -33,9 +32,8 @@ struct CareTapSectionLabel: View {
     }
 
     var body: some View {
-        Text(title.uppercased())
-            .font(.system(size: 12, weight: .semibold, design: .default))
-            .tracking(0.6)
-            .foregroundStyle(CareTapTheme.textTertiary)
+        Text(title)
+            .font(CareTapTypography.footnote.weight(.semibold))
+            .foregroundStyle(CareTapTheme.textSecondary)
     }
 }

@@ -34,18 +34,12 @@ struct HomeScreenScaffold<Content: View>: View {
                     onNotificationsTap: onNotificationsTap
                 )
 
-                ScrollView(.vertical) {
+                CareTapViewportScrollView(topPadding: 8, bottomPadding: 28) {
                     content
-                        .frame(maxWidth: .infinity, alignment: .topLeading)
-                        .padding(.horizontal, CareTapSpacing.screenPadding)
-                        .padding(.top, 8)
-                        .padding(.bottom, 120)
                 }
-                .scrollIndicators(.hidden)
-                .scrollDismissesKeyboard(.interactively)
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
     }
 
     private var backgroundLayer: some View {

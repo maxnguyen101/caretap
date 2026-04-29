@@ -25,6 +25,18 @@ enum CareTapDestination: String, CaseIterable, Identifiable, Hashable {
         }
     }
 
+    /// Shorter label for the tab bar so it fits narrow widths without clipping.
+    var tabBarTitle: String {
+        switch self {
+        case .home:
+            return "Home"
+        case .workspace:
+            return "Work"
+        case .settings:
+            return "Settings"
+        }
+    }
+
     var systemImage: String {
         switch self {
         case .home:

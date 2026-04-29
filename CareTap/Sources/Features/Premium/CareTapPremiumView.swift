@@ -59,7 +59,7 @@ struct CareTapPremiumView: View {
                 .scaledToFill()
                 .frame(height: 170)
                 .frame(maxWidth: .infinity)
-                .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+                .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
 
             VStack(alignment: .leading, spacing: 6) {
                 Text(state.status.title)
@@ -104,8 +104,8 @@ struct CareTapPremiumView: View {
         }
         .padding(18)
         .careTapGlassFill(opacity: 0.58)
-        .careTapLiquidGlass(tint: heroTint.opacity(0.03), cornerRadius: 24)
-        .careTapGlassStroke(cornerRadius: 24, opacity: 0.24)
+        .careTapLiquidGlass(tint: heroTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private var plansSection: some View {
@@ -171,12 +171,12 @@ struct CareTapPremiumView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .careTapLiquidGlass(
                 tint: isSelected(product)
-                    ? CareTapTheme.sage.opacity(0.08)
+                    ? CareTapTheme.sage.opacity(0.05)
                     : CareTapTheme.glassTint.opacity(0.025),
-                cornerRadius: 18,
+                cornerRadius: CareTapSpacing.cornerRadiusCompact,
                 interactive: true
             )
-            .careTapGlassStroke(cornerRadius: 18, opacity: isSelected(product) ? 0.32 : 0.2)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: isSelected(product) ? 0.3 : 0.2)
         }
         .buttonStyle(.plain)
         .disabled(state.status.isActive && product.isActivePlan)
@@ -250,8 +250,8 @@ struct CareTapPremiumView: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.05), cornerRadius: 14)
-        .careTapGlassStroke(cornerRadius: 14, opacity: 0.18)
+        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.04), cornerRadius: 10)
+        .careTapGlassStroke(cornerRadius: 10, opacity: 0.18)
     }
 
     private func detailRow(icon: String, text: String) -> some View {
@@ -293,8 +293,8 @@ struct CareTapPremiumView: View {
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapLiquidGlass(tint: tone.color.opacity(0.05), cornerRadius: 16)
-        .careTapGlassStroke(cornerRadius: 16, opacity: 0.18)
+        .careTapLiquidGlass(tint: tone.color.opacity(0.035), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.18)
     }
 
     private func premiumBadge(text: String, tone: CareTapTone) -> some View {
@@ -306,7 +306,10 @@ struct CareTapPremiumView: View {
             .fixedSize(horizontal: true, vertical: false)
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
-            .background((tone == .sage ? CareTapTheme.sage : tone.color).opacity(0.1), in: Capsule())
+            .background(
+                (tone == .sage ? CareTapTheme.sage : tone.color).opacity(0.1),
+                in: RoundedRectangle(cornerRadius: 6, style: .continuous)
+            )
     }
 
     private func isSelected(_ product: CareTapPremiumProductState) -> Bool {

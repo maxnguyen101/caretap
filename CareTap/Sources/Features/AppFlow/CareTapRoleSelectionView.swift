@@ -25,46 +25,42 @@ struct CareTapRoleSelectionView: View {
         CareTapFlowScaffold(
             leadingSystemImage: nil
         ) {
-            VStack(spacing: 28) {
+            VStack(alignment: .leading, spacing: 20) {
                 heroSection
                 roleSelector
                 localFirstSection
                 signInSection
                 CareTapLegalLinksFooter()
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 
     // MARK: - Hero
 
     private var heroSection: some View {
-        VStack(spacing: 14) {
-            ZStack {
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [CareTapTheme.sage.opacity(0.22), CareTapTheme.sage.opacity(0.08)],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .frame(width: 88, height: 88)
-
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 10) {
                 Image(systemName: "dot.radiowaves.left.and.right")
-                    .font(.system(size: 34, weight: .semibold))
+                    .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(CareTapTheme.sageStrong)
-            }
-            .overlay {
-                Circle()
-                    .stroke(CareTapTheme.sage.opacity(0.35), lineWidth: 1)
-            }
-            .padding(.top, 4)
+                    .frame(width: 36, height: 36)
+                    .background(CareTapTheme.surface, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .stroke(CareTapTheme.stroke.opacity(0.5), lineWidth: 1)
+                    }
 
-            VStack(spacing: 8) {
-                Text("Start tracking, your way")
+                Text("TapCare")
+                    .font(CareTapTypography.brand)
+                    .foregroundStyle(CareTapTheme.textPrimary)
+            }
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Start with your routine")
                     .font(CareTapTypography.hero)
                     .foregroundStyle(CareTapTheme.textPrimary)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .minimumScaleFactor(0.85)
                     .lineLimit(2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -72,17 +68,17 @@ struct CareTapRoleSelectionView: View {
                 Text("Use TapCare privately on this iPhone, then add sync or caregiver sharing when you need it.")
                     .font(CareTapTypography.callout)
                     .foregroundStyle(CareTapTheme.textSecondary)
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(.leading)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Roles
 
     private var roleSelector: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             roleOption(
                 role: .patient,
                 title: "For me",
@@ -97,6 +93,7 @@ struct CareTapRoleSelectionView: View {
                 icon: "person.2.fill"
             )
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func roleOption(role: CareTapRole, title: String, subtitle: String, icon: String) -> some View {
@@ -106,17 +103,17 @@ struct CareTapRoleSelectionView: View {
             CareTapHaptics.selection()
             onRoleSelected(role)
         } label: {
-            HStack(spacing: 16) {
+            HStack(spacing: 12) {
                 Image(systemName: icon)
-                    .font(.system(size: 20, weight: .medium))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(isSelected ? CareTapTheme.sageStrong : CareTapTheme.textSecondary)
-                    .frame(width: 44, height: 44)
+                    .frame(width: 40, height: 40)
                     .background {
                         if #available(iOS 26, *) {
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                                 .fill(isSelected ? CareTapTheme.sage.opacity(0.12) : .clear)
                         } else {
-                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                                 .fill(isSelected ? CareTapTheme.sage.opacity(0.12) : CareTapTheme.surfaceMuted)
                         }
                     }
@@ -125,15 +122,20 @@ struct CareTapRoleSelectionView: View {
                     Text(title)
                         .font(CareTapTypography.bodyStrong)
                         .foregroundStyle(CareTapTheme.textPrimary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.85)
                         .fixedSize(horizontal: false, vertical: true)
                     Text(subtitle)
                         .font(CareTapTypography.footnote)
                         .foregroundStyle(CareTapTheme.textSecondary)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.85)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .layoutPriority(1)
 
-                Spacer()
+                Spacer(minLength: 8)
 
                 ZStack {
                     Circle()
@@ -147,21 +149,23 @@ struct CareTapRoleSelectionView: View {
                     }
                 }
             }
-            .padding(16)
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .careTapGlassFill(opacity: isSelected ? 0.8 : 0.5)
             .careTapLiquidGlass(
-                tint: isSelected ? CareTapTheme.sage.opacity(0.06) : CareTapTheme.glassTint.opacity(0.03),
-                cornerRadius: 20
+                tint: isSelected ? CareTapTheme.sage.opacity(0.04) : CareTapTheme.glassTint.opacity(0.025),
+                cornerRadius: CareTapSpacing.cornerRadiusCard
             )
             .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .stroke(isSelected ? CareTapTheme.sage.opacity(0.5) : CareTapTheme.stroke.opacity(0.3), lineWidth: isSelected ? 1.5 : 1)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
+                    .stroke(isSelected ? CareTapTheme.sage.opacity(0.42) : CareTapTheme.stroke.opacity(0.3), lineWidth: isSelected ? 1.25 : 1)
             }
         }
         .buttonStyle(.plain)
-        .animation(.spring(duration: 0.3), value: isSelected)
+        .animation(.easeInOut(duration: 0.18), value: isSelected)
         .accessibilityLabel(title)
         .accessibilityValue(isSelected ? "Selected" : "Not selected")
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Local First
@@ -199,6 +203,7 @@ struct CareTapRoleSelectionView: View {
                 )
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     // MARK: - Sign In
@@ -215,6 +220,7 @@ struct CareTapRoleSelectionView: View {
                 appleSignInSection
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     @ViewBuilder
@@ -242,9 +248,10 @@ struct CareTapRoleSelectionView: View {
                 Spacer()
             }
             .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
             .careTapGlassFill(opacity: 0.55)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.22)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
         } else {
             Text("Choose a view above to continue.")
                 .font(CareTapTypography.footnote)
@@ -267,10 +274,11 @@ struct CareTapRoleSelectionView: View {
             }
             Spacer()
         }
-        .padding(16)
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
         .careTapGlassFill(CareTapTheme.success, opacity: 0.06)
-        .careTapLiquidGlass(tint: CareTapTheme.success.opacity(0.04), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.25)
+        .careTapLiquidGlass(tint: CareTapTheme.success.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     // MARK: - Apple Sign In
@@ -309,15 +317,16 @@ struct CareTapRoleSelectionView: View {
                 }
             }
             .signInWithAppleButtonStyle(.black)
-            .frame(height: 52)
-            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .frame(maxWidth: .infinity)
+            .frame(height: 48)
+            .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous))
             .disabled(selectedRole == nil || isBusy)
             .opacity(selectedRole == nil ? 0.4 : 1)
 
             dividerRow
 
             Button {
-                withAnimation(.spring(duration: 0.3)) {
+                withAnimation(.easeInOut(duration: 0.18)) {
                     showEmailForm = true
                 }
             } label: {
@@ -329,13 +338,13 @@ struct CareTapRoleSelectionView: View {
                 }
                 .foregroundStyle(CareTapTheme.textPrimary)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
+                .padding(.vertical, 13)
                 .careTapLiquidGlass(
                     tint: CareTapTheme.glassTint.opacity(0.06),
-                    cornerRadius: 14,
+                    cornerRadius: CareTapSpacing.cornerRadiusCompact,
                     interactive: true
                 )
-                .careTapGlassStroke(cornerRadius: 14, opacity: 0.3)
+                .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.3)
             }
             .buttonStyle(.plain)
             .disabled(selectedRole == nil || isBusy)
@@ -357,6 +366,7 @@ struct CareTapRoleSelectionView: View {
                     .frame(maxWidth: .infinity)
             }
         }
+        .frame(maxWidth: .infinity)
     }
 
     // MARK: - Email Form
@@ -414,20 +424,20 @@ struct CareTapRoleSelectionView: View {
                 }
                 .foregroundStyle(CareTapTheme.textPrimary)
                 .frame(maxWidth: .infinity)
-                .padding(.vertical, 14)
+                .padding(.vertical, 13)
                 .careTapLiquidGlass(
                     tint: CareTapTheme.sage.opacity(0.1),
-                    cornerRadius: 14,
+                    cornerRadius: CareTapSpacing.cornerRadiusCompact,
                     interactive: true
                 )
-                .careTapGlassStroke(cornerRadius: 14, opacity: 0.3)
+                .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.3)
             }
             .buttonStyle(.plain)
             .disabled(!isEmailFormValid || isBusy)
             .opacity(isEmailFormValid ? 1 : 0.5)
 
             Button {
-                withAnimation(.spring(duration: 0.25)) {
+                withAnimation(.easeInOut(duration: 0.18)) {
                     isSignUpMode.toggle()
                 }
             } label: {
@@ -440,7 +450,7 @@ struct CareTapRoleSelectionView: View {
             dividerRow
 
             Button {
-                withAnimation(.spring(duration: 0.3)) {
+                withAnimation(.easeInOut(duration: 0.18)) {
                     showEmailForm = false
                 }
             } label: {
@@ -454,6 +464,7 @@ struct CareTapRoleSelectionView: View {
             }
             .buttonStyle(.plain)
         }
+        .frame(maxWidth: .infinity)
     }
 
     private var isEmailFormValid: Bool {
@@ -484,9 +495,10 @@ struct CareTapRoleSelectionView: View {
                 .autocorrectionDisabled()
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 14)
-        .careTapGlassStroke(cornerRadius: 14, opacity: 0.25)
+        .padding(.vertical, 13)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.25)
     }
 
     private func glassSecureField(
@@ -506,9 +518,10 @@ struct CareTapRoleSelectionView: View {
                 .textContentType(.password)
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 14)
-        .careTapGlassStroke(cornerRadius: 14, opacity: 0.25)
+        .padding(.vertical, 13)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.25)
     }
 
     private var dividerRow: some View {

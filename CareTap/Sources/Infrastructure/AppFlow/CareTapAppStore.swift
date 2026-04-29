@@ -968,8 +968,8 @@ final class CareTapAppStore: ObservableObject {
     }
 
     private func lookupState(for query: String) -> MedicationLookupState {
-        if query.isEmpty {
-            return .suggestions(bundledCatalog.allSuggestions())
+        if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            return .empty(query: "")
         }
 
         let matches = bundledCatalog.suggestions(matching: query)

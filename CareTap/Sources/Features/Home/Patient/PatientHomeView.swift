@@ -16,7 +16,7 @@ struct PatientHomeView: View {
             onDestinationSelected: onDestinationSelected,
             onNotificationsTap: onNotificationsTap
         ) {
-            VStack(spacing: 20) {
+            VStack(spacing: 18) {
                 PatientHomeHeroCard(
                     greetingText: greetingText,
                     currentDose: state.currentDose,
@@ -76,7 +76,7 @@ private struct PatientHomeHeroCard: View {
     var onSecondaryAction: (SecondaryActionState) -> Void = { _ in }
 
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             // Greeting text sits above the card, not inside
             HStack {
                 Text(greetingText)
@@ -85,16 +85,16 @@ private struct PatientHomeHeroCard: View {
                 Spacer()
             }
 
-            CareTapCard(style: .elevated) {
-                VStack(spacing: 14) {
-                    HStack(alignment: .top, spacing: 14) {
+            CareTapCard(style: cardStyle) {
+                VStack(spacing: 12) {
+                    HStack(alignment: .top, spacing: 12) {
                         CareTapMedicationPhotoView(
                             photoPath: currentDose.bottlePhotoLocalPath,
                             title: currentDose.medicationName,
-                            size: CGSize(width: 56, height: 72)
+                            size: CGSize(width: 48, height: 64)
                         )
 
-                        VStack(alignment: .leading, spacing: 6) {
+                        VStack(alignment: .leading, spacing: 5) {
                             ViewThatFits(in: .vertical) {
                                 HStack(alignment: .center, spacing: 6) {
                                     CareTapStatusBadge(text: currentDose.focusState.chipText, tone: currentDose.focusState.tone)
@@ -115,7 +115,7 @@ private struct PatientHomeHeroCard: View {
                             }
 
                             Text(currentDose.focusState.heroTitle)
-                                .font(CareTapTypography.title)
+                                .font(.system(size: 21, weight: .semibold, design: .default))
                                 .foregroundStyle(CareTapTheme.textPrimary)
                                 .lineLimit(2)
                                 .minimumScaleFactor(0.85)
@@ -131,37 +131,35 @@ private struct PatientHomeHeroCard: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     }
 
-                    CareTapPrimaryActionButton(
-                        title: currentDose.primaryActionTitle,
-                        systemImage: currentDose.primaryActionSymbol,
-                        action: onPrimaryAction
-                    )
+                    // No ViewThatFits here — alternate branches can leave ghosted glass; one column + compositingGroup keeps layers clean.
+                    VStack(spacing: 10) {
+                        CareTapPrimaryActionButton(
+                            title: currentDose.primaryActionTitle,
+                            systemImage: currentDose.primaryActionSymbol,
+                            action: onPrimaryAction
+                        )
 
-                    // Secondary actions
-                    if !currentDose.secondaryActions.isEmpty {
-                        ViewThatFits(in: .vertical) {
+                        if !currentDose.secondaryActions.isEmpty {
                             HStack(spacing: 8) {
                                 ForEach(currentDose.secondaryActions) { action in
                                     CareTapSecondaryPillButton(title: action.title, tone: action.tone) {
                                         onSecondaryAction(action)
                                     }
-                                }
-                            }
-
-                            VStack(spacing: 8) {
-                                ForEach(currentDose.secondaryActions) { action in
-                                    CareTapSecondaryPillButton(title: action.title, tone: action.tone) {
-                                        onSecondaryAction(action)
-                                    }
+                                    .frame(minWidth: 0, maxWidth: .infinity)
                                 }
                             }
                         }
                     }
+                    .compositingGroup()
                 }
             }
         }
         .accessibilityElement(children: .contain)
         .accessibilityLabel("\(currentDose.medicationName), \(currentDose.focusState.chipText)")
+    }
+
+    private var cardStyle: CareTapCardStyle {
+        currentDose.focusState == .completed ? .completed : .elevated
     }
 }
 
@@ -185,9 +183,8 @@ private struct PatientHomeSnapshotRow: View {
 
     private var progressCard: some View {
         CareTapCard(style: .muted) {
-            HStack(spacing: 14) {
-                CareTapProgressRing(fraction: progress.fractionComplete)
-                    .frame(width: 50, height: 50)
+            HStack(spacing: 10) {
+                CareTapProgressRing(fraction: progress.fractionComplete, size: 44, lineWidth: 5)
 
                 VStack(alignment: .leading, spacing: 3) {
                     Text("Today")
@@ -213,9 +210,9 @@ private struct PatientHomeSnapshotRow: View {
 
     private var nextCard: some View {
         CareTapCard(style: .muted) {
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 Image(systemName: "clock.arrow.circlepath")
-                    .font(.system(size: 20, weight: .medium))
+                    .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(CareTapTheme.sage)
 
                 VStack(alignment: .leading, spacing: 3) {
@@ -264,11 +261,11 @@ private struct PatientUpcomingSection: View {
         CareTapGlassSection(title: "Later Today") {
             VStack(spacing: 10) {
                 ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                    HStack(spacing: 12) {
+                    HStack(spacing: 10) {
                         Image(systemName: "clock")
                             .font(.system(size: 14, weight: .medium))
                             .foregroundStyle(CareTapTheme.textTertiary)
-                            .frame(width: 24)
+                            .frame(width: 20)
 
                         VStack(alignment: .leading, spacing: 2) {
                             Text(item.title)
@@ -294,13 +291,13 @@ private struct PatientUpcomingSection: View {
                             .multilineTextAlignment(.trailing)
                             .frame(minWidth: 0, alignment: .trailing)
                     }
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 12)
+                    .padding(.horizontal, 12)
+                    .padding(.vertical, 10)
                     .careTapLiquidGlass(
                         tint: CareTapTheme.glassTint.opacity(0.02),
-                        cornerRadius: 14
+                        cornerRadius: CareTapSpacing.cornerRadiusCompact
                     )
-                    .careTapGlassStroke(cornerRadius: 14, opacity: 0.18)
+                    .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.18)
                     .careTapStaggeredEntry(index: index, baseDelay: 0.3)
                 }
             }

@@ -104,8 +104,8 @@ struct CaregiverHomeView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
         .careTapGlassFill(opacity: 0.6)
-        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.04), cornerRadius: 16)
-        .careTapGlassStroke(cornerRadius: 16, opacity: 0.25)
+        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.24)
     }
 
     // MARK: - People
@@ -146,13 +146,13 @@ struct CaregiverHomeView: View {
                         .padding(.vertical, 8)
                         .careTapGlassFill(CareTapTheme.sage, opacity: person.isSelected ? 0.08 : 0)
                         .careTapLiquidGlass(
-                            tint: person.isSelected ? CareTapTheme.sage.opacity(0.06) : CareTapTheme.glassTint.opacity(0.03),
-                            cornerRadius: 20
+                            tint: person.isSelected ? CareTapTheme.sage.opacity(0.04) : CareTapTheme.glassTint.opacity(0.025),
+                            cornerRadius: CareTapSpacing.cornerRadiusCompact
                         )
                         .overlay {
-                            Capsule()
+                            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
                                 .stroke(
-                                    person.isSelected ? CareTapTheme.sage.opacity(0.5) : CareTapTheme.stroke.opacity(0.35),
+                                    person.isSelected ? CareTapTheme.sage.opacity(0.42) : CareTapTheme.stroke.opacity(0.32),
                                     lineWidth: 1
                                 )
                         }

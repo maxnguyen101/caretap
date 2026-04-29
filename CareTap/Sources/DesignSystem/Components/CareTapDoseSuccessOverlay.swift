@@ -1,7 +1,6 @@
 import SwiftUI
 
-/// A celebratory success animation shown after logging a dose.
-/// Features a scaling checkmark with expanding rings, similar to Apple Pay success.
+/// A calm success confirmation shown after logging a dose.
 struct CareTapDoseSuccessOverlay: View {
     @Binding var isPresented: Bool
     var medicationName: String = ""
@@ -9,49 +8,25 @@ struct CareTapDoseSuccessOverlay: View {
     var onDismiss: () -> Void = {}
 
     @State private var checkScale: CGFloat = 0
-    @State private var ringScale: CGFloat = 0.8
-    @State private var ringOpacity: Double = 0
-    @State private var ring2Scale: CGFloat = 0.8
-    @State private var ring2Opacity: Double = 0
     @State private var textOpacity: Double = 0
     @State private var backgroundOpacity: Double = 0
 
     var body: some View {
         if isPresented {
             ZStack {
-                // Dimmed background
-                Color.black.opacity(backgroundOpacity * 0.3)
+                Color.black.opacity(backgroundOpacity * 0.18)
                     .ignoresSafeArea()
                     .onTapGesture { dismiss() }
 
-                VStack(spacing: 24) {
+                VStack(spacing: 18) {
                     ZStack {
-                        // Outer pulse ring
                         Circle()
-                            .stroke(CareTapTheme.sage.opacity(ring2Opacity * 0.3), lineWidth: 2)
-                            .frame(width: 120, height: 120)
-                            .scaleEffect(ring2Scale)
-
-                        // Inner pulse ring
-                        Circle()
-                            .stroke(CareTapTheme.sage.opacity(ringOpacity * 0.5), lineWidth: 3)
-                            .frame(width: 100, height: 100)
-                            .scaleEffect(ringScale)
-
-                        // Checkmark circle
-                        Circle()
-                            .fill(
-                                LinearGradient(
-                                    colors: [CareTapTheme.sage, CareTapTheme.sageStrong],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
-                            .frame(width: 80, height: 80)
+                            .fill(CareTapTheme.sageStrong)
+                            .frame(width: 72, height: 72)
                             .scaleEffect(checkScale)
                             .overlay {
                                 Image(systemName: "checkmark")
-                                    .font(.system(size: 36, weight: .bold))
+                                    .font(.system(size: 32, weight: .bold))
                                     .foregroundStyle(.white)
                                     .scaleEffect(checkScale)
                             }
@@ -70,6 +45,13 @@ struct CareTapDoseSuccessOverlay: View {
                     }
                     .opacity(textOpacity)
                 }
+                .padding(24)
+                .frame(maxWidth: 260)
+                .careTapLiquidGlass(
+                    tint: CareTapTheme.glassTint.opacity(0.05),
+                    cornerRadius: CareTapSpacing.cornerRadiusLarge
+                )
+                .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusLarge, opacity: 0.26)
             }
             .onAppear { playAnimation() }
         }
@@ -78,32 +60,16 @@ struct CareTapDoseSuccessOverlay: View {
     private func playAnimation() {
         CareTapHaptics.confirm()
 
-        withAnimation(.spring(duration: 0.5, bounce: 0.4)) {
+        withAnimation(.spring(duration: 0.34, bounce: 0.18)) {
             checkScale = 1
             backgroundOpacity = 1
         }
 
-        withAnimation(.easeOut(duration: 0.8).delay(0.1)) {
-            ringScale = 1.4
-            ringOpacity = 1
-        }
-
-        withAnimation(.easeOut(duration: 1.0).delay(0.2)) {
-            ring2Scale = 1.6
-            ring2Opacity = 1
-        }
-
-        withAnimation(.easeOut(duration: 0.6).delay(0.15)) {
-            ringOpacity = 0
-            ring2Opacity = 0
-        }
-
-        withAnimation(.easeOut(duration: 0.4).delay(0.3)) {
+        withAnimation(.easeOut(duration: 0.24).delay(0.1)) {
             textOpacity = 1
         }
 
-        // Auto-dismiss after 1.8 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.35) {
             dismiss()
         }
     }

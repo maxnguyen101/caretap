@@ -6,14 +6,14 @@ struct CareTapStatusBadge: View {
 
     var body: some View {
         Text(text)
-            .font(.system(size: 10, weight: .bold, design: .rounded))
+            .font(.system(size: 11, weight: .semibold, design: .default))
             .foregroundStyle(foregroundColor)
             .lineLimit(1)
             .minimumScaleFactor(0.8)
-            .fixedSize(horizontal: true, vertical: false)
-            .padding(.horizontal, 10)
+            .truncationMode(.tail)
+            .padding(.horizontal, 8)
             .padding(.vertical, 5)
-            .background(backgroundColor, in: Capsule())
+            .background(backgroundColor, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
             .accessibilityLabel(text)
     }
 

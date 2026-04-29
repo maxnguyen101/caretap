@@ -173,8 +173,8 @@ struct AutomationSetupWizardView: View {
             .background(CareTapTheme.sage.opacity(0.08), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         }
         .padding(16)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.2)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.2)
     }
 
     // MARK: - Copy Link Card
@@ -231,7 +231,7 @@ struct AutomationSetupWizardView: View {
             }
         }
         .buttonStyle(.plain)
-        .animation(.spring(duration: 0.25), value: didCopyLink)
+        .animation(.easeInOut(duration: 0.18), value: didCopyLink)
     }
 
     // MARK: - Footer
@@ -299,8 +299,8 @@ struct AutomationSetupWizardView: View {
             }
             .padding(.horizontal, 8)
             .padding(.vertical, 8)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
-            .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
         }
         .padding(.horizontal, 16)
         .padding(.bottom, 10)
@@ -312,7 +312,7 @@ struct AutomationSetupWizardView: View {
                 Capsule()
                     .fill(index == currentStep ? CareTapTheme.sageStrong : CareTapTheme.textTertiary.opacity(0.25))
                     .frame(width: index == currentStep ? 20 : 8, height: 6)
-                    .animation(.spring(duration: 0.3), value: currentStep)
+                    .animation(.easeInOut(duration: 0.18), value: currentStep)
             }
         }
     }
@@ -356,13 +356,13 @@ private struct AutomationStepScreenshotView: View {
                 .frame(maxWidth: .infinity)
                 .frame(height: 280)
                 .padding(20)
-                .background(CareTapTheme.surfaceMuted, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                .background(CareTapTheme.surfaceMuted, in: RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
             }
         }
         .frame(maxHeight: 380)
-        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
         .overlay(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
+            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                 .stroke(CareTapTheme.stroke, lineWidth: 1)
         )
     }

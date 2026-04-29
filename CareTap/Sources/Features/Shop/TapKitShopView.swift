@@ -39,7 +39,7 @@ struct TapKitShopView: View {
                 .zIndex(2)
             }
         }
-        .animation(.spring(duration: 0.45, bounce: 0.18), value: state.confirmation)
+        .animation(.easeInOut(duration: 0.2), value: state.confirmation)
     }
 
     // MARK: Hero
@@ -64,28 +64,12 @@ struct TapKitShopView: View {
 
     private var heroVisual: some View {
         ZStack {
-            LinearGradient(
-                colors: [
-                    CareTapTheme.sage.opacity(0.22),
-                    CareTapTheme.sageStrong.opacity(0.14),
-                    CareTapTheme.canvasMist.opacity(0.6)
-                ],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
-            .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-
-            Circle()
-                .fill(CareTapTheme.sage.opacity(0.18))
-                .frame(width: 220, height: 220)
-                .blur(radius: 36)
-                .offset(x: -110, y: 80)
-
-            Circle()
-                .fill(CareTapTheme.warm.opacity(0.18))
-                .frame(width: 180, height: 180)
-                .blur(radius: 38)
-                .offset(x: 130, y: -70)
+            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
+                .fill(CareTapTheme.surfaceMuted)
+                .careTapLiquidGlass(
+                    tint: CareTapTheme.glassTint.opacity(0.03),
+                    cornerRadius: CareTapSpacing.cornerRadiusCard
+                )
 
             HStack(spacing: 18) {
                 bottleIllustration
@@ -96,16 +80,16 @@ struct TapKitShopView: View {
         }
         .frame(height: 200)
         .frame(maxWidth: .infinity)
-        .careTapGlassStroke(cornerRadius: 28, opacity: 0.22)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
     }
 
     private var bottleIllustration: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
+            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                 .fill(.white.opacity(0.55))
                 .frame(width: 100, height: 144)
                 .overlay {
-                    RoundedRectangle(cornerRadius: 22, style: .continuous)
+                    RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                         .stroke(Color.white.opacity(0.45), lineWidth: 1)
                 }
             VStack(spacing: 6) {
@@ -244,14 +228,8 @@ struct TapKitShopView: View {
     private var setupSupportCard: some View {
         HStack(alignment: .top, spacing: 14) {
             ZStack {
-                Circle()
-                    .fill(
-                        LinearGradient(
-                            colors: [CareTapTheme.sageStrong, CareTapTheme.warm],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(CareTapTheme.sageStrong)
                     .frame(width: 44, height: 44)
 
                 Image(systemName: "person.text.rectangle.fill")
@@ -260,10 +238,9 @@ struct TapKitShopView: View {
             }
 
             VStack(alignment: .leading, spacing: 6) {
-                Text("Setup support included")
-                    .font(CareTapTypography.micro)
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .tracking(0.4)
+                Text("Setup support")
+                    .font(CareTapTypography.footnote.weight(.semibold))
+                    .foregroundStyle(CareTapTheme.textSecondary)
 
                 Text(state.setupNote)
                     .font(CareTapTypography.footnote)
@@ -273,8 +250,8 @@ struct TapKitShopView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(16)
-        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.05), cornerRadius: 20)
-        .careTapGlassStroke(cornerRadius: 20, opacity: 0.22)
+        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.03), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
     }
 
     // MARK: Details
@@ -360,17 +337,11 @@ struct TapKitShopView: View {
                     .padding(.horizontal, 16)
                     .frame(minHeight: 56)
                     .background {
-                        RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(
-                                LinearGradient(
-                                    colors: [CareTapTheme.sageStrong, CareTapTheme.sage],
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                            .fill(CareTapTheme.sageStrong)
                             .overlay {
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                                    .stroke(Color.white.opacity(0.14), lineWidth: 1)
                             }
                     }
                 }
@@ -388,8 +359,8 @@ struct TapKitShopView: View {
         }
         .padding(.horizontal, 8)
         .padding(.vertical, 10)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 }
 
@@ -410,14 +381,14 @@ private struct TapKitPackCard: View {
             .padding(16)
             .frame(maxWidth: .infinity)
             .background {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                     .fill(backgroundFill)
             }
             .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                     .stroke(borderColor, lineWidth: isSelected ? 1.6 : 1)
             }
-            .animation(.spring(duration: 0.32, bounce: 0.18), value: isSelected)
+            .animation(.easeInOut(duration: 0.18), value: isSelected)
         }
         .buttonStyle(.plain)
         .accessibilityLabel("\(pack.title), \(pack.subtitle), \(pack.priceText)")
@@ -452,7 +423,7 @@ private struct TapKitPackCard: View {
                         .foregroundStyle(highlightTextColor)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 3)
-                        .background(highlightBackgroundColor, in: Capsule())
+                        .background(highlightBackgroundColor, in: RoundedRectangle(cornerRadius: 6, style: .continuous))
                 }
             }
 
@@ -546,14 +517,8 @@ private struct TapKitOrderConfirmationOverlay: View {
                         .frame(maxWidth: .infinity)
                         .frame(minHeight: 56)
                         .background {
-                            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                .fill(
-                                    LinearGradient(
-                                        colors: [CareTapTheme.sageStrong, CareTapTheme.sage],
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
+                            RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                                .fill(CareTapTheme.sageStrong)
                         }
                 }
                 .buttonStyle(.plain)
@@ -577,7 +542,6 @@ private struct TapKitOrderConfirmationOverlay: View {
             Image(systemName: "checkmark")
                 .font(.system(size: 42, weight: .light))
                 .foregroundStyle(CareTapTheme.success)
-                .symbolEffect(.bounce, options: .nonRepeating)
         }
     }
 
@@ -593,8 +557,8 @@ private struct TapKitOrderConfirmationOverlay: View {
         }
         .padding(18)
         .frame(maxWidth: .infinity)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.06), cornerRadius: 20)
-        .careTapGlassStroke(cornerRadius: 20, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private func receiptRow(label: String, value: String) -> some View {

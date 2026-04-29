@@ -244,8 +244,8 @@ struct NFCPairingView: View {
             }
         }
         .padding(14)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.2)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.2)
     }
 
     private func tipRow(icon: String, text: String) -> some View {
@@ -291,11 +291,8 @@ struct NFCPairingView: View {
                                 .fixedSize(horizontal: false, vertical: true)
 
                             Text("TapKit")
-                                .font(.system(size: 10, weight: .bold))
-                                .foregroundStyle(.white)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 3)
-                                .background(.white.opacity(0.18), in: Capsule())
+                                .font(.system(size: 11, weight: .semibold))
+                                .foregroundStyle(.white.opacity(0.86))
                         }
 
                         Text(tapKitSubtitle)
@@ -318,7 +315,7 @@ struct NFCPairingView: View {
                     .foregroundStyle(.white)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
-                    .background(.white.opacity(0.16), in: Capsule())
+                    .background(.white.opacity(0.14), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
 
                     HStack(spacing: 4) {
                         Image(systemName: "shippingbox.and.arrow.backward.fill")
@@ -354,21 +351,11 @@ struct NFCPairingView: View {
             .padding(20)
             .frame(maxWidth: .infinity)
             .background {
-                RoundedRectangle(cornerRadius: 22, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                CareTapTheme.sageStrong,
-                                CareTapTheme.sage,
-                                CareTapTheme.sage.opacity(0.85)
-                            ],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
+                    .fill(CareTapTheme.sageStrong)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 22, style: .continuous)
-                            .stroke(Color.white.opacity(0.2), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
+                            .stroke(Color.white.opacity(0.16), lineWidth: 1)
                     }
             }
         }
@@ -429,9 +416,9 @@ struct NFCPairingView: View {
             .padding(14)
             .careTapLiquidGlass(
                 tint: CareTapTheme.sage.opacity(0.04),
-                cornerRadius: 18
+                cornerRadius: CareTapSpacing.cornerRadiusCompact
             )
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.2)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.2)
         }
         .buttonStyle(.plain)
     }

@@ -59,11 +59,11 @@ struct PatientScheduleView: View {
                     .foregroundStyle(CareTapTheme.sageStrong)
                     .frame(width: 44, height: 44)
                     .careTapLiquidGlass(
-                        tint: CareTapTheme.sage.opacity(0.08),
-                        cornerRadius: 22,
+                        tint: CareTapTheme.sage.opacity(0.05),
+                        cornerRadius: 12,
                         interactive: true
                     )
-                    .careTapGlassStroke(cornerRadius: 22, opacity: 0.4)
+                    .careTapGlassStroke(cornerRadius: 12, opacity: 0.34)
             }
             .buttonStyle(.plain)
             .accessibilityLabel("Add item")
@@ -274,9 +274,9 @@ private struct MedicationRowTile: View {
             tint: medication.hasCurrentOpenDose
                 ? CareTapTheme.alert.opacity(0.03)
                 : CareTapTheme.glassTint.opacity(0.02),
-            cornerRadius: 18
+            cornerRadius: CareTapSpacing.cornerRadiusCompact
         )
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.22)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.22)
         .contentShape(Rectangle())
         .accessibilityLabel("\(medication.title), \(medication.dosage)")
     }

@@ -122,8 +122,8 @@ struct CareTapTapConfirmationSheet: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .careTapGlassFill(opacity: 0.6)
-        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.04), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private func duplicateDetailCard(_ details: NFCTapConfirmationState.DuplicateDetails) -> some View {
@@ -151,8 +151,8 @@ struct CareTapTapConfirmationSheet: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .careTapGlassFill(opacity: 0.6)
-        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.04), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private func timingDetailCard(_ details: NFCTapConfirmationState.TimingDetails) -> some View {
@@ -175,8 +175,8 @@ struct CareTapTapConfirmationSheet: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .careTapGlassFill(opacity: 0.6)
-        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.04), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.28)
+        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private func idleDetailCard(_ details: NFCTapConfirmationState.IdleDetails) -> some View {
@@ -207,8 +207,8 @@ struct CareTapTapConfirmationSheet: View {
         .padding(18)
         .frame(maxWidth: .infinity, alignment: .leading)
         .careTapGlassFill(opacity: 0.55)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.22)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
     }
 
     // MARK: - Actions
@@ -362,17 +362,11 @@ struct CareTapTapConfirmationSheet: View {
             .frame(maxWidth: .infinity)
             .frame(minHeight: 54)
             .background {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [tone.color, tone.strongColor],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                    .fill(tone.strongColor)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
-                            .stroke(Color.white.opacity(0.18), lineWidth: 1)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCompact, style: .continuous)
+                            .stroke(Color.white.opacity(0.14), lineWidth: 1)
                     }
             }
         }

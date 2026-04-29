@@ -12,7 +12,7 @@ struct PatientWorkspaceView: View {
     var onUndoHistoryRow: (PatientHistoryRowState) -> Void = { _ in }
 
     var body: some View {
-        ScrollView {
+        CareTapViewportScrollView(topPadding: 24, bottomPadding: 36) {
             VStack(alignment: .leading, spacing: 24) {
                 header
                 summaryCard
@@ -50,11 +50,7 @@ struct PatientWorkspaceView: View {
                     )
                 }
             }
-            .padding(.horizontal, CareTapSpacing.screenPadding)
-            .padding(.top, 24)
-            .padding(.bottom, 120)
         }
-        .background(CareTapTheme.canvas)
     }
 
     private var header: some View {
@@ -82,11 +78,11 @@ struct PatientWorkspaceView: View {
                         .foregroundStyle(CareTapTheme.sageStrong)
                         .frame(width: 44, height: 44)
                         .careTapLiquidGlass(
-                            tint: CareTapTheme.sage.opacity(0.08),
-                            cornerRadius: 22,
+                            tint: CareTapTheme.sage.opacity(0.05),
+                            cornerRadius: 12,
                             interactive: true
                         )
-                        .careTapGlassStroke(cornerRadius: 22, opacity: 0.34)
+                        .careTapGlassStroke(cornerRadius: 12, opacity: 0.3)
                 }
                 .buttonStyle(.plain)
                 .accessibilityLabel("Add item")

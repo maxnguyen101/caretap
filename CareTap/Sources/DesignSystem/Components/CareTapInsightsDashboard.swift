@@ -1,9 +1,7 @@
 import Charts
 import SwiftUI
 
-/// Apple-style metrics surface for the Workspace tab. Replaces the flat number
-/// tiles with a primary adherence ring, a soft 7-day logged-doses chart, and a
-/// row of sage-tinted metric chips that scale gracefully with Dynamic Type.
+/// Quiet metrics surface for the Workspace tab.
 struct CareTapInsightsDashboard: View {
     let adherenceFraction: Double
     let adherenceLabel: String
@@ -75,7 +73,7 @@ struct CareTapInsightsDashboard: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 18) {
+        VStack(alignment: .leading, spacing: 16) {
             heroRow
             if !secondaryStats.isEmpty {
                 metricsRow
@@ -84,158 +82,115 @@ struct CareTapInsightsDashboard: View {
                 trendSection
             }
         }
-        .padding(18)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapGlassFill(opacity: 0.55)
-        .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.04), cornerRadius: 22)
-        .careTapGlassStroke(cornerRadius: 22, opacity: 0.24)
+        .careTapGlassFill(opacity: 0.62)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.25)
     }
-
-    // MARK: - Hero
 
     private var heroRow: some View {
-        HStack(alignment: .top, spacing: 16) {
-            adherenceRing
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Today")
-                    .font(CareTapTypography.footnote.weight(.semibold))
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .lineLimit(1)
-
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .firstTextBaseline, spacing: 14) {
                 Text(adherenceLabel)
-                    .font(CareTapTypography.hero)
+                    .font(CareTapTypography.title)
                     .foregroundStyle(CareTapTheme.textPrimary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.6)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
+                    .frame(maxWidth: .infinity, alignment: .leading)
 
-                Text(adherenceCaption)
-                    .font(CareTapTypography.footnote)
-                    .foregroundStyle(CareTapTheme.textSecondary)
-                    .lineLimit(3)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-    }
+                VStack(alignment: .trailing, spacing: 2) {
+                    Text(primaryStat.value)
+                        .font(.system(size: 34, weight: .semibold, design: .default))
+                        .foregroundStyle(CareTapTheme.textPrimary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.55)
+                        .contentTransition(.numericText())
 
-    private var adherenceRing: some View {
-        ZStack {
-            Circle()
-                .stroke(CareTapTheme.surfaceMuted, lineWidth: 10)
-            Circle()
-                .trim(from: 0, to: CGFloat(adherenceFraction.clamped(0, 1)))
-                .stroke(
-                    AngularGradient(
-                        gradient: Gradient(colors: [
-                            CareTapTheme.sage,
-                            CareTapTheme.sageStrong,
-                            CareTapTheme.sage
-                        ]),
-                        center: .center
-                    ),
-                    style: StrokeStyle(lineWidth: 10, lineCap: .round)
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(.spring(duration: 0.8, bounce: 0.15), value: adherenceFraction)
-
-            VStack(spacing: 0) {
-                Text(primaryStat.value)
-                    .font(.system(size: 26, weight: .bold, design: .rounded))
-                    .foregroundStyle(CareTapTheme.textPrimary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.5)
-                    .contentTransition(.numericText())
-                Text(primaryStat.label)
-                    .font(.system(size: 10, weight: .semibold))
-                    .tracking(0.8)
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .lineLimit(1)
-                    .textCase(.uppercase)
-            }
-            .padding(8)
-        }
-        .frame(width: 96, height: 96)
-    }
-
-    // MARK: - Metric row
-
-    private var metricsRow: some View {
-        ViewThatFits(in: .horizontal) {
-            HStack(spacing: 10) {
-                ForEach(secondaryStats) { stat in
-                    metricChip(stat)
+                    Text(primaryStat.label)
+                        .font(CareTapTypography.micro)
+                        .foregroundStyle(CareTapTheme.textTertiary)
+                        .lineLimit(1)
                 }
             }
 
-            VStack(spacing: 10) {
-                ForEach(secondaryStats) { stat in
+            Text(adherenceCaption)
+                .font(CareTapTypography.footnote)
+                .foregroundStyle(CareTapTheme.textSecondary)
+                .lineLimit(3)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
+
+            progressBar
+        }
+    }
+
+    private var progressBar: some View {
+        GeometryReader { proxy in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(CareTapTheme.surfaceMuted)
+                Capsule()
+                    .fill(CareTapTheme.sageStrong)
+                    .frame(width: max(8, proxy.size.width * adherenceFraction.clamped(0, 1)))
+                    .animation(.easeOut(duration: 0.28), value: adherenceFraction)
+            }
+        }
+        .frame(height: 6)
+    }
+
+    private var metricsRow: some View {
+        ViewThatFits(in: .horizontal) {
+            HStack(spacing: 0) {
+                ForEach(Array(secondaryStats.enumerated()), id: \.element.id) { index, stat in
                     metricChip(stat)
+                    if index < secondaryStats.count - 1 {
+                        Divider()
+                            .overlay(CareTapTheme.separator.opacity(0.45))
+                            .padding(.vertical, 4)
+                    }
+                }
+            }
+
+            VStack(spacing: 0) {
+                ForEach(Array(secondaryStats.enumerated()), id: \.element.id) { index, stat in
+                    metricChip(stat)
+                    if index < secondaryStats.count - 1 {
+                        Divider()
+                            .overlay(CareTapTheme.separator.opacity(0.45))
+                    }
                 }
             }
         }
     }
 
     private func metricChip(_ stat: StatValue) -> some View {
-        HStack(alignment: .center, spacing: 12) {
-            miniRing(color: stat.accent.color, progress: stat.progress)
+        VStack(alignment: .leading, spacing: 3) {
+            Text(stat.value)
+                .font(.system(size: 19, weight: .semibold, design: .default))
+                .foregroundStyle(stat.accent.color)
+                .lineLimit(1)
+                .minimumScaleFactor(0.55)
+                .contentTransition(.numericText())
 
-            VStack(alignment: .leading, spacing: 2) {
-                Text(stat.value)
-                    .font(.system(size: 18, weight: .bold, design: .rounded))
-                    .foregroundStyle(CareTapTheme.textPrimary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.55)
-                    .contentTransition(.numericText())
-                Text(stat.label)
-                    .font(CareTapTypography.footnote.weight(.medium))
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .lineLimit(2)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            Text(stat.label)
+                .font(CareTapTypography.micro)
+                .foregroundStyle(CareTapTheme.textTertiary)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
         }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 12)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(stat.accent.fill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(stat.accent.color.opacity(0.18), lineWidth: 1)
-        }
     }
-
-    private func miniRing(color: Color, progress: Double?) -> some View {
-        ZStack {
-            Circle()
-                .stroke(color.opacity(0.18), lineWidth: 4)
-            if let progress {
-                Circle()
-                    .trim(from: 0, to: CGFloat(progress.clamped(0, 1)))
-                    .stroke(color, style: StrokeStyle(lineWidth: 4, lineCap: .round))
-                    .rotationEffect(.degrees(-90))
-                    .animation(.spring(duration: 0.6, bounce: 0.1), value: progress)
-            } else {
-                Circle()
-                    .fill(color.opacity(0.12))
-                    .padding(4)
-            }
-        }
-        .frame(width: 34, height: 34)
-    }
-
-    // MARK: - Trend
 
     private var trendSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .firstTextBaseline, spacing: 8) {
                 Text("Recent trend")
                     .font(CareTapTypography.footnote.weight(.semibold))
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .textCase(.uppercase)
-                    .tracking(0.6)
+                    .foregroundStyle(CareTapTheme.textSecondary)
 
                 Spacer()
 
@@ -251,21 +206,8 @@ struct CareTapInsightsDashboard: View {
                     x: .value("Day", point.date, unit: .day),
                     y: .value("Logged", point.loggedCount)
                 )
-                .cornerRadius(6)
-                .foregroundStyle(
-                    LinearGradient(
-                        colors: [CareTapTheme.sage, CareTapTheme.sageStrong],
-                        startPoint: .bottom,
-                        endPoint: .top
-                    )
-                )
-                .annotation(position: .top, alignment: .center, spacing: 2) {
-                    if point.loggedCount > 0 {
-                        Text("\(point.loggedCount)")
-                            .font(.system(size: 9, weight: .semibold, design: .rounded))
-                            .foregroundStyle(CareTapTheme.sageStrong)
-                    }
-                }
+                .cornerRadius(4)
+                .foregroundStyle(CareTapTheme.sageStrong.opacity(0.74))
             }
             .chartXAxis {
                 AxisMarks(values: .stride(by: .day)) { value in

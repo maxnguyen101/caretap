@@ -33,16 +33,7 @@ struct CareTapMedicationPhotoView: View {
     @ViewBuilder
     private var placeholder: some View {
         RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-            .fill(
-                LinearGradient(
-                    colors: [
-                        CareTapTheme.sage.opacity(0.14),
-                        CareTapTheme.surface
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                )
-            )
+            .fill(CareTapTheme.surfaceMuted)
             .overlay {
                 VStack(spacing: 4) {
                     Image(systemName: "pill.fill")

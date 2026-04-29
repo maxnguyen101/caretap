@@ -4,109 +4,62 @@ struct BestNextStepWidgetView: View {
     let snapshot: BestNextStepSnapshot
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 12) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("TapCare")
-                        .font(CareTapTypography.micro)
-                        .foregroundStyle(CareTapTheme.textTertiary)
-                        .textCase(.uppercase)
-
-                    CareTapStatusBadge(text: snapshot.state.chipText, tone: snapshot.state.tone)
-                }
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+                Image(systemName: symbolName)
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(snapshotAccent)
+                    .frame(width: 24, height: 24)
+                    .background(snapshotAccent.opacity(0.12), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
 
                 Spacer(minLength: 0)
 
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(
-                        LinearGradient(
-                            colors: [
-                                CareTapTheme.surface.opacity(0.92),
-                                CareTapTheme.canvasWarm.opacity(0.86)
-                            ],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing
-                        )
-                    )
-                    .overlay {
-                        Image(systemName: "wave.3.right.circle.fill")
-                            .font(.system(size: 16, weight: .medium))
-                            .foregroundStyle(snapshotAccent)
-                    }
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 14, style: .continuous)
-                            .stroke(CareTapTheme.stroke.opacity(0.18), lineWidth: 1)
-                    }
-                    .frame(width: 38, height: 38)
+                Text(snapshot.state.chipText)
+                    .font(.system(size: 10, weight: .semibold, design: .default))
+                    .foregroundStyle(snapshotAccent)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
             }
 
             Spacer(minLength: 0)
 
-            VStack(alignment: .leading, spacing: 6) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(snapshot.title)
-                    .font(.system(size: 21, weight: .semibold, design: .default))
+                    .font(.system(size: 20, weight: .semibold, design: .default))
                     .foregroundStyle(CareTapTheme.textPrimary)
-                    .lineLimit(3)
-                    .minimumScaleFactor(0.88)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.78)
 
                 Text(snapshot.subtitle)
-                    .font(CareTapTypography.footnote)
+                    .font(.system(size: 12, weight: .regular, design: .default))
                     .foregroundStyle(CareTapTheme.textSecondary)
-                    .lineLimit(3)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.82)
             }
 
-            HStack(spacing: 8) {
+            Spacer(minLength: 0)
+
+            HStack(spacing: 6) {
                 Text(actionLabel)
-                    .font(CareTapTypography.micro.weight(.semibold))
+                    .font(.system(size: 12, weight: .semibold, design: .default))
                     .foregroundStyle(snapshotAccent)
                     .lineLimit(1)
+                    .minimumScaleFactor(0.78)
 
                 Spacer(minLength: 0)
 
-                Image(systemName: "arrow.up.right")
-                    .font(.system(size: 11, weight: .semibold))
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 10, weight: .semibold))
                     .foregroundStyle(snapshotAccent)
-            }
-            .padding(.horizontal, 12)
-            .padding(.vertical, 9)
-            .background(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(CareTapTheme.surface.opacity(0.74))
-            )
-            .overlay {
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(CareTapTheme.stroke.opacity(0.14), lineWidth: 1)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .padding(18)
+        .padding(14)
         .background(widgetSurface)
-        .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-        .overlay {
-            Image("GlassTexture")
-                .resizable()
-                .scaledToFill()
-                .opacity(0.12)
-                .blendMode(.softLight)
-                .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 28, style: .continuous)
-                .stroke(CareTapTheme.stroke.opacity(0.14), lineWidth: 1)
-        }
     }
 
     private var widgetSurface: some ShapeStyle {
-        LinearGradient(
-            colors: [
-                CareTapTheme.surface.opacity(0.95),
-                CareTapTheme.canvasWarm.opacity(0.985),
-                CareTapTheme.canvasMist.opacity(0.9)
-            ],
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
+        CareTapTheme.surface.opacity(0.92)
     }
 
     private var snapshotAccent: Color {
@@ -127,13 +80,28 @@ struct BestNextStepWidgetView: View {
     private var actionLabel: String {
         switch snapshot.state {
         case .dueNow, .overdue:
-            return "Log now"
+            return "Open to log"
         case .snoozed:
-            return "Resume soon"
+            return "Resume"
         case .completed:
             return "View today"
         case .upcoming:
             return "Open home"
+        }
+    }
+
+    private var symbolName: String {
+        switch snapshot.state {
+        case .completed:
+            return "checkmark.circle.fill"
+        case .upcoming:
+            return "clock.fill"
+        case .dueNow:
+            return "hand.tap.fill"
+        case .overdue:
+            return "exclamationmark.circle.fill"
+        case .snoozed:
+            return "moon.zzz.fill"
         }
     }
 }

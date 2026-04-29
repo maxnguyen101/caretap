@@ -21,7 +21,7 @@ struct CaregiverWorkspaceView: View {
     var onOpenPremium: () -> Void = {}
 
     var body: some View {
-        ScrollView {
+        CareTapViewportScrollView(topPadding: 24, bottomPadding: 36) {
             VStack(alignment: .leading, spacing: 24) {
                 header
                 summaryCard
@@ -68,11 +68,7 @@ struct CaregiverWorkspaceView: View {
                     )
                 }
             }
-            .padding(.horizontal, CareTapSpacing.screenPadding)
-            .padding(.top, 24)
-            .padding(.bottom, 120)
         }
-        .background(CareTapTheme.canvas)
     }
 
     private var header: some View {

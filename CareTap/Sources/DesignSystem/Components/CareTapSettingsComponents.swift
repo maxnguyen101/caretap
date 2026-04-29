@@ -31,10 +31,10 @@ struct CareTapSettingsSectionView: View {
                     }
                 }
             }
-            .careTapGlassFill(opacity: 0.6)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.25)
-            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+            .careTapGlassFill(opacity: 0.64)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.26)
+            .clipShape(RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous))
 
             if let footer = section.footer {
                 Text(footer)
@@ -151,7 +151,7 @@ struct CareTapSettingsRowView: View {
             .frame(width: 30, height: 30)
             .background(
                 (row.tone == .neutral ? CareTapTheme.surfaceMuted : row.tone.color.opacity(0.1)),
-                in: RoundedRectangle(cornerRadius: 8, style: .continuous)
+                in: RoundedRectangle(cornerRadius: 7, style: .continuous)
             )
     }
 

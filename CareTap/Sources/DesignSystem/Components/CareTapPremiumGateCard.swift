@@ -10,7 +10,7 @@ struct CareTapPremiumGateCard: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top, spacing: 12) {
                 ZStack {
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
                         .fill(CareTapTheme.warm.opacity(0.12))
                         .frame(width: 40, height: 40)
 
@@ -49,18 +49,18 @@ struct CareTapPremiumGateCard: View {
                 .padding(.horizontal, 12)
                 .padding(.vertical, 10)
                 .careTapLiquidGlass(
-                    tint: CareTapTheme.sage.opacity(0.08),
-                    cornerRadius: 12,
+                    tint: CareTapTheme.sage.opacity(0.05),
+                    cornerRadius: 10,
                     interactive: true
                 )
-                .careTapGlassStroke(cornerRadius: 12, opacity: 0.28)
+                .careTapGlassStroke(cornerRadius: 10, opacity: 0.24)
             }
             .buttonStyle(.plain)
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapGlassFill(opacity: 0.48)
-        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.025), cornerRadius: 20)
-        .careTapGlassStroke(cornerRadius: 20, opacity: 0.22)
+        .careTapGlassFill(opacity: 0.58)
+        .careTapLiquidGlass(tint: CareTapTheme.warm.opacity(0.02), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
     }
 }

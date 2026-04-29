@@ -98,15 +98,19 @@ struct AddMedicationView: View {
     private var lookupContent: some View {
         switch state.lookupState {
         case .suggestions(let suggestions):
-            VStack(alignment: .leading, spacing: 12) {
-                Text(searchQuery.isEmpty ? "Popular picks" : "Matches")
-                    .font(CareTapTypography.micro)
-                    .foregroundStyle(CareTapTheme.textTertiary)
+            if trimmedSearchQuery.isEmpty {
+                searchPrompt
+            } else {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Matches")
+                        .font(CareTapTypography.micro)
+                        .foregroundStyle(CareTapTheme.textTertiary)
 
-                LazyVGrid(columns: medicationColumns, spacing: 10) {
-                    ForEach(suggestions) { suggestion in
-                        MedicationSuggestionTile(suggestion: suggestion) {
-                            selectSuggestion(suggestion)
+                    LazyVGrid(columns: medicationColumns, spacing: 10) {
+                        ForEach(suggestions) { suggestion in
+                            MedicationSuggestionTile(suggestion: suggestion) {
+                                selectSuggestion(suggestion)
+                            }
                         }
                     }
                 }
@@ -123,23 +127,27 @@ struct AddMedicationView: View {
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
         case .empty(let query):
-            VStack(spacing: 8) {
-                Image(systemName: "tray")
-                    .font(.system(size: 24, weight: .light))
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                Text("No match for \"\(query)\"")
-                    .font(CareTapTypography.footnote)
-                    .foregroundStyle(CareTapTheme.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text("Use what you typed and keep going.")
-                    .font(CareTapTypography.micro)
-                    .foregroundStyle(CareTapTheme.textTertiary)
-                    .multilineTextAlignment(.center)
-                    .fixedSize(horizontal: false, vertical: true)
+            if query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                searchPrompt
+            } else {
+                VStack(spacing: 8) {
+                    Image(systemName: "tray")
+                        .font(.system(size: 24, weight: .light))
+                        .foregroundStyle(CareTapTheme.textTertiary)
+                    Text("No match for \"\(query)\"")
+                        .font(CareTapTypography.footnote)
+                        .foregroundStyle(CareTapTheme.textSecondary)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                    Text("Use what you typed and keep going.")
+                        .font(CareTapTypography.micro)
+                        .foregroundStyle(CareTapTheme.textTertiary)
+                        .multilineTextAlignment(.center)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
         case .error(let message):
             CareTapInlineBanner(
                 icon: "exclamationmark.circle.fill",
@@ -204,9 +212,39 @@ struct AddMedicationView: View {
     private var heroHighlights: [String] {
         [
             state.selectedCategory.title,
-            searchQuery.isEmpty ? "Preset suggestions" : "Custom search",
+            trimmedSearchQuery.isEmpty ? "Type a name" : "Custom entry",
             selectedTimeTitles.isEmpty ? "Choose times" : "\(selectedTimeTitles.count) time\(selectedTimeTitles.count == 1 ? "" : "s")"
         ]
+    }
+
+    private var trimmedSearchQuery: String {
+        searchQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var searchPrompt: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundStyle(CareTapTheme.sageStrong)
+                .frame(width: 36, height: 36)
+                .background(CareTapTheme.sage.opacity(0.1), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text("Search or add your own")
+                    .font(CareTapTypography.footnote.weight(.semibold))
+                    .foregroundStyle(CareTapTheme.textPrimary)
+                Text("Type the name from the bottle, packet, or routine.")
+                    .font(CareTapTypography.micro)
+                    .foregroundStyle(CareTapTheme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
+            .layoutPriority(1)
+
+            Spacer(minLength: 0)
+        }
+        .padding(14)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 16)
+        .careTapGlassStroke(cornerRadius: 16, opacity: 0.18)
     }
 
     private var guidanceCard: some View {

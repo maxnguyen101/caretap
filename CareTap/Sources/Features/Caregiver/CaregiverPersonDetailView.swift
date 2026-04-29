@@ -183,6 +183,6 @@ private struct CaregiverDetailTagRow: View {
             .foregroundStyle(CareTapTheme.sageStrong)
             .padding(.horizontal, 10)
             .padding(.vertical, 7)
-            .background(CareTapTheme.sage.opacity(0.1), in: Capsule())
+            .background(CareTapTheme.sage.opacity(0.1), in: RoundedRectangle(cornerRadius: 6, style: .continuous))
     }
 }

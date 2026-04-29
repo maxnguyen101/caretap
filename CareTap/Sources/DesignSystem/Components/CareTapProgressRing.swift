@@ -2,6 +2,8 @@ import SwiftUI
 
 struct CareTapProgressRing: View {
     let fraction: Double
+    var size: CGFloat = 56
+    var lineWidth: CGFloat = 6
 
     @State private var animatedFraction: Double = 0
     @State private var hasAppeared = false
@@ -9,43 +11,31 @@ struct CareTapProgressRing: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(CareTapTheme.surfaceMuted, lineWidth: 6)
+                .stroke(CareTapTheme.surfaceMuted, lineWidth: lineWidth)
 
             Circle()
                 .trim(from: 0, to: animatedFraction.clamped(to: 0...1))
                 .stroke(
-                    AngularGradient(
-                        colors: [CareTapTheme.sage, CareTapTheme.sageStrong],
-                        center: .center
-                    ),
-                    style: StrokeStyle(lineWidth: 6, lineCap: .round)
+                    CareTapTheme.sageStrong,
+                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
                 )
                 .rotationEffect(.degrees(-90))
-
-            // Glow dot at the end of the arc
-            if animatedFraction > 0.05 {
-                Circle()
-                    .fill(CareTapTheme.sageStrong)
-                    .frame(width: 8, height: 8)
-                    .offset(y: -25)
-                    .rotationEffect(.degrees(360 * animatedFraction - 90))
-            }
 
             Text(fraction.formatted(.percent.precision(.fractionLength(0))))
                 .font(CareTapTypography.micro)
                 .foregroundStyle(CareTapTheme.textPrimary)
                 .contentTransition(.numericText(value: fraction))
         }
-        .frame(width: 56, height: 56)
+        .frame(width: size, height: size)
         .onAppear {
             guard !hasAppeared else { return }
             hasAppeared = true
-            withAnimation(.spring(duration: 1.2, bounce: 0.15).delay(0.3)) {
+            withAnimation(.easeOut(duration: 0.45).delay(0.15)) {
                 animatedFraction = fraction
             }
         }
         .onChange(of: fraction) { _, newValue in
-            withAnimation(.spring(duration: 0.6, bounce: 0.1)) {
+            withAnimation(.easeOut(duration: 0.25)) {
                 animatedFraction = newValue
             }
         }

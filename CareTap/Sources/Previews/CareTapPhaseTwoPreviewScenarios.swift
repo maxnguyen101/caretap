@@ -8,11 +8,7 @@ enum CareTapPhaseTwoPreviewScenarios {
         selectedCategory: .prescription,
         searchPlaceholder: "e.g. Lisinopril, Metformin...",
         searchQuery: "",
-        lookupState: .suggestions([
-            MedicationSuggestionState(title: "Atorvastatin", subtitle: "Cholesterol", symbolName: "pills.fill", tone: .alert),
-            MedicationSuggestionState(title: "Amlodipine", subtitle: "Blood Pressure", symbolName: "heart.text.square.fill", tone: .success),
-            MedicationSuggestionState(title: "Metformin", subtitle: "Diabetes", symbolName: "cross.case.fill", tone: .warm)
-        ]),
+        lookupState: .empty(query: ""),
         timeSlots: [
             MedicationTimeSlotState(title: "Morning", timeText: "8:00 AM", symbolName: "sun.max.fill", isSelected: true),
             MedicationTimeSlotState(title: "Noon", timeText: "12:00 PM", symbolName: "sun.max", isSelected: false),

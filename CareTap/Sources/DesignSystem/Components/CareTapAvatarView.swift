@@ -8,7 +8,7 @@ struct CareTapAvatarView: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             avatarShape
-                .fill(backgroundGradient)
+                .fill(backgroundColor)
                 .overlay {
                     Group {
                         if isSquare {
@@ -17,7 +17,7 @@ struct CareTapAvatarView: View {
                                 .foregroundStyle(.white.opacity(0.9))
                         } else {
                             Text(displayInitials)
-                                .font(.system(size: size * 0.34, weight: .bold, design: .rounded))
+                                .font(.system(size: size * 0.34, weight: .semibold, design: .default))
                                 .foregroundStyle(.white)
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.6)
@@ -53,16 +53,16 @@ struct CareTapAvatarView: View {
         return String(trimmed.prefix(3)).uppercased()
     }
 
-    private var backgroundGradient: LinearGradient {
+    private var backgroundColor: Color {
         switch profile.style {
         case .patient:
-            return LinearGradient(colors: [CareTapTheme.sageStrong, CareTapTheme.sage], startPoint: .topLeading, endPoint: .bottomTrailing)
+            return CareTapTheme.sageStrong
         case .caregiver:
-            return LinearGradient(colors: [CareTapTheme.success, CareTapTheme.sage], startPoint: .topLeading, endPoint: .bottomTrailing)
+            return CareTapTheme.success
         case .lovedOne:
-            return LinearGradient(colors: [Color(red: 0.13, green: 0.17, blue: 0.20), Color(red: 0.31, green: 0.39, blue: 0.42)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            return Color(red: 0.22, green: 0.26, blue: 0.27)
         case .helper:
-            return LinearGradient(colors: [CareTapTheme.warm.opacity(0.8), CareTapTheme.alert.opacity(0.9)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            return CareTapTheme.warm
         }
     }
 

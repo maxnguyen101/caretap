@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Reusable modifier: content enters with a staggered fade-up on appear.
+/// Reusable modifier: content enters with a short fade on appear.
 struct CareTapStaggeredEntry: ViewModifier {
     let index: Int
     let baseDelay: TimeInterval
@@ -10,12 +10,12 @@ struct CareTapStaggeredEntry: ViewModifier {
     func body(content: Content) -> some View {
         content
             .opacity(hasAppeared ? 1 : 0)
-            .offset(y: hasAppeared ? 0 : 16)
+            .offset(y: hasAppeared ? 0 : 6)
             .onAppear {
                 guard !hasAppeared else { return }
                 withAnimation(
-                    .spring(duration: 0.55, bounce: 0.12)
-                    .delay(baseDelay + Double(index) * 0.08)
+                    .easeOut(duration: 0.22)
+                    .delay(baseDelay + Double(index) * 0.04)
                 ) {
                     hasAppeared = true
                 }
@@ -23,7 +23,7 @@ struct CareTapStaggeredEntry: ViewModifier {
     }
 }
 
-/// Reusable modifier: content scales up from 0.95 with a fade on appear.
+/// Reusable modifier: content fades in on appear.
 struct CareTapCardEntrance: ViewModifier {
     let delay: TimeInterval
 
@@ -32,30 +32,26 @@ struct CareTapCardEntrance: ViewModifier {
     func body(content: Content) -> some View {
         content
             .opacity(hasAppeared ? 1 : 0)
-            .scaleEffect(hasAppeared ? 1 : 0.96)
             .onAppear {
                 guard !hasAppeared else { return }
-                withAnimation(.spring(duration: 0.5, bounce: 0.1).delay(delay)) {
+                withAnimation(.easeOut(duration: 0.2).delay(delay)) {
                     hasAppeared = true
                 }
             }
     }
 }
 
-/// Pulse-glow effect for items needing attention (overdue badges, etc.)
+/// Subtle emphasis for items needing attention.
 struct CareTapAttentionPulse: ViewModifier {
     let isActive: Bool
     @State private var pulsing = false
 
     func body(content: Content) -> some View {
         content
-            .shadow(
-                color: isActive ? CareTapTheme.alert.opacity(pulsing ? 0.35 : 0.1) : .clear,
-                radius: pulsing ? 12 : 4
-            )
+            .opacity(isActive && pulsing ? 0.82 : 1)
             .onAppear {
                 guard isActive else { return }
-                withAnimation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true)) {
+                withAnimation(.easeInOut(duration: 1.4).repeatForever(autoreverses: true)) {
                     pulsing = true
                 }
             }

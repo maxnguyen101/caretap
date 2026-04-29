@@ -70,10 +70,9 @@ struct CaregiverWelcomeView: View {
 
     private var codeSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("INVITE CODE")
-                .font(CareTapTypography.micro)
-                .foregroundStyle(CareTapTheme.textTertiary)
-                .tracking(0.5)
+            Text("Invite code")
+                .font(CareTapTypography.footnote.weight(.semibold))
+                .foregroundStyle(CareTapTheme.textSecondary)
 
             TextField(
                 "Enter code",
@@ -85,9 +84,9 @@ struct CaregiverWelcomeView: View {
             .padding(.vertical, 20)
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity)
-            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 20)
+            .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
             .overlay {
-                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                     .stroke(
                         draftInviteCode.isEmpty ? CareTapTheme.stroke.opacity(0.25) : CareTapTheme.sage.opacity(0.5),
                         lineWidth: draftInviteCode.isEmpty ? 1 : 1.5

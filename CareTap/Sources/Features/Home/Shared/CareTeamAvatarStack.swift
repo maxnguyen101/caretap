@@ -39,7 +39,7 @@ struct CareTeamAvatarStack: View {
                         .frame(width: 32, height: 32)
                         .overlay {
                             Text("+\(min(totalCount - displayedCount, 99))")
-                                .font(.system(size: 11, weight: .semibold, design: .rounded))
+                                .font(.system(size: 11, weight: .semibold, design: .default))
                                 .foregroundStyle(CareTapTheme.textSecondary)
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.7)

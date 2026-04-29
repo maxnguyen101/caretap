@@ -14,7 +14,7 @@ struct CareTapBundledMedicationCatalog {
     func suggestions(matching query: String, limit: Int = 14) -> [MedicationSuggestionState] {
         let normalizedQuery = Self.normalized(query)
         guard !normalizedQuery.isEmpty else {
-            return allSuggestions(limit: limit)
+            return []
         }
 
         let matches = items

@@ -42,14 +42,14 @@ struct CareTapEmptyState: View {
                             .font(.system(size: 12, weight: .bold))
                     }
                     .foregroundStyle(CareTapTheme.sageStrong)
-                    .padding(.horizontal, 24)
+                    .padding(.horizontal, 18)
                     .padding(.vertical, 12)
                     .careTapLiquidGlass(
-                        tint: CareTapTheme.sage.opacity(0.08),
-                        cornerRadius: 14,
+                        tint: CareTapTheme.sage.opacity(0.05),
+                        cornerRadius: 10,
                         interactive: true
                     )
-                    .careTapGlassStroke(cornerRadius: 14, opacity: 0.3)
+                    .careTapGlassStroke(cornerRadius: 10, opacity: 0.26)
                 }
                 .buttonStyle(.plain)
             }

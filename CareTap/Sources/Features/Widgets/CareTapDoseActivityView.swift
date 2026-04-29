@@ -1,95 +1,21 @@
 import SwiftUI
 
 struct CareTapDoseActivityView: View {
+    enum Presentation {
+        case lockScreen
+        case island
+    }
+
     let state: CareTapDoseActivityViewState
+    var presentation: Presentation = .lockScreen
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 12) {
-                HStack(spacing: 10) {
-                    RoundedRectangle(cornerRadius: 16, style: .continuous)
-                        .fill(accentColor.opacity(0.14))
-                        .frame(width: 42, height: 42)
-                        .overlay {
-                            Image(systemName: "pills.fill")
-                                .foregroundStyle(accentColor)
-                        }
-
-                    VStack(alignment: .leading, spacing: 2) {
-                        Text("TapCare")
-                            .font(CareTapTypography.micro)
-                            .foregroundStyle(CareTapTheme.textTertiary)
-                            .textCase(.uppercase)
-
-                        Text("Due \(state.dueTimeText)")
-                            .font(CareTapTypography.footnote)
-                            .foregroundStyle(CareTapTheme.textSecondary)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                }
-
-                Spacer(minLength: 0)
-
-                CareTapStatusBadge(text: state.statusText, tone: state.statusTone)
-            }
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(state.medicationName)
-                    .font(CareTapTypography.section)
-                    .foregroundStyle(CareTapTheme.textPrimary)
-                    .fixedSize(horizontal: false, vertical: true)
-
-                Text(state.dosage)
-                    .font(CareTapTypography.footnote)
-                    .foregroundStyle(CareTapTheme.textSecondary)
-                    .fixedSize(horizontal: false, vertical: true)
-            }
-
-            ViewThatFits(in: .vertical) {
-                HStack(spacing: 12) {
-                    actionPill
-                    Spacer(minLength: 0)
-                    Text(state.statusText)
-                        .font(CareTapTypography.micro)
-                        .foregroundStyle(CareTapTheme.textTertiary)
-                }
-
-                VStack(alignment: .leading, spacing: 8) {
-                    actionPill
-                    Text(state.statusText)
-                        .font(CareTapTypography.micro)
-                        .foregroundStyle(CareTapTheme.textTertiary)
-                }
-            }
+        switch presentation {
+        case .lockScreen:
+            lockScreenLayout
+        case .island:
+            islandLayout
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .background(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .fill(
-                    LinearGradient(
-                        colors: [
-                            CareTapTheme.surface.opacity(0.88),
-                            CareTapTheme.canvasWarm.opacity(0.92)
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                        )
-                )
-        )
-        .overlay {
-            Image("GlassTexture")
-                .resizable()
-                .scaledToFill()
-                .opacity(0.12)
-                .blendMode(.softLight)
-                .clipShape(RoundedRectangle(cornerRadius: 24, style: .continuous))
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .stroke(CareTapTheme.stroke.opacity(0.16), lineWidth: 1)
-        }
-        .accessibilityElement(children: .combine)
     }
 
     private var accentColor: Color {
@@ -109,13 +35,108 @@ struct CareTapDoseActivityView: View {
         }
     }
 
+    private var lockScreenLayout: some View {
+        HStack(alignment: .center, spacing: 12) {
+            statusIcon(size: 34, symbolSize: 15)
+
+            VStack(alignment: .leading, spacing: 3) {
+                HStack(spacing: 6) {
+                    Text(state.statusText)
+                        .font(.system(size: 11, weight: .semibold, design: .default))
+                        .foregroundStyle(accentColor)
+                        .lineLimit(1)
+
+                    Text("Due \(state.dueTimeText)")
+                        .font(.system(size: 11, weight: .medium, design: .default))
+                        .foregroundStyle(CareTapTheme.textSecondary)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.82)
+                }
+
+                Text(state.medicationName)
+                    .font(.system(size: 17, weight: .semibold, design: .default))
+                    .foregroundStyle(CareTapTheme.textPrimary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.78)
+
+                Text(state.dosage)
+                    .font(.system(size: 12, weight: .regular, design: .default))
+                    .foregroundStyle(CareTapTheme.textSecondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.82)
+            }
+
+            Spacer(minLength: 6)
+
+            actionPill
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .accessibilityElement(children: .combine)
+    }
+
+    private var islandLayout: some View {
+        HStack(alignment: .center, spacing: 10) {
+            statusIcon(size: 28, symbolSize: 13)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(state.medicationName)
+                    .font(.system(size: 14, weight: .semibold, design: .default))
+                    .foregroundStyle(CareTapTheme.textPrimary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.72)
+
+                Text("\(state.dosage) · \(state.dueTimeText)")
+                    .font(.system(size: 11, weight: .regular, design: .default))
+                    .foregroundStyle(CareTapTheme.textSecondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.75)
+            }
+
+            Spacer(minLength: 4)
+
+            Text(state.primaryActionLabel)
+                .font(.system(size: 11, weight: .semibold, design: .default))
+                .foregroundStyle(accentColor)
+                .lineLimit(1)
+                .minimumScaleFactor(0.72)
+        }
+        .padding(.top, 2)
+        .accessibilityElement(children: .combine)
+    }
+
     private var actionPill: some View {
         Text(state.primaryActionLabel)
-            .font(CareTapTypography.micro.weight(.semibold))
+            .font(.system(size: 12, weight: .semibold, design: .default))
             .foregroundStyle(accentColor)
-            .padding(.horizontal, 12)
-            .padding(.vertical, 8)
-            .background(accentColor.opacity(0.12), in: Capsule())
+            .lineLimit(1)
+            .minimumScaleFactor(0.75)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 7)
+            .background(accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 7, style: .continuous))
+    }
+
+    private func statusIcon(size: CGFloat, symbolSize: CGFloat) -> some View {
+        Image(systemName: symbolName)
+            .font(.system(size: symbolSize, weight: .semibold))
+            .foregroundStyle(accentColor)
+            .frame(width: size, height: size)
+            .background(accentColor.opacity(0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+    }
+
+    private var symbolName: String {
+        switch state.statusTone {
+        case .alert:
+            return "exclamationmark.circle.fill"
+        case .success:
+            return "checkmark.circle.fill"
+        case .warm:
+            return "hand.tap.fill"
+        case .mist:
+            return "moon.zzz.fill"
+        default:
+            return "pills.fill"
+        }
     }
 }
 

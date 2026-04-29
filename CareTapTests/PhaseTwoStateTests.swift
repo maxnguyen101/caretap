@@ -27,13 +27,12 @@ final class PhaseTwoStateTests: XCTestCase {
         XCTAssertEqual(suggestion?.defaultContainerKind, .packet)
     }
 
-    func testBundledCatalogReturnsDefaultSuggestionsWhenQueryIsEmpty() {
+    func testBundledCatalogDoesNotShowPresetSuggestionsWhenQueryIsEmpty() {
         let catalog = CareTapBundledMedicationCatalog(bundle: Bundle(for: Self.self))
 
         let suggestions = catalog.suggestions(matching: "")
 
-        XCTAssertFalse(suggestions.isEmpty)
-        XCTAssertTrue(suggestions.count <= 14)
+        XCTAssertTrue(suggestions.isEmpty)
     }
 
     func testTapKitShopDefaultStateReflectsCheckoutAvailability() {

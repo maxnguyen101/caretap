@@ -324,8 +324,8 @@ private struct HistoryRowCard: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .careTapLiquidGlass(tint: row.tone.color.opacity(0.02), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.18)
+        .careTapLiquidGlass(tint: row.tone.color.opacity(0.02), cornerRadius: CareTapSpacing.cornerRadiusCompact)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCompact, opacity: 0.18)
         .accessibilityElement(children: .combine)
     }
 

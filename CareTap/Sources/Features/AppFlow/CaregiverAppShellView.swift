@@ -34,13 +34,13 @@ struct CaregiverAppShellView: View {
             ZStack {
                 CareTapScreenBackground()
 
-                VStack(spacing: 0) {
-                    tabContent
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .animation(.smooth(duration: 0.25), value: selectedDestination)
-
-                    CareTapBottomBar(selected: selectedDestination, onSelect: onDestinationSelected)
-                }
+                tabContent
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+                    .animation(.smooth(duration: 0.25), value: selectedDestination)
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                CareTapBottomBar(selected: selectedDestination, onSelect: onDestinationSelected)
             }
             .navigationDestination(item: $selectedRelationship) { relationship in
                 CaregiverPersonDetailView(

@@ -308,8 +308,8 @@ struct PatientScheduleSetupView: View {
         .tint(CareTapTheme.sageStrong)
         .padding(16)
         .careTapGlassFill(opacity: 0.55)
-        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.03), cornerRadius: 18)
-        .careTapGlassStroke(cornerRadius: 18, opacity: 0.24)
+        .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+        .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.24)
     }
 
     private var advancedScheduleSection: some View {
@@ -417,15 +417,15 @@ struct PatientScheduleSetupView: View {
             }
             .padding(14)
             .background(
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                     .fill(.regularMaterial)
                     .overlay {
-                        RoundedRectangle(cornerRadius: 18, style: .continuous)
+                        RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                             .fill(CareTapTheme.surface.opacity(0.22))
                     }
             )
             .overlay {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
+                RoundedRectangle(cornerRadius: CareTapSpacing.cornerRadiusCard, style: .continuous)
                     .stroke(CareTapTheme.stroke.opacity(0.24), lineWidth: 1)
             }
         }

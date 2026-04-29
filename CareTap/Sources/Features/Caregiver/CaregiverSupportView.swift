@@ -99,13 +99,13 @@ struct CaregiverSupportView: View {
         VStack(alignment: .leading, spacing: 12) {
             sectionLabel("Connect")
 
-            Text("Enter a shared code to follow someone, receive alerts, and keep their routine visible from Home.")
+            Text("Paste or type the code they shared. One tap connects you to their routine and alerts.")
                 .font(CareTapTypography.footnote)
                 .foregroundStyle(CareTapTheme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
 
             VStack(spacing: 12) {
-                TextField("Invite code", text: $draftInviteCode)
+                TextField("Shared code", text: $draftInviteCode)
                     .textInputAutocapitalization(.characters)
                     .autocorrectionDisabled()
                     .font(CareTapTypography.section)
@@ -113,18 +113,30 @@ struct CaregiverSupportView: View {
                     .careTapGlassFill(opacity: 0.6)
                     .careTapLiquidGlass(tint: CareTapTheme.glassTint.opacity(0.04), cornerRadius: 14)
                     .careTapGlassStroke(cornerRadius: 14, opacity: 0.3)
-
-                HStack(spacing: 10) {
-                    CareTapPrimaryActionButton(
-                        title: "Connect",
-                        systemImage: "person.badge.plus",
-                        isEnabled: !trimmedInviteCode.isEmpty,
-                        action: onAcceptInvite
-                    )
-
-                    if !trimmedInviteCode.isEmpty {
-                        CareTapSecondaryPillButton(title: "Decline", tone: .warm, action: onDeclineInvite)
+                    .submitLabel(.go)
+                    .onSubmit {
+                        if !trimmedInviteCode.isEmpty {
+                            onAcceptInvite()
+                        }
                     }
+
+                CareTapPrimaryActionButton(
+                    title: "Connect",
+                    systemImage: "person.badge.plus",
+                    isEnabled: !trimmedInviteCode.isEmpty,
+                    action: onAcceptInvite
+                )
+
+                if !trimmedInviteCode.isEmpty {
+                    Button {
+                        onDeclineInvite()
+                    } label: {
+                        Text("Decline this code")
+                            .font(CareTapTypography.footnote.weight(.semibold))
+                            .foregroundStyle(CareTapTheme.textSecondary)
+                            .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
@@ -333,8 +345,8 @@ struct CaregiverSupportView: View {
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
             .careTapGlassFill(opacity: 0.48)
-            .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.025), cornerRadius: 18)
-            .careTapGlassStroke(cornerRadius: 18, opacity: 0.22)
+            .careTapLiquidGlass(tint: CareTapTheme.sage.opacity(0.025), cornerRadius: CareTapSpacing.cornerRadiusCard)
+            .careTapGlassStroke(cornerRadius: CareTapSpacing.cornerRadiusCard, opacity: 0.22)
         }
     }
 

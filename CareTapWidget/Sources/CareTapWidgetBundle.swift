@@ -77,6 +77,7 @@ struct BestNextStepWidget: Widget {
         .configurationDisplayName("Best Next Step")
         .description("Shows the next check-in or item that matters most right now.")
         .supportedFamilies([.systemSmall])
+        .contentMarginsDisabled()
     }
 }
 
@@ -90,6 +91,7 @@ struct TodaySnapshotWidget: Widget {
         .configurationDisplayName("Today Snapshot")
         .description("Summarizes today's progress and the next thing coming up.")
         .supportedFamilies([.systemMedium])
+        .contentMarginsDisabled()
     }
 }
 
@@ -97,36 +99,58 @@ struct CareTapDoseActivityWidget: Widget {
     var body: some WidgetConfiguration {
         ActivityConfiguration(for: CareTapDoseActivityAttributes.self) { context in
             CareTapDoseActivityView(state: CareTapDoseActivityViewState(contentState: context.state))
-                .activityBackgroundTint(CareTapTheme.canvas)
+                .activityBackgroundTint(CareTapTheme.surface)
                 .activitySystemActionForegroundColor(CareTapTheme.sage)
         } dynamicIsland: { context in
             DynamicIsland {
                 DynamicIslandExpandedRegion(.leading) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("TapCare")
-                            .font(CareTapTypography.micro)
-                            .foregroundStyle(CareTapTheme.textTertiary)
-                        Text(context.state.dueTime, style: .time)
-                            .font(CareTapTypography.footnote)
+                        Text(context.state.medicationName)
+                            .font(.system(size: 13, weight: .semibold, design: .default))
                             .foregroundStyle(CareTapTheme.textPrimary)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.72)
+                        Text(context.state.dueTime, style: .time)
+                            .font(.system(size: 11, weight: .regular, design: .default))
+                            .foregroundStyle(CareTapTheme.textSecondary)
                     }
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    CareTapStatusBadge(text: context.state.status.badgeText, tone: context.state.status.tone)
+                    Text(context.state.status.badgeText)
+                        .font(.system(size: 11, weight: .semibold, design: .default))
+                        .foregroundStyle(context.state.status.tone.color)
+                        .lineLimit(1)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    CareTapDoseActivityView(state: CareTapDoseActivityViewState(contentState: context.state))
+                    CareTapDoseActivityView(
+                        state: CareTapDoseActivityViewState(contentState: context.state),
+                        presentation: .island
+                    )
                 }
             } compactLeading: {
-                Image(systemName: "pills.fill")
-                    .foregroundStyle(CareTapTheme.sage)
+                Image(systemName: compactSymbol(for: context.state.status))
+                    .foregroundStyle(context.state.status.tone.color)
             } compactTrailing: {
                 Text(context.state.dueTime, style: .time)
-                    .font(CareTapTypography.micro)
+                    .font(.system(size: 11, weight: .semibold, design: .default))
                     .foregroundStyle(CareTapTheme.textPrimary)
             } minimal: {
-                Image(systemName: "pills.fill")
+                Image(systemName: compactSymbol(for: context.state.status))
+                    .foregroundStyle(context.state.status.tone.color)
             }
+        }
+    }
+
+    private func compactSymbol(for status: CareTapLiveActivityStatus) -> String {
+        switch status {
+        case .completed:
+            return "checkmark.circle.fill"
+        case .overdue:
+            return "exclamationmark.circle.fill"
+        case .snoozed:
+            return "moon.zzz.fill"
+        case .dueNow:
+            return "hand.tap.fill"
         }
     }
 }
